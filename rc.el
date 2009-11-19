@@ -96,3 +96,6 @@
 
 ;; Agda
 (load "emacs-rc-agda.el")
+
+;; whitespace mode
+(load "emacs-rc-whitespace.el")
