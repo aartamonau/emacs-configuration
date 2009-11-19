@@ -34,10 +34,10 @@
 (transient-mark-mode nil)
 
 ;; ;; highlight current line
-(hl-line-mode 1)
+;; (hl-line-mode 1)
 
 ;; replace tabs with spaces
-(set-variable 'indent-tabs-mode 'nil)
+(setq-default indent-tabs-mode nil)
 
 ;; hide cursor in non-selected windows
 (set-default 'cursor-in-non-selected-windows nil)
