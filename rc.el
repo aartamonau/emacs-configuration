@@ -99,3 +99,6 @@
 
 ;; whitespace mode
 (load "emacs-rc-whitespace.el")
+
+;; prolog
+(load "emacs-rc-prolog-mode.el")
