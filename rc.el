@@ -1,6 +1,6 @@
 (setq load-path
       (append load-path
-	      '("~/emacs/rc")))
+              '("~/emacs/rc")))
 
 ;; global hook handler
 (load "emacs-rc-global-hook.el")
@@ -102,3 +102,6 @@
 
 ;; prolog
 (load "emacs-rc-prolog-mode.el")
+
+;; clojure
+(load "emacs-rc-clojure-mode.el")
