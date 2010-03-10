@@ -30,6 +30,10 @@
 ;; normal pasting from X applications
 (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 
+;; all operations that copy some text to x selection will do so
+;; for clipboard too
+(setq x-select-enable-clipboard t)
+
 ;; highlight region between point and mark
 (transient-mark-mode nil)
 

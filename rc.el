@@ -6,7 +6,7 @@
 (load "emacs-rc-global-hook.el")
 
 ;; Customizing common Emacs' appearance and behavior
-(load "emacs-rc-appearance-behavior.el")
+(load "emacs-rc-common-appearance-behavior.el")
 
 ;; flymake
 (load "emacs-rc-flymake.el")
