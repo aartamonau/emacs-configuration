@@ -1,33 +1,107 @@
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
+;; this org mode config is mostly adapted from
+;; http://www.newartisans.com/2007/08/using-org-mode-as-a-day-planner.html
+
+(defconst todo-template
+  (concat ))
 
 (defun org ()
   (interactive)
-  (find-file-existing "~/dev/mine/org/tasks.org"))
+  (find-file-existing "~/org/todo.org"))
 
-(setq org-log-done t)
-(setq org-agenda-files
-      (list "~/dev/mine/org/tasks.org"
-	    "~/dev/mine/org/ideas.org"))
-(setq org-time-stamp-custom-formats
-      (cons "<%d/%m/%Y>" "<%d/%m/%Y %a %H:%M>"))
-(setq org-display-custom-times t)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+(global-set-key "\C-cl" 'org-store-link)
+(define-key global-map "\C-cr" 'remember)
 
-(setq org-directory "~/dev/mine/org/")
-(setq org-default-notes-file
-      (concat org-directory "/notes.org"))
-(setq remember-annotation-functions '(org-remember-annotation))
-(setq remember-handler-functions '(org-remember-handler))
-(add-hook 'remember-mode-hook 'org-remember-apply-template)
-(define-key global-map "\C-cr" 'org-remember)
+(eval-after-load "org"
+  '(progn
+     (define-prefix-command 'org-todo-state-map)
 
-(setq org-remember-templates
-    '(("Idea" ?i "* %^{Brief Description} %^g\n%?\nAdded: %U" "ideas.org" "Ideas")
-     )
-   )
+     (define-key org-mode-map "\C-cs" 'org-todo-state-map)
 
-(setq org-clock-persist t)
-(org-clock-persistence-insinuate)
+     (define-key org-todo-state-map "t"
+       #'(lambda nil (interactive) (org-todo "TODO")))
+     (define-key org-todo-state-map "x"
+       #'(lambda nil (interactive) (org-todo "CANCELLED")))
+     (define-key org-todo-state-map "d"
+       #'(lambda nil (interactive) (org-todo "DONE")))
+     (define-key org-todo-state-map "f"
+       #'(lambda nil (interactive) (org-todo "DEFERRED")))
+     (define-key org-todo-state-map "l"
+       #'(lambda nil (interactive) (org-todo "DELEGATED")))
+     (define-key org-todo-state-map "s"
+       #'(lambda nil (interactive) (org-todo "STARTED")))
+     (define-key org-todo-state-map "w"
+       #'(lambda nil (interactive) (org-todo "WAITING")))
+     (define-key org-todo-state-map "a"
+       #'(lambda nil (interactive) (org-todo "ASSIGN")))))
 
-(add-hook 'org-mode-hook 'turn-on-font-lock)
+(eval-after-load "org-agenda"
+  '(progn
+     (define-key org-agenda-mode-map "\C-n" 'next-line)
+     (define-key org-agenda-keymap   "\C-n" 'next-line)
+     (define-key org-agenda-mode-map "\C-p" 'previous-line)
+     (define-key org-agenda-keymap   "\C-p" 'previous-line)))
+
+
+(custom-set-variables
+ '(org-todo-keywords '((sequence "TODO"
+                                 "DEFERRED"
+                                 "STARTED"
+                                 "WAITING"
+                                 "ASSIGN"
+
+                                 "|"
+
+                                 "DONE"
+                                 "CANCELLED"
+                                 "DELEGATED")))
+ '(org-agenda-files (quote ("~/org/todo.org")))
+ '(org-default-notes-file "~/org/notes.org")
+ '(org-agenda-ndays 7)
+ '(org-deadline-warning-days 14)
+ '(org-agenda-show-all-dates t)
+ '(org-agenda-skip-deadline-if-done t)
+ '(org-agenda-skip-scheduled-if-done t)
+ '(org-agenda-start-on-weekday nil)
+ '(org-reverse-note-order t)
+ '(org-fast-tag-selection-single-key (quote expert))
+ '(org-agenda-custom-commands
+   (quote (("s" todo "ASSIGN" nil)
+           ("d" todo "DELEGATED" nil)
+           ("c" todo "DONE|DEFERRED|CANCELLED" nil)
+           ("w" todo "WAITING" nil)
+           ("W" agenda "" ((org-agenda-ndays 21)))
+           ("A" agenda ""
+            ((org-agenda-skip-function
+              (lambda nil
+                (org-agenda-skip-entry-if (quote notregexp) "\\=.*\\[#A\\]")))
+             (org-agenda-ndays 1)
+             (org-agenda-overriding-header "Today's Priority #A tasks: ")))
+           ("u" alltodo ""
+            ((org-agenda-skip-function
+              (lambda nil
+                (org-agenda-skip-entry-if (quote scheduled) (quote deadline)
+                                          (quote regexp) "<[^>\n]+>")))
+             (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
+ '(org-remember-store-without-prompt t)
+ '(org-remember-templates
+   '(("todo" ?t
+      "* ASSIGN %^{Description}\n  SCHEDULED: %t\n  %?"
+      "~/org/todo.org" "Unsorted Tasks")
+
+     ("note" ?n
+      "* ASSIGN\n  SCHEDULED: %t\n %u %?"
+      "~/org/todo.org" "Unsorted Notes")))
+
+ '(remember-annotation-functions (quote (org-remember-annotation)))
+ '(remember-handler-functions (quote (org-remember-handler)))
+
+ '(org-time-stamp-custom-formats
+   (cons "<%d/%m/%Y>" "<%d/%m/%Y %a %H:%M>"))
+ '(org-display-custom-times t))
+
+
+(eval-after-load "remember"
+  '(progn
+     (add-hook 'remember-mode-hook 'org-remember-apply-template)))
