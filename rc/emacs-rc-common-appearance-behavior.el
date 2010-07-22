@@ -51,3 +51,9 @@
 
 ;; the first day of week is monday
 (setq calendar-week-start-day 1)
+
+;; hack to make spawned frames the same as in the main one
+(setq default-frame-alist
+      (append '((font . "DejaVu Sans Mono-9")
+                (geometry . "-1-1"))
+              default-frame-alist))
