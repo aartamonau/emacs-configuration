@@ -15,6 +15,8 @@
 
 (eval-after-load "org"
   '(progn
+     (add-hook 'org-mode-hook 'auto-fill-mode)
+
      (define-prefix-command 'org-todo-state-map)
 
      (define-key org-mode-map "\C-cs" 'org-todo-state-map)
@@ -99,8 +101,10 @@
 
  '(org-time-stamp-custom-formats
    (cons "<%d/%m/%Y>" "<%d/%m/%Y %a %H:%M>"))
- '(org-display-custom-times t))
+ '(org-display-custom-times t)
+ '(org-clock-persist t))
 
+(org-clock-persistence-insinuate)
 
 (eval-after-load "remember"
   '(progn
