@@ -48,16 +48,16 @@
 
 (custom-set-variables
  '(org-todo-keywords '((sequence "TODO"
-                                 "DEFERRED"
-                                 "STARTED"
-                                 "WAITING"
-                                 "ASSIGN"
+                                 "DEFERRED(@)"
+                                 "STARTED(!)"
+                                 "WAITING(@)"
+                                 "ASSIGN(!)"
 
                                  "|"
 
-                                 "DONE"
-                                 "CANCELLED"
-                                 "DELEGATED")))
+                                 "DONE(@)"
+                                 "CANCELLED(@)"
+                                 "DELEGATED(@)")))
  '(org-agenda-files (quote ("~/org/todo.org")))
  '(org-default-notes-file "~/org/notes.org")
  '(org-agenda-ndays 7)
@@ -102,7 +102,13 @@
  '(org-time-stamp-custom-formats
    (cons "<%d/%m/%Y>" "<%d/%m/%Y %a %H:%M>"))
  '(org-display-custom-times t)
- '(org-clock-persist t))
+ '(org-clock-persist t)
+
+ ;; ask for a note for every state change
+ '(org-log-into-drawer "LOGBOOK")
+
+ ;; log time for done state
+ '(org-log-done 'time))
 
 (org-clock-persistence-insinuate)
 
