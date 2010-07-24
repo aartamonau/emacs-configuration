@@ -1,9 +1,6 @@
 ;; this org mode config is mostly adapted from
 ;; http://www.newartisans.com/2007/08/using-org-mode-as-a-day-planner.html
 
-(defconst todo-template
-  (concat ))
-
 (defun org ()
   (interactive)
   (find-file-existing "~/org/todo.org"))
