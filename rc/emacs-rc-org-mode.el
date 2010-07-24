@@ -27,6 +27,9 @@
      (define-key org-agenda-keymap   "\C-p" 'previous-line)))
 
 
+(defconst todo-template "* ASSIGN %^{Description}\n  SCHEDULED: %t\n  %?")
+(defconst note-template "* ASSIGN\n  SCHEDULED: %t\n %u %?")
+
 (custom-set-variables
  '(org-todo-keywords '((sequence "TODO(t)"
                                  "DEFERRED(D@)"
@@ -68,13 +71,13 @@
                                           (quote regexp) "<[^>\n]+>")))
              (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
  '(org-remember-store-without-prompt t)
- '(org-remember-templates
+ `(org-remember-templates
    '(("todo" ?t
-      "* ASSIGN %^{Description}\n  SCHEDULED: %t\n  %?"
+      ,todo-template
       "~/org/todo.org" "Unsorted Tasks")
 
      ("note" ?n
-      "* ASSIGN\n  SCHEDULED: %t\n %u %?"
+      ,note-template
       "~/org/todo.org" "Unsorted Notes")))
 
  '(remember-annotation-functions (quote (org-remember-annotation)))
