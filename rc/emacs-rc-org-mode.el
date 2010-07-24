@@ -1,6 +1,9 @@
 ;; this org mode config is mostly adapted from
 ;; http://www.newartisans.com/2007/08/using-org-mode-as-a-day-planner.html
 
+(require 'org-install)
+(require 'org-protocol)
+
 (defun org ()
   (interactive)
   (find-file-existing "~/org/todo.org"))
@@ -28,7 +31,11 @@
 
 
 (defconst todo-template "* ASSIGN %^{Description}\n  SCHEDULED: %t\n  %?")
+(defconst todo-template-capture
+  "* ASSIGN %:description\n  SCHEDULED: %t\n  %:initial")
 (defconst note-template "* ASSIGN\n  SCHEDULED: %t\n %u %?")
+(defconst note-template-capture
+  "* ASSIGN\n  SCHEDULED: %t\n %u %:initial")
 
 (custom-set-variables
  '(org-todo-keywords '((sequence "TODO(t)"
@@ -79,6 +86,21 @@
      ("note" ?n
       ,note-template
       "~/org/todo.org" "Unsorted Notes")))
+ `(org-capture-templates
+   '(("t"
+      "Tasks"
+      entry
+      (file+headline "~/org/todo.org" "Unsorted Tasks")
+      ,todo-template-capture
+      :empty-lines 1
+      :immediate-finish t)
+     ("n"
+      "Notes"
+      entry
+      (file+headline "~/org/todo.org" "Unsorted Notes")
+      ,note-template-capture
+      :empty-lines 1
+      :immediate-finish t)))
 
  '(remember-annotation-functions (quote (org-remember-annotation)))
  '(remember-handler-functions (quote (org-remember-handler)))
