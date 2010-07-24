@@ -12,7 +12,12 @@
 
 (eval-after-load "org"
   '(progn
-     (add-hook 'org-mode-hook 'auto-fill-mode)))
+     (add-hook 'org-mode-hook 'auto-fill-mode)
+
+     (define-key org-mode-map "\M-n"    'org-metadown)
+     (define-key org-mode-map "\M-p"    'org-metaup)
+     (define-key org-mode-map "\M-\C-f" 'org-metaright)
+     (define-key org-mode-map "\M-\C-b" 'org-metaleft)))
 
 (eval-after-load "org-agenda"
   '(progn
