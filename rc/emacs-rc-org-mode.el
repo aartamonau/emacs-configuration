@@ -15,28 +15,7 @@
 
 (eval-after-load "org"
   '(progn
-     (add-hook 'org-mode-hook 'auto-fill-mode)
-
-     (define-prefix-command 'org-todo-state-map)
-
-     (define-key org-mode-map "\C-cs" 'org-todo-state-map)
-
-     (define-key org-todo-state-map "t"
-       #'(lambda nil (interactive) (org-todo "TODO")))
-     (define-key org-todo-state-map "x"
-       #'(lambda nil (interactive) (org-todo "CANCELLED")))
-     (define-key org-todo-state-map "d"
-       #'(lambda nil (interactive) (org-todo "DONE")))
-     (define-key org-todo-state-map "f"
-       #'(lambda nil (interactive) (org-todo "DEFERRED")))
-     (define-key org-todo-state-map "l"
-       #'(lambda nil (interactive) (org-todo "DELEGATED")))
-     (define-key org-todo-state-map "s"
-       #'(lambda nil (interactive) (org-todo "STARTED")))
-     (define-key org-todo-state-map "w"
-       #'(lambda nil (interactive) (org-todo "WAITING")))
-     (define-key org-todo-state-map "a"
-       #'(lambda nil (interactive) (org-todo "ASSIGN")))))
+     (add-hook 'org-mode-hook 'auto-fill-mode)))
 
 (eval-after-load "org-agenda"
   '(progn
@@ -47,17 +26,17 @@
 
 
 (custom-set-variables
- '(org-todo-keywords '((sequence "TODO"
-                                 "DEFERRED(@)"
-                                 "STARTED(!)"
-                                 "WAITING(@)"
-                                 "ASSIGN(!)"
+ '(org-todo-keywords '((sequence "TODO(t)"
+                                 "DEFERRED(D@)"
+                                 "STARTED(s!)"
+                                 "WAITING(w@)"
+                                 "ASSIGN(a!)"
 
                                  "|"
 
-                                 "DONE(@)"
-                                 "CANCELLED(@)"
-                                 "DELEGATED(@)")))
+                                 "DONE(d@)"
+                                 "CANCELLED(c@)"
+                                 "DELEGATED(l@)")))
  '(org-agenda-files (quote ("~/org/todo.org")))
  '(org-default-notes-file "~/org/notes.org")
  '(org-agenda-ndays 7)
