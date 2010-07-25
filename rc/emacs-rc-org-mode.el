@@ -114,7 +114,12 @@
  '(org-log-into-drawer "LOGBOOK")
 
  ;; log time for done state
- '(org-log-done 'time))
+ '(org-log-done 'time)
+
+ '(org-habit-show-habits-only-for-today t)
+ '(org-habit-graph-column 60))
+
+(add-to-list 'org-modules 'org-habit)
 
 (org-clock-persistence-insinuate)
 
