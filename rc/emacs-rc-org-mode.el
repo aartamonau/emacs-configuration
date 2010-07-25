@@ -41,6 +41,7 @@
  '(org-todo-keywords '((sequence "TODO(t)"
                                  "DEFERRED(D@)"
                                  "STARTED(s!)"
+                                 "PAUSED(p@)"
                                  "WAITING(w@)"
                                  "ASSIGN(a!)"
 
