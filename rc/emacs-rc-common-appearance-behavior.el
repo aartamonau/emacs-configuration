@@ -57,3 +57,6 @@
       (append '((font . "DejaVu Sans Mono-9")
                 (geometry . "-1-1"))
               default-frame-alist))
+
+;; reverting modified buffers automatically
+(setq global-auto-revert-mode t)
