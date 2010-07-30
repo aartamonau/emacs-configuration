@@ -108,3 +108,5 @@
 
 ;; server
 (load "emacs-rc-server.el")
+
+(load "emacs-rc-gtags.el")
