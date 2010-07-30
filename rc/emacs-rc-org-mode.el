@@ -49,7 +49,15 @@
 
                                  "DONE(d@)"
                                  "CANCELLED(c@)"
-                                 "DELEGATED(l@)")))
+                                 "DELEGATED(l@)")
+                       (sequence "TODO(t)"
+                                 "ONLINE(n!)"
+                                 "OFFLINE(f!)"
+                                 "PAUSED(p@)"
+
+                                 "|"
+
+                                 "DONE(d@)")))
  '(org-agenda-files (quote ("~/org/todo.org")))
  '(org-default-notes-file "~/org/notes.org")
  '(org-agenda-ndays 7)
