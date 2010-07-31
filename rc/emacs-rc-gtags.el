@@ -1,6 +1,15 @@
 (eval-after-load "gtags"
   '(progn
 
+     (defun my/prefix-count (prefix-arg)
+       "Number of times universal-argument has been pressed."
+       (let ((result 0)
+             (prefix prefix-arg))
+         (while (> prefix 1)
+           (setq prefix (/ prefix 4))
+           (setq result (1+ result)))
+         result))
+
      (defun my/gtags-find-file-at-point ()
        "Finds a file at point using gtags. Based on ffap-include-start.el."
        (interactive)
@@ -45,6 +54,15 @@ gtags-find-file."
            (my/gtags-find-tag-from-here)
            (gtags-find-tag)))
 
+     (defun my/gtags-find-tag-dispatch (prefix)
+       "Dispatches execution to specific find-tag function depending on
+prefix argument."
+       (interactive "p")
+       (let ((prefix (my/prefix-count prefix)))
+         (cond ((= prefix 0) (my/gtags-find-file-or-tag-at-point))
+               ((= prefix 1) (gtags-find-tag))
+               (t            (gtags-find-file)))))
+
      (defun my/gtags-find-rtag-at-point ()
        "Tries to find a cross-reference for tag at point. If this fails
 then falls back to usual gtags-rtag-at-point function."
@@ -56,17 +74,16 @@ then falls back to usual gtags-rtag-at-point function."
                     (gtags-goto-tag token "r"))
            (gtags-find-rtag))))
 
+     (defun my/gtags-find-rtag-dispatch (prefix)
+       "Dispatches execution to specific find-rtag function depending on
+prefix argument."
+       (interactive "p")
+       (let ((prefix (my/prefix-count prefix)))
+         (cond ((= prefix 0) (my/gtags-find-rtag-at-point))
+               (t            (gtags-find-rtag)))))
 
-     (define-key gtags-mode-map "\M-."
-       'my/gtags-find-file-or-tag-at-point)
 
-     (define-key gtags-mode-map "\C-u\M-."
-       'gtags-find-tag)
-
-     (define-key gtags-mode-map "\C-u\C-u\M-."
-       'gtags-find-file)
-
-     (define-key gtags-mode-map "\M-,"     'my/gtags-find-rtag-at-point)
-     (define-key gtags-mode-map "\C-u\M-," 'gtags-find-rtag)))
+     (define-key gtags-mode-map "\M-." 'my/gtags-find-tag-dispatch)
+     (define-key gtags-mode-map "\M-," 'my/gtags-find-rtag-dispatch)
 
 (add-hook 'c-mode-common-hook 'gtags-mode)
