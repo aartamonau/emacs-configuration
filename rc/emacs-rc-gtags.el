@@ -84,6 +84,6 @@ prefix argument."
 
 
      (define-key gtags-mode-map "\M-." 'my/gtags-find-tag-dispatch)
-     (define-key gtags-mode-map "\M-," 'my/gtags-find-rtag-dispatch)
+     (define-key gtags-mode-map "\M-," 'my/gtags-find-rtag-dispatch)))
 
 (add-hook 'c-mode-common-hook 'gtags-mode)
