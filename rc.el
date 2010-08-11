@@ -8,6 +8,9 @@
 ;; Customizing common Emacs' appearance and behavior
 (load "emacs-rc-common-appearance-behavior.el")
 
+;; auto-fill-mode adjustments
+(load "emacs-rc-auto-fill-mode.el")
+
 ;; flymake
 (load "emacs-rc-flymake.el")
 
