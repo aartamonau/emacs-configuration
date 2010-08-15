@@ -15,7 +15,7 @@
 
 (eval-after-load "org"
   '(progn
-     (add-hook 'org-mode-hook 'auto-fill-mode)
+     (add-hook 'org-mode-hook 'my/auto-fill-mode-comments-only-disable)
 
      (define-key org-mode-map "\M-n"    'org-metadown)
      (define-key org-mode-map "\M-p"    'org-metaup)
