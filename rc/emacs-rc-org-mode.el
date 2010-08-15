@@ -39,7 +39,6 @@
 
 (custom-set-variables
  '(org-todo-keywords '((sequence "TODO(t)"
-                                 "DEFERRED(D@)"
                                  "STARTED(s!)"
                                  "PAUSED(p@)"
                                  "WAITING(w@)"
@@ -48,8 +47,8 @@
                                  "|"
 
                                  "DONE(d@)"
-                                 "CANCELLED(c@)"
-                                 "DELEGATED(l@)")
+                                 "DEFERRED(D@)"
+                                 "CANCELLED(c@)")
                        (sequence "TODO(t)"
                                  "ONLINE(n!)"
                                  "OFFLINE(f!)"
@@ -70,16 +69,15 @@
  '(org-fast-tag-selection-single-key (quote expert))
  '(org-agenda-custom-commands
    (quote (("s" todo "ASSIGN" nil)
-           ("d" todo "DELEGATED" nil)
+           ("d" todo "DEFERRED" nil)
            ("c" todo "DONE|DEFERRED|CANCELLED" nil)
            ("w" todo "WAITING" nil)
-           ("W" agenda "" ((org-agenda-ndays 21)))
            ("A" agenda ""
             ((org-agenda-skip-function
-              (lambda nil
-                (org-agenda-skip-entry-if (quote notregexp) "\\=.*\\[#A\\]")))
-             (org-agenda-ndays 1)
-             (org-agenda-overriding-header "Today's Priority #A tasks: ")))
+              (lambda ()
+                (org-agenda-skip-entry-if 'todo '("ASSIGN"))))
+             (org-agenda-overriding-header "Agenda (no ASSIGN)")))
+           ("W" agenda "" ((org-agenda-ndays 21)))
            ("u" alltodo ""
             ((org-agenda-skip-function
               (lambda nil
