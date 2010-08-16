@@ -30,12 +30,12 @@
      (define-key org-agenda-keymap   "\C-p" 'previous-line)))
 
 
-(defconst todo-template "* ASSIGN %^{Description}\n  SCHEDULED: %t\n  %?")
+(defconst todo-template "* ASSIGN %^{Description}\n  %u\n  %?")
 (defconst todo-template-capture
-  "* ASSIGN %:description\n  SCHEDULED: %t\n  %:initial")
-(defconst note-template "* ASSIGN\n  SCHEDULED: %t\n %u %?")
+  "* ASSIGN %:description\n  %u\n  %:initial")
+(defconst note-template "* %^{Title} :NOTE:\n  %u\n  %?")
 (defconst note-template-capture
-  "* ASSIGN\n  SCHEDULED: %t\n %u %:initial")
+  "* %:description\n  %u\n  %:initial")
 
 (custom-set-variables
  '(org-todo-keywords '((sequence "TODO(t)"
