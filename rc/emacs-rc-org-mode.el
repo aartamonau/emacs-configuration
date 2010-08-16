@@ -75,8 +75,8 @@
            ("A" agenda ""
             ((org-agenda-skip-function
               (lambda ()
-                (org-agenda-skip-entry-if 'todo '("ASSIGN"))))
-             (org-agenda-overriding-header "Agenda (no ASSIGN)")))
+                (org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING"))))
+             (org-agenda-overriding-header "Agenda (no ASSIGN|WATING)")))
            ("W" agenda "" ((org-agenda-ndays 21)))
            ("u" alltodo ""
             ((org-agenda-skip-function
