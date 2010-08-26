@@ -27,3 +27,4 @@
 ;; doxymacs hook handler MUST be added after the previous handler
 (add-hook 'c-mode-common-hook 'doxymacs-mode)
 (add-hook 'c-mode-common-hook 'auto-fill-mode)
+(add-hook 'c-mode-common-hook 'flyspell-prog-mode)
