@@ -129,7 +129,10 @@
    '((agenda time-up habit-down priority-down category-keep)
      (todo   priority-down category-keep)
      (tags   priority-down category-keep)
-     (search category-keep))))
+     (search category-keep)))
+
+ '(org-columns-default-format
+   "%30ITEM %SCHEDULED %TAGS %PRIORITY %8Effort(ESTIMATE){:} %8CLOCKSUM(CLOCK)"))
 
 (add-to-list 'org-modules 'org-habit)
 
