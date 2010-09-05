@@ -109,7 +109,4 @@
 ;; clojure
 (load "emacs-rc-clojure-mode.el")
 
-;; server
-(load "emacs-rc-server.el")
-
 (load "emacs-rc-gtags.el")
