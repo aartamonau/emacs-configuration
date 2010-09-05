@@ -31,11 +31,7 @@
 
 
 (defconst todo-template "* ASSIGN %^{Description}\n  %u\n  %?")
-(defconst todo-template-capture
-  "* ASSIGN %:description\n  %u\n  %:initial")
 (defconst note-template "* %^{Title} :NOTE:\n  %u\n  %?")
-(defconst note-template-capture
-  "* %:description\n  %u\n  %:initial")
 
 (defun my/agenda-filter ()
   "Agenda filter which discard ASSIGN and WAITING entries."
@@ -107,21 +103,6 @@
      ("note" ?n
       ,note-template
       "~/org/todo.org" "Unsorted Notes")))
- `(org-capture-templates
-   '(("t"
-      "Tasks"
-      entry
-      (file+headline "~/org/todo.org" "Unsorted Tasks")
-      ,todo-template-capture
-      :empty-lines 1
-      :immediate-finish t)
-     ("n"
-      "Notes"
-      entry
-      (file+headline "~/org/todo.org" "Unsorted Notes")
-      ,note-template-capture
-      :empty-lines 1
-      :immediate-finish t)))
 
  '(remember-annotation-functions (quote (org-remember-annotation)))
  '(remember-handler-functions (quote (org-remember-handler)))
