@@ -37,6 +37,14 @@
 (defconst note-template-capture
   "* %:description\n  %u\n  %:initial")
 
+(defun my/agenda-filter ()
+  "Agenda filter which discard ASSIGN and WAITING entries."
+  (org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING")))
+
+(defconst my/agenda-header
+  "Agenda (no ASSIGN|WATING)"
+  "Custom agenda header")
+
 (custom-set-variables
  '(org-todo-keywords '((sequence "TODO(t)"
                                  "STARTED(s!)"
@@ -59,7 +67,7 @@
                                  "DONE(d@)")))
  '(org-agenda-files (quote ("~/org/todo.org")))
  '(org-default-notes-file "~/org/notes.org")
- '(org-agenda-ndays 7)
+ '(org-agenda-ndays 1)
  '(org-deadline-warning-days 14)
  '(org-agenda-show-all-dates t)
  '(org-agenda-skip-deadline-if-done t)
@@ -67,17 +75,23 @@
  '(org-agenda-start-on-weekday nil)
  '(org-reverse-note-order t)
  '(org-fast-tag-selection-single-key (quote expert))
- '(org-agenda-custom-commands
+ `(org-agenda-custom-commands
    (quote (("s" todo "ASSIGN" nil)
            ("d" todo "DEFERRED" nil)
            ("c" todo "DONE|DEFERRED|CANCELLED" nil)
            ("w" todo "WAITING" nil)
            ("A" agenda ""
-            ((org-agenda-skip-function
-              (lambda ()
-                (org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING"))))
-             (org-agenda-overriding-header "Agenda (no ASSIGN|WATING)")))
-           ("W" agenda "" ((org-agenda-ndays 21)))
+            ((org-agenda-skip-function 'my/agenda-filter)
+             (org-agenda-overriding-header ,my/agenda-header)))
+           ("W" agenda ""
+            ((org-agenda-skip-function 'my/agenda-filter)
+             (org-agenda-overriding-header ,my/agenda-header)
+             (org-agenda-ndays 7)))
+           ("T" agenda ""
+            ((org-agenda-skip-function 'my/agenda-filter)
+             (org-agenda-overriding-header ,my/agenda-header)
+             (org-agenda-start-day "+1")
+             (org-agenda-ndays 1)))
            ("u" alltodo ""
             ((org-agenda-skip-function
               (lambda nil
@@ -123,8 +137,18 @@
  ;; log time for done state
  '(org-log-done 'time)
 
- '(org-habit-show-habits-only-for-today t)
- '(org-habit-graph-column 60))
+ '(org-habit-show-habits-only-for-today nil)
+ '(org-habit-graph-column 60)
+
+ '(org-agenda-time-grid
+   '((daily weekly)
+     ""
+     (600 800 1000 1200 1400 1600 1800 2000 2200 2359)))
+ '(org-agenda-sorting-strategy
+   '((agenda time-up habit-down priority-down category-keep)
+     (todo   priority-down category-keep)
+     (tags   priority-down category-keep)
+     (search category-keep))))
 
 (add-to-list 'org-modules 'org-habit)
 
