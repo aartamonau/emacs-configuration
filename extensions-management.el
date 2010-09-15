@@ -16,12 +16,12 @@ as a file in extension directory."
 (defun  add-extension-load-path (name)
   "Adds extension to the load-path."
   (setq load-path
-        (append load-path
-                (list (extension-path name)))))
+        (append (list (extension-path name))
+                load-path)))
 
 
 (defun add-extension-exec-path (name)
   "Adds extension to the exec-path."
   (setq exec-path
-        (append exec-path
-                (list (extension-path name)))))
+        (append (list (extension-path name))
+                exec-path)))
