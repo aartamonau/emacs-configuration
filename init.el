@@ -7,5 +7,5 @@
 ;; no disabled commands for novice (does not clobber .emacs file)
 (setq disabled-command-function nil)
 
-;; rc must be loaded after custom-file
-(load "~/emacs/rc.el")
+;; must be loaded after custom file
+(load "~/emacs/presets.el")

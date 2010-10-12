@@ -1,7 +1,3 @@
-(setq load-path
-      (append load-path
-              '("~/emacs/rc")))
-
 ;; global hook handler
 (load "emacs-rc-global-hook.el")
 
@@ -110,3 +106,5 @@
 (load "emacs-rc-clojure-mode.el")
 
 (load "emacs-rc-gtags.el")
+
+;; (load "emacs-rc-mode-compile.el")
