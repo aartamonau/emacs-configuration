@@ -64,3 +64,6 @@
 ;; add new line at the end of file if there is no one on save
 (custom-set-variables
  '(require-final-newline t))
+
+;; default major mode is text-mode
+(setq default-major-mode 'text-mode)
