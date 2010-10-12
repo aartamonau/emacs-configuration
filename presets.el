@@ -1,3 +1,5 @@
+(require 'cl)
+
 (defconst presets-directory "~/emacs/presets"
   "Directory containing presets.")
 
