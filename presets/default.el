@@ -108,3 +108,5 @@
 (load "emacs-rc-gtags.el")
 
 ;; (load "emacs-rc-mode-compile.el")
+
+(load "emacs-rc-cmake.el")
