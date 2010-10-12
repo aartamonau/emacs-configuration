@@ -12,4 +12,4 @@ mode's startup hook instead of usual auto-fill-mode."
   (auto-fill-mode)
   (set-variable 'comment-auto-fill-only-comments nil t))
 
-(add-hook 'text-mode 'auto-fill-mode)
+(add-hook 'text-mode-hook 'auto-fill-mode)
