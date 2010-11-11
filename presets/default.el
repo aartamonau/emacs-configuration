@@ -4,6 +4,9 @@
 ;; Customizing common Emacs' appearance and behavior
 (load "emacs-rc-common-appearance-behavior.el")
 
+;; rectangular selection
+(load "emacs-rc-rect-mark.el")
+
 ;; auto-fill-mode adjustments
 (load "emacs-rc-auto-fill-mode.el")
 
