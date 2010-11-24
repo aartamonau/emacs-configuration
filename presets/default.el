@@ -113,3 +113,6 @@
 ;; (load "emacs-rc-mode-compile.el")
 
 (load "emacs-rc-cmake.el")
+
+;; Erlang
+(load "emacs-rc-erlang.el")
