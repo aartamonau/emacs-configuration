@@ -2,7 +2,7 @@
 
 (global-linum-mode 1)
 
-(defconst linum-mode-excludes '(doc-view-mode)
+(defconst linum-mode-excludes '(doc-view-mode org-mode)
   "List of major modes preventing linum to be enabled in the buffer.")
 
 (defadvice linum-mode (around linum-mode-selective activate)
