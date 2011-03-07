@@ -116,3 +116,6 @@
 
 ;; Erlang
 (load "emacs-rc-erlang.el")
+
+;; markdown mode
+(load "emacs-rc-markdown.el")
