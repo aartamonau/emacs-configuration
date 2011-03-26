@@ -22,14 +22,6 @@
      (define-key org-mode-map "\M-\C-f" 'org-metaright)
      (define-key org-mode-map "\M-\C-b" 'org-metaleft)))
 
-(eval-after-load "org-agenda"
-  '(progn
-     (define-key org-agenda-mode-map "\C-n" 'next-line)
-     (define-key org-agenda-keymap   "\C-n" 'next-line)
-     (define-key org-agenda-mode-map "\C-p" 'previous-line)
-     (define-key org-agenda-keymap   "\C-p" 'previous-line)))
-
-
 (defconst todo-template "* ASSIGN %^{Description}\n  %u\n  %?")
 (defconst note-template "* %^{Title} :NOTE:\n  %u\n  %?")
 
