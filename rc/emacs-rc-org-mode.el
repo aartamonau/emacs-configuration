@@ -3,6 +3,7 @@
 
 (require 'org-install)
 (require 'org-protocol)
+(require 'cl)
 
 (defun org ()
   (interactive)
@@ -33,6 +34,13 @@
   "Agenda (no ASSIGN|WATING)"
   "Custom agenda header")
 
+(defun* my/org-files (dir &key (except nil))
+  "Returns a list of org files in a `dir' directory not including
+  those that are enumerated in `except'"
+  (remove-if (lambda (path) (member (file-name-nondirectory path)
+                                    except))
+             (file-expand-wildcards (concat dir "/*.org"))))
+
 (custom-set-variables
  '(org-todo-keywords '((sequence "TODO(t)"
                                  "STARTED(s!)"
@@ -53,7 +61,9 @@
                                  "|"
 
                                  "DONE(d@)")))
- '(org-agenda-files (quote ("~/org/todo.org")))
+ `(org-agenda-files (quote
+                     ,(my/org-files "~/org"
+                                    :except '("notes.org" "flagged.org"))))
  '(org-default-notes-file "~/org/notes.org")
  '(org-agenda-ndays 1)
  '(org-deadline-warning-days 14)
