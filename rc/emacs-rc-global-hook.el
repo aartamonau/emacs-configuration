@@ -2,4 +2,4 @@
 ;; this must be added to all interested modes manually
 (defun global-hook-handler ()
   ;; make it possible to hop into the center of studdlyCaps words
-  (c-subword-mode 1))
+  (subword-mode 1))
