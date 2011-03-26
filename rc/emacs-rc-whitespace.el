@@ -2,4 +2,4 @@
 
 (custom-set-variables
  '(whitespace-global-modes '(not org-mode))
- '(whitespace-style  '(tabs trailing lines-tail empty tab-mark)))
+ '(whitespace-style '(face tabs trailing lines-tail empty tab-mark)))
