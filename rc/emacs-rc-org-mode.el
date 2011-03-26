@@ -127,7 +127,10 @@
    "%30ITEM %SCHEDULED %TAGS %PRIORITY %8Effort(ESTIMATE){:} %8CLOCKSUM(CLOCK)")
 
  '(org-clock-in-switch-to-state "STARTED")
- '(org-clock-out-switch-to-state "PAUSED"))
+ '(org-clock-out-switch-to-state "PAUSED")
+
+ '(org-mobile-inbox-for-pull "~/org/flagged.org")
+ '(org-mobile-directory      "~/Dropbox/MobileOrg"))
 
 
 (add-to-list 'org-modules 'org-habit)
