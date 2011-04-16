@@ -122,3 +122,6 @@
 
 ;; ediff adjustments
 (load "emacs-rc-ediff.el")
+
+;; re-builder customizations
+(load "emacs-rc-re-builder.el")
