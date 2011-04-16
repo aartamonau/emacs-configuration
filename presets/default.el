@@ -119,3 +119,6 @@
 
 ;; markdown mode
 (load "emacs-rc-markdown.el")
+
+;; ediff adjustments
+(load "emacs-rc-ediff.el")
