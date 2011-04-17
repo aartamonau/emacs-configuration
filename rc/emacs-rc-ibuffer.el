@@ -56,7 +56,6 @@
          (noempty (not ibuffer-show-empty-filter-groups))
          (buffers (ibuffer-current-state-list))
          (visible (length (ibuffer-generate-filter-groups buffers noempty))))
-    (message "hidden: %d, visible: %d" hidden visible)
     (if (> hidden visible)
         (my/ibuffer-show-all-filter-groups)
       (my/ibuffer-hide-all-filter-groups))))
@@ -90,6 +89,31 @@ via parameters)"
       (ibuffer-toggle-filter-group-1 group-position)
       (goto-char group-position))))
 
+(defun my/ibuffer-current-filter-group-name ()
+  "Returns a name of filter group at point (even if point is at some buffer)"
+  (let ((group-position (my/ibuffer-previous-filter-group)))
+    (when group-position
+      (my/ibuffer-get-filter-group-name group-position))))
+
+(defun my/ibuffer-setup-isearch-mode-hooks ()
+  "Adds isearch hooks to show all filter groups when search is
+  started and to restore the old state after search is
+  done. Filter group at final point is kept visible in any case."
+  (require 'cl)
+  (lexical-let ((hidden nil))
+    (add-hook 'isearch-mode-hook
+              '(lambda ()
+                 (setq hidden ibuffer-hidden-filter-groups)
+                 (my/ibuffer-show-all-filter-groups))
+              nil t)
+
+    (add-hook 'isearch-mode-end-hook
+              '(lambda ()
+                 (let ((current (my/ibuffer-current-filter-group-name)))
+                   (setq ibuffer-hidden-filter-groups (remove current hidden))
+                   (ibuffer-update nil t)))
+              nil t)))
+
 (defun my/ibuffer-mode-hook ()
   (ibuffer-switch-to-saved-filter-groups "default")
 
@@ -105,6 +129,9 @@ via parameters)"
     'my/ibuffer-toggle-filter-group-at-point)
   (define-key
     ibuffer-mode-map (kbd "<backtab>")
-    'my/ibuffer-toggle-all-filter-groups))
+    'my/ibuffer-toggle-all-filter-groups)
+
+  ;; search hooks
+  (my/ibuffer-setup-isearch-mode-hooks))
 
 (add-hook 'ibuffer-mode-hook 'my/ibuffer-mode-hook)
