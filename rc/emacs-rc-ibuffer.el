@@ -116,6 +116,7 @@ via parameters)"
 
 (defun my/ibuffer-mode-hook ()
   (ibuffer-switch-to-saved-filter-groups "default")
+  (my/ibuffer-hide-all-filter-groups)
 
   ;; key bindings
   (define-key
