@@ -89,11 +89,82 @@ via parameters)"
       (ibuffer-toggle-filter-group-1 group-position)
       (goto-char group-position))))
 
+(defun my/ibuffer-is-at-filter-group (&optional group-position)
+  "Return `t' if position is at the line with filter group"
+  (unless group-position
+    (setq group-position (my/ibuffer-previous-filter-group)))
+  (when group-position
+    (= (line-beginning-position) group-position)))
+
 (defun my/ibuffer-current-filter-group-name ()
   "Returns a name of filter group at point (even if point is at some buffer)"
   (let ((group-position (my/ibuffer-previous-filter-group)))
-    (when group-position
+    (when (and group-position
+               (or (ibuffer-current-buffer)
+                   (= (line-beginning-position) group-position)))
       (my/ibuffer-get-filter-group-name group-position))))
+
+(defun my/ibuffer-get-current-position-base ()
+  "Returns a base element for current position."
+  (cond ((my/ibuffer-is-at-filter-group)
+         (list 'group
+               (line-beginning-position)
+               (my/ibuffer-current-filter-group-name)))
+        ((ibuffer-current-buffer)
+         (list 'buffer
+               (line-beginning-position)
+               (buffer-name (ibuffer-current-buffer))))
+        (t (let ((current-line  (line-beginning-position))
+                 (backward-line (save-excursion
+                                  (ibuffer-backward-line)
+                                  (point))))
+             (if (>= backward-line current-line)
+                 (list 'absolute 0 nil)
+               (save-excursion
+                 (end-of-buffer)
+                 (list 'last (line-number-at-pos) nil)))))))
+
+(defun my/ibuffer-get-current-position ()
+  "Returns a context of current position"
+  (let* ((base (my/ibuffer-get-current-position-base))
+         (tag (car base))
+         (base-position (cadr base))
+         (datum (caddr base))
+         (offset (if (eq tag 'last)
+                     (- base-position (line-number-at-pos))
+                   (- (point) base-position))))
+
+    (list tag datum offset)))
+
+(defun my/ibuffer-get-line-length ()
+  "Returns a length of current line"
+  (save-excursion
+    (end-of-line)
+    (current-column)))
+
+(defun my/ibuffer-jump-to-position (position)
+  "Jump to previously saved position"
+  (flet ((jump-helper (offset)
+                      (let* ((line-length (my/ibuffer-get-line-length))
+                             (final-offset (if (> offset line-length)
+                                               line-length
+                                             offset)))
+                        (forward-char offset))))
+
+    (let ((tag    (car position))
+          (datum  (cadr position))
+          (offset (caddr position)))
+      (cond ((eq tag 'absolute) (goto-char offset))
+            ((eq tag 'last)
+             (progn (end-of-buffer)
+                    (goto-line (- (line-number-at-pos)
+                                  offset))))
+            ((eq tag 'buffer)
+             (progn (ibuffer-jump-to-buffer datum)
+                    (jump-helper offset)))
+            ((eq tag 'group)
+             (progn (ibuffer-jump-to-filter-group datum)
+                    (jump-helper offset)))))))
 
 (defun my/ibuffer-setup-isearch-mode-hooks ()
   "Adds isearch hooks to show all filter groups when search is
@@ -103,20 +174,28 @@ via parameters)"
   (lexical-let ((hidden nil))
     (add-hook 'isearch-mode-hook
               '(lambda ()
-                 (setq hidden ibuffer-hidden-filter-groups)
-                 (my/ibuffer-show-all-filter-groups))
+                 (let ((position (my/ibuffer-get-current-position)))
+                   (setq hidden ibuffer-hidden-filter-groups)
+                   (my/ibuffer-show-all-filter-groups)
+                   (my/ibuffer-jump-to-position position)))
               nil t)
 
     (add-hook 'isearch-mode-end-hook
               '(lambda ()
-                 (let ((current (my/ibuffer-current-filter-group-name)))
-                   (setq ibuffer-hidden-filter-groups (remove current hidden))
-                   (ibuffer-update nil t)))
+                 (let* ((position (my/ibuffer-get-current-position))
+                        (current-group (my/ibuffer-current-filter-group-name))
+                        (new-hidden (if (my/ibuffer-is-at-filter-group)
+                                        hidden
+                                      (remove current-group hidden))))
+                   (setq ibuffer-hidden-filter-groups new-hidden)
+                   (ibuffer-update nil t)
+                   (my/ibuffer-jump-to-position position)))
               nil t)))
 
 (defun my/ibuffer-mode-hook ()
   (ibuffer-switch-to-saved-filter-groups "default")
   (my/ibuffer-hide-all-filter-groups)
+  (beginning-of-buffer)
 
   ;; key bindings
   (define-key
