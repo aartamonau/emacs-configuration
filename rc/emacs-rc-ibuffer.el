@@ -171,25 +171,35 @@ via parameters)"
   started and to restore the old state after search is
   done. Filter group at final point is kept visible in any case."
   (require 'cl)
-  (lexical-let ((hidden nil))
+  (lexical-let ((hidden nil)
+                (starting-position nil))
     (add-hook 'isearch-mode-hook
               '(lambda ()
-                 (let ((position (my/ibuffer-get-current-position)))
-                   (setq hidden ibuffer-hidden-filter-groups)
-                   (my/ibuffer-show-all-filter-groups)
-                   (my/ibuffer-jump-to-position position)))
+                 (setq starting-position (my/ibuffer-get-current-position))
+                 (setq hidden ibuffer-hidden-filter-groups)
+                 (my/ibuffer-show-all-filter-groups)
+                 (my/ibuffer-jump-to-position starting-position))
               nil t)
 
     (add-hook 'isearch-mode-end-hook
               '(lambda ()
-                 (let* ((position (my/ibuffer-get-current-position))
-                        (current-group (my/ibuffer-current-filter-group-name))
-                        (new-hidden (if (my/ibuffer-is-at-filter-group)
-                                        hidden
-                                      (remove current-group hidden))))
-                   (setq ibuffer-hidden-filter-groups new-hidden)
-                   (ibuffer-update nil t)
-                   (my/ibuffer-jump-to-position position)))
+                 (let ((position
+                        (if isearch-mode-end-hook-quit
+                            starting-position
+                          (my/ibuffer-get-current-position)))
+                       (current-group nil)
+                       (at-filter-group nil))
+                   (save-excursion
+                     (my/ibuffer-jump-to-position position)
+                     (setq current-group
+                           (my/ibuffer-current-filter-group-name))
+                     (setq at-filter-group (my/ibuffer-is-at-filter-group)))
+                   (let ((new-hidden (if at-filter-group
+                                         hidden
+                                       (remove current-group hidden))))
+                     (setq ibuffer-hidden-filter-groups new-hidden)
+                     (ibuffer-update nil t)
+                     (my/ibuffer-jump-to-position position))))
               nil t)))
 
 (defun my/ibuffer-mode-hook ()
@@ -224,6 +234,5 @@ via parameters)"
     (if position
         (goto-char position)
       (goto-char (point-min)))))
-
 
 (add-hook 'ibuffer-mode-hook 'my/ibuffer-mode-hook)
