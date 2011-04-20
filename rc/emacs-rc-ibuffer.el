@@ -178,7 +178,12 @@ via parameters)"
                  (setq starting-position (my/ibuffer-get-current-position))
                  (setq hidden ibuffer-hidden-filter-groups)
                  (my/ibuffer-show-all-filter-groups)
-                 (my/ibuffer-jump-to-position starting-position))
+                 (my/ibuffer-jump-to-position starting-position)
+
+                 ;; hacky; prevent isearch from thinking that it is still at
+                 ;; the old position
+                 (setq isearch-barrier (point))
+                 (setq isearch-opoint (point)))
               nil t)
 
     (add-hook 'isearch-mode-end-hook
