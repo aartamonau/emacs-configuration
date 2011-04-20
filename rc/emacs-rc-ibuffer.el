@@ -156,7 +156,7 @@ via parameters)"
           (offset (caddr position)))
       (cond ((eq tag 'absolute) (goto-char offset))
             ((eq tag 'last)
-             (progn (end-of-buffer)
+             (progn (goto-char (point-max))
                     (goto-line (- (line-number-at-pos)
                                   offset))))
             ((eq tag 'buffer)
@@ -195,7 +195,6 @@ via parameters)"
 (defun my/ibuffer-mode-hook ()
   (ibuffer-switch-to-saved-filter-groups "default")
   (my/ibuffer-hide-all-filter-groups)
-  (beginning-of-buffer)
 
   ;; key bindings
   (define-key
@@ -213,5 +212,18 @@ via parameters)"
 
   ;; search hooks
   (my/ibuffer-setup-isearch-mode-hooks))
+
+(defadvice ibuffer (around ibuffer-adjust-point activate)
+  "If ibuffer is called for the first time then cursor is moved
+  to the beginning of the buffer. Otherwise old position is restored."
+  (let* ((ibuffer-buffer (get-buffer "*Ibuffer*"))
+         (position (when ibuffer-buffer
+                     (with-current-buffer ibuffer-buffer
+                       (point)))))
+    ad-do-it
+    (if position
+        (goto-char position)
+      (goto-char (point-min)))))
+
 
 (add-hook 'ibuffer-mode-hook 'my/ibuffer-mode-hook)
