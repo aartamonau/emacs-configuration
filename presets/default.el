@@ -128,3 +128,6 @@
 
 ;; ibuffer
 (load "emacs-rc-ibuffer.el")
+
+;; view-mode
+(load "emacs-rc-view-mode.el")
