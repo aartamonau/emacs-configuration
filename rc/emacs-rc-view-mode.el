@@ -3,6 +3,13 @@
   (let ((toggle (if buffer-read-only 1 0)))
     (view-mode toggle)))
 
+(defun my/find-file-hook ()
+  "Activates view-mode if buffer is read-only"
+  (when buffer-read-only
+    (view-mode)))
+
+(add-hook 'find-file-hook 'my/find-file-hook)
+
 (defun my/view-mode-hook ()
   (define-key view-mode-map (kbd "j") 'next-line)
   (define-key view-mode-map (kbd "k") 'previous-line)
