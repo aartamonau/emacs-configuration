@@ -19,6 +19,9 @@
   (define-key view-mode-map (kbd "G")
     (lambda ()
       (interactive)
-      (View-goto-percent 100))))
+      (View-goto-percent 100)))
+
+  (define-key view-mode-map (kbd "q") 'delete-window)
+  (define-key view-mode-map (kbd "Q") 'kill-buffer-and-window))
 
 (add-hook 'view-mode-hook 'my/view-mode-hook)
