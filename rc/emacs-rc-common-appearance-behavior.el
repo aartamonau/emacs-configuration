@@ -67,3 +67,8 @@
 
 ;; default major mode is text-mode
 (setq default-major-mode 'text-mode)
+
+;; unbind `suspend-frame' from keys if we have been run from X
+(unless (controlling-tty-p)
+  (dolist (key (where-is-internal 'suspend-frame (current-global-map)))
+    (global-unset-key key)))
