@@ -3,3 +3,5 @@
   (concat (file-name-as-directory erlang-root-dir) "bin"))
 
 (require 'erlang-start)
+
+(add-hook 'erlang-mode-hook 'global-hook-handler)
