@@ -112,3 +112,6 @@
 
 ;; ace jump mode
 (load "emacs-rc-ace-jump-mode.el")
+
+;; workgroups
+(load "emacs-rc-workgroups.el")

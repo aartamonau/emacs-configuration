@@ -27,7 +27,8 @@
         pkgbuild-mode
         zenburn-theme
         switch-window
-        ace-jump-mode))
+        ace-jump-mode
+        workgroups))
 
 (setq aa/all-packages
       (append aa/packages
