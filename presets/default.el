@@ -5,7 +5,10 @@
 (load "emacs-rc-global-hook.el")
 
 ;; Customizing common Emacs' appearance and behavior
-(load "emacs-rc-common-appearance-behavior.el")
+(load "emacs-rc-common.el")
+
+;; color theme
+(load "emacs-rc-color-theme.el")
 
 ;; rectangular selection
 (load "emacs-rc-rect-mark.el")

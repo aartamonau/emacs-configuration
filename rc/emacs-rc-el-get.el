@@ -24,7 +24,8 @@
         django-mode
         rect-mark
         cmake-mode
-        pkgbuild-mode))
+        pkgbuild-mode
+        zenburn-theme))
 
 (setq aa/all-packages
       (append aa/packages

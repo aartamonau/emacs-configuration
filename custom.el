@@ -63,14 +63,3 @@
  '(safe-local-variable-values (quote ((eval ignore-errors "Write-contents-functions is a buffer-local alternative to before-save-hook" (add-hook (quote write-contents-functions) (lambda nil (delete-trailing-whitespace (point-min) (point-max)) nil)) (require (quote whitespace)) "Sometimes the mode needs to be toggled off and on." (whitespace-mode 0) (whitespace-mode 1)) (whitespace-line-column . 80) (whitespace-style face trailing lines-tail) (require-final-newline . t))))
  '(whitespace-global-modes (quote (not org-mode)))
  '(whitespace-style (quote (face tabs trailing lines-tail empty tab-mark))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:stipple nil :background "black" :foreground "DarkSlateGray" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 103 :width normal :family "misc-fixed"))))
- '(cursor ((t (:background "DarkGray"))))
- '(flymake-errline ((((class color)) (:background "dark red"))))
- '(flymake-warnline ((((class color)) (:background "gray7"))))
- '(highlight ((((class color) (min-colors 88) (background dark)) (:background "DarkBlue"))))
- '(region ((((class color) (min-colors 88) (background dark)) (:background "DarkSeaGreen4")))))

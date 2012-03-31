@@ -47,19 +47,10 @@
 (set-default 'cursor-in-non-selected-windows nil)
 
 ;; default font
-(set-default-font "DejaVu Sans Mono-9")
+;; (set-default-font "DejaVu Sans Mono-8")
 
 ;; the first day of week is monday
 (setq calendar-week-start-day 1)
-
-;; hack to make spawned frames the same as in the main one
-(setq default-frame-alist
-      (append '((font . "DejaVu Sans Mono-9")
-                (geometry . "-1-1"))
-              default-frame-alist))
-
-;; reverting modified buffers automatically
-(setq global-auto-revert-mode t)
 
 ;; add new line at the end of file if there is no one on save
 (custom-set-variables
