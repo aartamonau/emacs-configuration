@@ -1,4 +1,4 @@
-(load "rect-mark.el")
+(require 'rect-mark)
 
 (define-key ctl-x-map (kbd "C-SPC") 'rm-set-mark)
 

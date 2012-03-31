@@ -1,3 +1,6 @@
+(autoload 'gtags-mode "gtags"
+  "Toggle Gtags mode, a minor mode for browsing source code using GLOBAL.")
+
 (eval-after-load "gtags"
   '(progn
 

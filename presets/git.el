@@ -1,5 +1,4 @@
 (load "emacs-rc-common-appearance-behavior.el")
-(load "emacs-rc-rect-mark.el")
 (load "emacs-rc-auto-fill-mode.el")
 (load "emacs-rc-user.el")
 (load "emacs-rc-linum.el")

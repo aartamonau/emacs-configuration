@@ -1,5 +1,3 @@
-(add-extension-load-path "yasnippet")
-
 (require 'yasnippet) ;; not yasnippet-bundle
 
 (yas/initialize)
