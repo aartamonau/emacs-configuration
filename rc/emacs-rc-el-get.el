@@ -25,7 +25,8 @@
         rect-mark
         cmake-mode
         pkgbuild-mode
-        zenburn-theme))
+        zenburn-theme
+        switch-window))
 
 (setq aa/all-packages
       (append aa/packages
