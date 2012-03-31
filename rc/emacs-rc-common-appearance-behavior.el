@@ -35,7 +35,7 @@
 (setq x-select-enable-clipboard t)
 
 ;; highlight region between point and mark
-(transient-mark-mode nil)
+(transient-mark-mode 0)
 
 ;; ;; highlight current line
 ;; (hl-line-mode 1)
