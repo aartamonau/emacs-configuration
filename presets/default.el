@@ -121,3 +121,6 @@
 
 ;; hippie expand
 (load "emacs-rc-hippie-expand.el")
+
+;; magit
+(load "emacs-rc-magit.el")

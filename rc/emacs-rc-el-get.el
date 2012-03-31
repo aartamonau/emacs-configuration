@@ -28,7 +28,9 @@
         zenburn-theme
         switch-window
         ace-jump-mode
-        workgroups))
+        workgroups
+        magit
+        magithub))
 
 (setq aa/all-packages
       (append aa/packages
