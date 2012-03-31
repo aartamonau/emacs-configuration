@@ -109,3 +109,6 @@
 
 ;; view-mode
 (load "emacs-rc-view-mode.el")
+
+;; ace jump mode
+(load "emacs-rc-ace-jump-mode.el")

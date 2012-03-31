@@ -26,7 +26,8 @@
         cmake-mode
         pkgbuild-mode
         zenburn-theme
-        switch-window))
+        switch-window
+        ace-jump-mode))
 
 (setq aa/all-packages
       (append aa/packages
