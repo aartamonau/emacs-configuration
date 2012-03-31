@@ -7,6 +7,9 @@
 ;; Customizing common Emacs' appearance and behavior
 (load "emacs-rc-common.el")
 
+;; misc keybindings
+(load "emacs-rc-misc-keybindings.el")
+
 ;; color theme
 (load "emacs-rc-color-theme.el")
 
