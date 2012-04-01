@@ -30,7 +30,8 @@
         ace-jump-mode
         workgroups
         magit
-        magithub))
+        magithub
+        ledger-mode))
 
 (setq aa/all-packages
       (append aa/packages
