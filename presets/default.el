@@ -132,4 +132,4 @@
 (load "emacs-rc-compile.el")
 
 ;; switch window customizations
-(load "emacs-switch-window.el")
+(load "emacs-rc-switch-window.el")
