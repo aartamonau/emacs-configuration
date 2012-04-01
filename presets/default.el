@@ -130,3 +130,6 @@
 
 ;; compilation setup (must be placed after eproject)
 (load "emacs-rc-compile.el")
+
+;; switch window customizations
+(load "emacs-switch-window.el")
