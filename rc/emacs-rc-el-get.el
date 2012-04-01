@@ -31,7 +31,8 @@
         workgroups
         magit
         magithub
-        ledger-mode))
+        ledger-mode
+        eproject))
 
 (setq aa/all-packages
       (append aa/packages

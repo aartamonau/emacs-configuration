@@ -124,3 +124,9 @@
 
 ;; magit
 (load "emacs-rc-magit.el")
+
+;; eproject
+(load "emacs-rc-eproject.el")
+
+;; compilation setup (must be placed after eproject)
+(load "emacs-rc-compile.el")
