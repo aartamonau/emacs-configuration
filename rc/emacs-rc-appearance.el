@@ -1,4 +1,6 @@
-(set-face-attribute 'default nil :font "DejaVu Sans Mono-8")
+(when window-system 'x
+      (set-face-attribute 'default nil :font "DejaVu Sans Mono-8"))
+
 (load-theme 'zenburn)
 
 (custom-set-faces

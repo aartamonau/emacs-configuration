@@ -10,8 +10,8 @@
 ;; misc keybindings
 (load "emacs-rc-misc-keybindings.el")
 
-;; color theme
-(load "emacs-rc-color-theme.el")
+;; appearance
+(load "emacs-rc-appearance.el")
 
 ;; rectangular selection
 (load "emacs-rc-rect-mark.el")
