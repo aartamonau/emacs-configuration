@@ -32,5 +32,6 @@
          (flymake-goto-prev-error)
          (credmp/flymake-display-err-minibuf))
 
+       (global-set-key (kbd "C-c ?") 'credmp/flymake-display-err-minibuf)
        (global-set-key (kbd "C-c n") 'aa/flymake-goto-next-error)
        (global-set-key (kbd "C-c p") 'aa/flymake-goto-prev-error)))
