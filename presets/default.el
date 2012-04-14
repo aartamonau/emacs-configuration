@@ -133,3 +133,6 @@
 
 ;; switch window customizations
 (load "emacs-rc-switch-window.el")
+
+;; ledger
+(load "emacs-rc-ledger.el")
