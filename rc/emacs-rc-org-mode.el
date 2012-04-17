@@ -43,6 +43,7 @@
              (file-expand-wildcards (concat dir "/*.org"))))
 
 (custom-set-variables
+ '(org-extend-today-until 3)
  '(org-todo-keywords '((sequence "TODO(t)"
                                  "STARTED(s!)"
                                  "PAUSED(p@)"
