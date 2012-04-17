@@ -3,6 +3,7 @@
 
 (require 'org-install)
 (require 'org-protocol)
+(require 'org-checklist)
 (require 'cl)
 
 (defun org ()
