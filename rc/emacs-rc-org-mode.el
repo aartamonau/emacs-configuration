@@ -142,7 +142,11 @@
  '(org-clock-out-switch-to-state "PAUSED")
 
  '(org-agenda-clockreport-parameter-plist
-   '(:link t :maxlevel 3)))
+   '(:link t :maxlevel 3))
+
+ '(org-refile-use-outline-path 'file)
+ '(org-outline-path-complete-in-steps nil)
+ '(org-refile-targets '((org-agenda-files . (:maxlevel . 3)))))
 
 
 (add-to-list 'org-modules 'org-habit)
