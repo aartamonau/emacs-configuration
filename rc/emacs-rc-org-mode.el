@@ -141,9 +141,6 @@
  '(org-clock-in-switch-to-state "STARTED")
  '(org-clock-out-switch-to-state "PAUSED")
 
- '(org-mobile-inbox-for-pull "~/org/flagged.org")
- '(org-mobile-directory      "~/Dropbox/MobileOrg")
-
  '(org-agenda-clockreport-parameter-plist
    '(:link t :maxlevel 3)))
 
