@@ -142,7 +142,10 @@
  '(org-clock-out-switch-to-state "PAUSED")
 
  '(org-mobile-inbox-for-pull "~/org/flagged.org")
- '(org-mobile-directory      "~/Dropbox/MobileOrg"))
+ '(org-mobile-directory      "~/Dropbox/MobileOrg")
+
+ '(org-agenda-clockreport-parameter-plist
+   '(:link t :maxlevel 3)))
 
 
 (add-to-list 'org-modules 'org-habit)
