@@ -146,7 +146,9 @@
 
  '(org-refile-use-outline-path 'file)
  '(org-outline-path-complete-in-steps nil)
- '(org-refile-targets '((org-agenda-files . (:maxlevel . 3)))))
+ '(org-refile-targets '((org-agenda-files . (:maxlevel . 3))))
+
+ '(org-mobile-directory      "~/Dropbox/MobileOrg"))
 
 
 (add-to-list 'org-modules 'org-habit)
