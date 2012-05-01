@@ -28,14 +28,6 @@
 (defconst todo-template "* ASSIGN %^{Description}\n  %u\n  %?")
 (defconst note-template "* %^{Title} :NOTE:\n  %u\n  %?")
 
-(defun my/agenda-filter ()
-  "Agenda filter which discard ASSIGN and WAITING entries."
-  (org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING")))
-
-(defconst my/agenda-header
-  "Agenda (no ASSIGN|WATING)"
-  "Custom agenda header")
-
 (defun* my/org-files (dir &key (except nil))
   "Returns a list of org files in a `dir' directory not including
   those that are enumerated in `except'"
@@ -75,25 +67,46 @@
  '(org-agenda-start-on-weekday nil)
  '(org-reverse-note-order t)
  '(org-fast-tag-selection-single-key (quote expert))
- `(org-agenda-custom-commands
-   (quote (("C" agenda "Couchbase"
-            ((org-agenda-filter-preset '("+COUCHBASE"))))
-           ("s" todo "ASSIGN" nil)
-           ("w" todo "WAITING" nil)
-           ("c" todo "DONE|CANCELLED" nil)
-           ("A" agenda ""
-            ((org-agenda-skip-function 'my/agenda-filter)
-             (org-agenda-overriding-header ,my/agenda-header)))
-           ("W" agenda ""
-            ((org-agenda-skip-function 'my/agenda-filter)
-             (org-agenda-overriding-header ,my/agenda-header)
-             (org-agenda-ndays 7)))
-           ("T" agenda ""
-            ((org-agenda-skip-function 'my/agenda-filter)
-             (org-agenda-overriding-header ,my/agenda-header)
+ '(org-agenda-custom-commands
+   (quote (("A" agenda "Today"
+            ((org-agenda-filter-preset '("-COUCHBASE -drill"))
+             (org-agenda-skip-function
+              '(org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING")))))
+           ("T" agenda "Tomorrow"
+            ((org-agenda-filter-preset '("-COUCHBASE -drill"))
              (org-agenda-start-day "+1")
-             (org-agenda-ndays 1)))
-           ("u" alltodo ""
+             (org-agenda-ndays 1)
+             (org-agenda-skip-function
+              '(org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING")))))
+           ("W" agenda "Week"
+            ((org-agenda-ndays 7)
+             (org-agenda-filter-preset '("-COUCHBASE -drill"))
+             (org-agenda-skip-function
+              '(org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING")))))
+
+           ("C" . "Couchbase agendas")
+           ("CA" agenda "Today"
+            ((org-agenda-filter-preset '("+COUCHBASE"))
+             (org-agenda-skip-function
+              '(org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING")))))
+           ("CT" agenda "Tomorrow"
+            ((org-agenda-filter-preset '("+COUCHBASE"))
+             (org-agenda-start-day "+1")
+             (org-agenda-ndays 1)
+             (org-agenda-skip-function
+              '(org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING")))))
+           ("CW" agenda "Week"
+            ((org-agenda-filter-preset '("+COUCHBASE"))
+             (org-agenda-ndays 7)
+             (org-agenda-skip-function
+              '(org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING")))))
+
+           ("Q" . "Queries")
+           ("QN" "Next" tags "NEXT")
+           ("QW" "Waiting" tags-todo "TODO=\"WAITING\"|WAITING" nil)
+           ("QA" "Unassigned" todo "ASSIGN" nil)
+           ("QD" "Completed" todo "DONE|CANCELLED" nil)
+           ("QU" "Unscheduled" alltodo "TODO"
             ((org-agenda-skip-function
               (lambda nil
                 (org-agenda-skip-entry-if (quote scheduled) (quote deadline)
