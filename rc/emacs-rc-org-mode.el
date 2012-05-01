@@ -54,7 +54,6 @@
                                  "|"
 
                                  "DONE(d@)"
-                                 "DEFERRED(D@)"
                                  "CANCELLED(c@)")
                        (sequence "TODO(t)"
                                  "ONLINE(n!)"
@@ -78,9 +77,8 @@
  '(org-fast-tag-selection-single-key (quote expert))
  `(org-agenda-custom-commands
    (quote (("s" todo "ASSIGN" nil)
-           ("d" todo "DEFERRED" nil)
-           ("c" todo "DONE|DEFERRED|CANCELLED" nil)
            ("w" todo "WAITING" nil)
+           ("c" todo "DONE|CANCELLED" nil)
            ("A" agenda ""
             ((org-agenda-skip-function 'my/agenda-filter)
              (org-agenda-overriding-header ,my/agenda-header)))
