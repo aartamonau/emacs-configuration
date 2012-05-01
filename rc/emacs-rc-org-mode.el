@@ -76,7 +76,9 @@
  '(org-reverse-note-order t)
  '(org-fast-tag-selection-single-key (quote expert))
  `(org-agenda-custom-commands
-   (quote (("s" todo "ASSIGN" nil)
+   (quote (("C" agenda "Couchbase"
+            ((org-agenda-filter-preset '("+COUCHBASE"))))
+           ("s" todo "ASSIGN" nil)
            ("w" todo "WAITING" nil)
            ("c" todo "DONE|CANCELLED" nil)
            ("A" agenda ""
