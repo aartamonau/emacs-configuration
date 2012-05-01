@@ -4,6 +4,7 @@
 (require 'org-install)
 (require 'org-protocol)
 (require 'org-checklist)
+(require 'org-drill)
 (require 'cl)
 
 (defun org ()
@@ -148,7 +149,9 @@
  '(org-outline-path-complete-in-steps nil)
  '(org-refile-targets '((org-agenda-files . (:maxlevel . 3))))
 
- '(org-mobile-directory      "~/Dropbox/MobileOrg"))
+ '(org-mobile-directory      "~/Dropbox/MobileOrg")
+
+ '(org-drill-maximum-duration 15))
 
 
 (add-to-list 'org-modules 'org-habit)
