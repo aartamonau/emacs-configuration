@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: Two-sided card for org-drill
+# key: twosided
+# --
+** Noun                                                               :drill:
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :END:
+
+   Translate
+
+*** English
+    $0
+*** English definition
+*** Transcription
+*** Examples
