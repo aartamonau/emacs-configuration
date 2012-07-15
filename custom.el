@@ -43,8 +43,6 @@
  '(org-habit-show-habits-only-for-today nil)
  '(org-log-done (quote time))
  '(org-log-into-drawer "LOGBOOK")
- '(org-mobile-directory "~/Dropbox/MobileOrg")
- '(org-mobile-inbox-for-pull "~/org/flagged.org")
  '(org-remember-store-without-prompt t)
  '(org-remember-templates (quote (("todo" 116 "* ASSIGN %^{Description}
   %u

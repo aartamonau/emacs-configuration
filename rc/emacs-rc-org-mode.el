@@ -57,7 +57,7 @@
                                  "DONE(d@)")))
  `(org-agenda-files (quote
                      ,(my/org-files "~/org"
-                                    :except '("notes.org" "flagged.org"))))
+                                    :except '("notes.org"))))
  '(org-default-notes-file "~/org/notes.org")
  '(org-agenda-ndays 1)
  '(org-deadline-warning-days 14)
@@ -162,7 +162,7 @@
  '(org-outline-path-complete-in-steps nil)
  '(org-refile-targets '((org-agenda-files . (:maxlevel . 3))))
 
- '(org-mobile-directory      "~/Dropbox/MobileOrg")
+ '(org-mobile-directory "~/Dropbox/MobileOrg")
 
  '(org-drill-maximum-duration 15))
 
