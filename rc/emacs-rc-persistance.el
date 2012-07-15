@@ -2,6 +2,8 @@
 
 ;; Reopen files
 (desktop-save-mode 1)
+(custom-set-variables
+ '(desktop-restore-eager 10))
 
 ;; Save environment
 ;; (require 'session)
