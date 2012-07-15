@@ -1,5 +1,4 @@
-(when window-system 'x
-      (set-face-attribute 'default nil :font "DejaVu Sans Mono-8"))
+(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-8"))
 
 (load-theme 'zenburn)
 

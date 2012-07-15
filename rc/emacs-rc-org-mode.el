@@ -171,6 +171,10 @@
 
 (org-clock-persistence-insinuate)
 
+;; automatically resume clocks when starting daemon
+(when (daemonp)
+  (setq org-clock-persist-query-resume nil))
+
 (eval-after-load "remember"
   '(progn
      (add-hook 'remember-mode-hook 'org-remember-apply-template)))

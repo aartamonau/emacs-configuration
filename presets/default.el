@@ -136,3 +136,6 @@
 
 ;; ledger
 (load "emacs-rc-ledger.el")
+
+;; daemon
+(load "emacs-rc-daemon.el")
