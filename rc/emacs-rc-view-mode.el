@@ -1,12 +1,18 @@
+(defun my/maybe-view-mode (&rest args)
+  (let ((major-mode-name (symbol-name major-mode)))
+    (unless (or (string-prefix-p "magit-" major-mode-name)
+                (string-equal 'rebase-mode major-mode))
+      (apply 'view-mode args))))
+
 (defadvice toggle-read-only (after run-view-mode-on-read-only activate)
   "Activates view-mode in buffer if it is made read-only"
   (let ((toggle (if buffer-read-only 1 0)))
-    (view-mode toggle)))
+    (my/maybe-view-mode toggle)))
 
 (defun my/find-file-hook ()
   "Activates view-mode if buffer is read-only"
   (when buffer-read-only
-    (view-mode)))
+    (my/maybe-view-mode)))
 
 (add-hook 'find-file-hook 'my/find-file-hook)
 
