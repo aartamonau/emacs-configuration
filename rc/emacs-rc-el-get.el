@@ -3,7 +3,10 @@
 (require 'el-get)
 
 (setq el-get-sources
-      '())
+      '((:name systemtap-mode
+               :type http
+               :url "http://coderepos.org/share/export/39195/lang/elisp/systemtap-mode/systemtap-mode.el"
+               :compile "systemtap-mode.el")))
 
 (setq aa/packages
       '(package

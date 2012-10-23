@@ -139,3 +139,5 @@
 
 ;; daemon
 (load "emacs-rc-daemon.el")
+
+(load "emacs-rc-systemtap.el")
