@@ -5,6 +5,11 @@
 (custom-set-variables
  '(desktop-restore-eager 10))
 
+(defun desktop-force-read ()
+  (interactive)
+  (let ((desktop-load-locked-desktop t))
+    (desktop-read)))
+
 ;; be conservative about loaded locked desktop files when running daemon
 (when (daemonp)
   (setq desktop-load-locked-desktop nil))
