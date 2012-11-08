@@ -63,3 +63,16 @@
 (unless (controlling-tty-p)
   (dolist (key (where-is-internal 'suspend-frame (current-global-map)))
     (global-unset-key key)))
+
+
+(add-hook 'find-file-hook
+          (lambda ()
+            (let ((file-name (buffer-file-name (current-buffer))))
+              (when file-name
+                (let* ((attributes (file-attributes file-name))
+                       (size (nth 7 attributes)))
+                  (when (> size large-file-warning-threshold)
+                    (message "Disabling expensive modes for `%s'" file-name)
+                    (linum-mode 0)
+                    (flyspell-mode 0)
+                    (auto-fill-mode 0)))))))
