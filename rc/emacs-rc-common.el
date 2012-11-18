@@ -71,7 +71,8 @@
               (when file-name
                 (let* ((attributes (file-attributes file-name))
                        (size (nth 7 attributes)))
-                  (when (> size large-file-warning-threshold)
+                  (when (and size
+                             (> size large-file-warning-threshold))
                     (message "Disabling expensive modes for `%s'" file-name)
                     (linum-mode 0)
                     (flyspell-mode 0)
