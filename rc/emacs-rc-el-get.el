@@ -6,7 +6,11 @@
       '((:name systemtap-mode
                :type http
                :url "http://coderepos.org/share/export/39195/lang/elisp/systemtap-mode/systemtap-mode.el"
-               :compile "systemtap-mode.el")))
+               :compile "systemtap-mode.el")
+        (:name el-get
+               :type http
+               :url "http://www.dr-qubit.org/undo-tree/undo-tree.el"
+               :compile "undo-tree")))
 
 (setq aa/packages
       '(package

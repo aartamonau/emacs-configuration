@@ -76,4 +76,5 @@
                     (message "Disabling expensive modes for `%s'" file-name)
                     (linum-mode 0)
                     (flyspell-mode 0)
-                    (auto-fill-mode 0)))))))
+                    (auto-fill-mode 0)
+                    (undo-tree-mode -1)))))))

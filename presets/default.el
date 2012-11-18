@@ -141,3 +141,5 @@
 (load "emacs-rc-daemon.el")
 
 (load "emacs-rc-systemtap.el")
+
+(load "emacs-rc-undo-tree.el")
