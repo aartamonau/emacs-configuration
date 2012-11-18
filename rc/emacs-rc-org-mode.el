@@ -13,8 +13,7 @@
 
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
-(global-set-key "\C-cl" 'org-store-link)
-(define-key global-map "\C-cr" 'remember)
+(define-key global-map "\C-cr" 'org-capture)
 
 (eval-after-load "org"
   '(progn
@@ -24,9 +23,6 @@
      (define-key org-mode-map "\M-p"    'org-metaup)
      (define-key org-mode-map "\M-\C-f" 'org-metaright)
      (define-key org-mode-map "\M-\C-b" 'org-metaleft)))
-
-(defconst todo-template "* ASSIGN %^{Description}\n  %u\n  %?")
-(defconst note-template "* %^{Title} :NOTE:\n  %u\n  %?")
 
 (defun* my/org-files (dir &key (except nil))
   "Returns a list of org files in a `dir' directory not including
@@ -113,14 +109,19 @@
                                           (quote regexp) "<[^>\n]+>")))
              (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
  '(org-remember-store-without-prompt t)
- `(org-remember-templates
-   '(("todo" ?t
-      ,todo-template
-      "~/org/todo.org" "Unsorted Tasks")
-
-     ("note" ?n
-      ,note-template
-      "~/org/todo.org" "Unsorted Notes")))
+ '(org-capture-templates
+   '(("t" "todo" entry
+      (file+headline "~/org/todo.org" "Unsorted Tasks")
+      "* TODO %^{Title}\n  %t\n  %?")
+     ("p" "protocol-capture" entry
+      (file+headline "~/org/todo.org" "Unsorted Tasks")
+      "* TODO %c\n  %t\n\n  %i" :immediate-finish t)
+     ("n" "note" entry
+      (file+headline "~/org/todo.org" "Unsorted Notes")
+      "* %^{Title} :NOTE:\n  %u\n  %?")
+     ("w" "word" entry
+      (file+headline "~/org/english.org" "Pending words")
+      "* %^{Word}\n  %u\n  %?")))
 
  '(remember-annotation-functions (quote (org-remember-annotation)))
  '(remember-handler-functions (quote (org-remember-handler)))
@@ -174,7 +175,3 @@
 ;; automatically resume clocks when starting daemon
 (when (daemonp)
   (setq org-clock-persist-query-resume nil))
-
-(eval-after-load "remember"
-  '(progn
-     (add-hook 'remember-mode-hook 'org-remember-apply-template)))
