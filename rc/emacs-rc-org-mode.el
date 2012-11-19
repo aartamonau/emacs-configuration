@@ -112,10 +112,10 @@
  '(org-capture-templates
    '(("t" "todo" entry
       (file+headline "~/org/todo.org" "Unsorted Tasks")
-      "* TODO %^{Title}\n  %t\n  %?")
+      "* TODO %^{Title}\n  SCHEDULED: %t\n  %?")
      ("p" "protocol-capture" entry
       (file+headline "~/org/todo.org" "Unsorted Tasks")
-      "* TODO %c\n  %t\n\n  %i" :immediate-finish t)
+      "* TODO %c\n  SCHEDULED: %t\n\n  %i" :immediate-finish t)
      ("n" "note" entry
       (file+headline "~/org/todo.org" "Unsorted Notes")
       "* %^{Title} :NOTE:\n  %u\n  %?")
