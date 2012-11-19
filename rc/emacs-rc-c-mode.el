@@ -17,9 +17,8 @@
 
 (defun my-c-mode-common-hook ()
   (c-set-style "k&r")
-  (setq tab-width 2) ;; change this to taste, this is what K&R uses :)
-  (my-build-tab-stop-list tab-width)
-  (setq c-basic-offset tab-width)
+  (my-build-tab-stop-list 2)
+  (setq c-basic-offset 2)
   (setq indent-tabs-mode nil)) ;; force only spaces for indentation
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
