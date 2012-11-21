@@ -78,3 +78,7 @@
                     (flyspell-mode 0)
                     (auto-fill-mode 0)
                     (undo-tree-mode -1)))))))
+
+(defadvice universal-argument-more (before break-sequences (arg) activate)
+  (when (consp arg)
+    (setq arg (car arg))))
