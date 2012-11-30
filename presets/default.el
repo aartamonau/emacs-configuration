@@ -143,3 +143,5 @@
 (load "emacs-rc-systemtap.el")
 
 (load "emacs-rc-undo-tree.el")
+
+(load "emacs-rc-dired.el")

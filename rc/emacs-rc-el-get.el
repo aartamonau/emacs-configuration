@@ -39,7 +39,8 @@
         magit
         magithub
         ledger-mode
-        eproject))
+        eproject
+        dired+))
 
 (setq aa/all-packages
       (append aa/packages
