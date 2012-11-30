@@ -145,3 +145,5 @@
 (load "emacs-rc-undo-tree.el")
 
 (load "emacs-rc-dired.el")
+
+(load "emacs-rc-tomatinho.el")

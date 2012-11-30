@@ -10,7 +10,12 @@
         (:name el-get
                :type http
                :url "http://www.dr-qubit.org/undo-tree/undo-tree.el"
-               :compile "undo-tree")))
+               :compile "undo-tree")
+        (:name tomatinho
+               :description "Pomodoro technique timer with a lean and usable interface."
+               :type github
+               :branch "master"
+               :pkgname "konr/tomatinho")))
 
 (setq aa/packages
       '(package
