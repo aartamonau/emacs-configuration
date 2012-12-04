@@ -15,7 +15,12 @@
                :description "Pomodoro technique timer with a lean and usable interface."
                :type github
                :branch "master"
-               :pkgname "konr/tomatinho")))
+               :pkgname "konr/tomatinho")
+        (:name etags-select
+               :type github
+               :branch "master"
+               :pkgname "aartamonau/etags-select"
+               :compile "etags-select.el")))
 
 (setq aa/packages
       '(package
