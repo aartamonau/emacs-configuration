@@ -50,7 +50,8 @@
         magithub
         ledger-mode
         eproject
-        dired+))
+        dired+
+        ghc-mod))
 
 (setq aa/all-packages
       (append aa/packages
