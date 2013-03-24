@@ -9,3 +9,7 @@
 (defun vc-git-annotate-command (file buf &optional rev)
   (let ((name (file-relative-name file)))
     (vc-git-command buf 0 name "blame" "-w" rev)))
+
+(custom-set-variables
+ ;; don't bother me when nothing staged; I very likely know what I'm doing.
+ 'magit-commit-all-when-nothing-staged nil)
