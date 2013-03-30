@@ -12,4 +12,4 @@
 
 (custom-set-variables
  ;; don't bother me when nothing staged; I very likely know what I'm doing.
- 'magit-commit-all-when-nothing-staged nil)
+ '(magit-commit-all-when-nothing-staged nil))
