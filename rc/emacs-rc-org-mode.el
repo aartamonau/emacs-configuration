@@ -1,7 +1,6 @@
 ;; this org mode config is mostly adapted from
 ;; http://www.newartisans.com/2007/08/using-org-mode-as-a-day-planner.html
 
-(require 'org-install)
 (require 'org-protocol)
 (require 'org-checklist)
 (require 'org-drill)
