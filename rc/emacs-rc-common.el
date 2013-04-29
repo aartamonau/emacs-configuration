@@ -65,6 +65,7 @@
     (global-unset-key key)))
 
 
+(setq large-file-warning-threshold 100000)
 (add-hook 'find-file-hook
           (lambda ()
             (let ((file-name (buffer-file-name (current-buffer))))
