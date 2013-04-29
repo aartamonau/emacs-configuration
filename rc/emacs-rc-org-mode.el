@@ -51,8 +51,7 @@
 
                                  "DONE(d@)")))
  `(org-agenda-files (quote
-                     ,(my/org-files "~/org"
-                                    :except '("notes.org"))))
+                     ,(my/org-files "~/org")))
  '(org-default-notes-file "~/org/notes.org")
  '(org-agenda-ndays 1)
  '(org-deadline-warning-days 14)
@@ -116,8 +115,8 @@
       (file+headline "~/org/todo.org" "Unsorted Tasks")
       "* TODO %c\n  SCHEDULED: %t\n\n  %i" :immediate-finish t)
      ("n" "note" entry
-      (file+headline "~/org/todo.org" "Unsorted Notes")
-      "* %^{Title} :NOTE:\n  %u\n  %?")
+      (file+headline "" "Misc notes")
+      "* %^{Title}\n  %u\n  %?")
      ("w" "word" entry
       (file+headline "~/org/english.org" "Pending words")
       "* %^{Word}\n  %u\n  %?")))
@@ -163,6 +162,8 @@
  '(org-refile-targets '((org-agenda-files . (:maxlevel . 3))))
 
  '(org-mobile-directory "~/Dropbox/MobileOrg")
+ '(org-mobile-files-exclude-regexp "^\\(english\\|from-mobile\\)\\.org$")
+ '(org-mobile-agendas '("A"))
 
  '(org-drill-maximum-duration 15))
 
