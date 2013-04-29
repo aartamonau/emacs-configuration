@@ -65,7 +65,10 @@
     (global-unset-key key)))
 
 
-(setq large-file-warning-threshold 100000)
+(when (daemonp)
+  ;; set threshold to something really big to prevent questions on start up;
+  ;; those questions freeze the daemon
+    (setq large-file-warning-threshold #x3fffffff))
 (add-hook 'find-file-hook
           (lambda ()
             (let ((file-name (buffer-file-name (current-buffer))))
@@ -73,7 +76,7 @@
                 (let* ((attributes (file-attributes file-name))
                        (size (nth 7 attributes)))
                   (when (and size
-                             (> size large-file-warning-threshold))
+                             (> size 5000000))
                     (message "Disabling expensive modes for `%s'" file-name)
                     (linum-mode 0)
                     (flyspell-mode 0)
