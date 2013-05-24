@@ -51,7 +51,8 @@
         ledger-mode
         eproject
         dired+
-        ghc-mod))
+        ghc-mod
+        emacs-w3m))
 
 (setq aa/all-packages
       (append aa/packages
