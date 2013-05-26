@@ -1,5 +1,5 @@
 (defun user-full-name ()
-  "Aliaksiej Artamonaŭ")
+  "Aliaksey Artamonau")
 
 (defun user-mail-address ()
   "aliaksiej.artamonau@gmail.com")
