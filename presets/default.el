@@ -149,3 +149,5 @@
 (load "emacs-rc-tomatinho.el")
 
 (load "emacs-rc-etags.el")
+
+(load "emacs-rc-wide-n.el")

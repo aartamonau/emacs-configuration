@@ -20,7 +20,9 @@
                :type github
                :branch "master"
                :pkgname "aartamonau/etags-select"
-               :compile "etags-select.el")))
+               :compile "etags-select.el")
+        (:name wide-n
+               :type emacswiki)))
 
 (setq aa/packages
       '(package
