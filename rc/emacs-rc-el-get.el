@@ -54,7 +54,8 @@
         eproject
         dired+
         ghc-mod
-        emacs-w3m))
+        emacs-w3m
+        evil-numbers))
 
 (setq aa/all-packages
       (append aa/packages
