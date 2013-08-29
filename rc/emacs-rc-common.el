@@ -81,7 +81,8 @@
                     (linum-mode 0)
                     (flyspell-mode 0)
                     (auto-fill-mode 0)
-                    (undo-tree-mode -1)))))))
+                    (undo-tree-mode -1)
+                    (toggle-truncate-lines 1)))))))
 
 (defadvice universal-argument-more (before break-sequences (arg) activate)
   (when (consp arg)
