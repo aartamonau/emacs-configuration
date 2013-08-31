@@ -15,4 +15,5 @@
 
   (require 'erlang-start)
   (require 'erlang-flymake)
-  (add-hook 'erlang-mode-hook 'global-hook-handler))
+  (add-hook 'erlang-mode-hook 'global-hook-handler)
+  (add-hook 'erlang-mode-hook 'gtags-mode))
