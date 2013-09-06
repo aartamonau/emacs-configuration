@@ -22,7 +22,12 @@
                :pkgname "aartamonau/etags-select"
                :compile "etags-select.el")
         (:name wide-n
-               :type emacswiki)))
+               :type emacswiki)
+        (:name keyfreq
+               :description "Track Emacs commands frequency"
+               :type github
+               :branch "master"
+               :pkgname "dacap/keyfreq")))
 
 (setq aa/packages
       '(package
