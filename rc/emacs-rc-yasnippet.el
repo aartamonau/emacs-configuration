@@ -1,6 +1,6 @@
 (require 'yasnippet) ;; not yasnippet-bundle
 
-(yas/initialize)
+(yas-global-mode 1)
 
 (setq yas/root-directory "~/emacs/snippets")
 (setq yas/prompt-functions '(yas/ido-prompt))
