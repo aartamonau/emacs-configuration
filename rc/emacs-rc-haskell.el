@@ -1,4 +1,4 @@
-(load "haskell-site-file")
+(require 'haskell-mode-autoloads)
 
 (add-hook 'haskell-mode-hook 'global-hook-handler)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-decl-scan)
