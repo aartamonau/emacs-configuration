@@ -60,7 +60,8 @@
         dired+
         ghc-mod
         emacs-w3m
-        evil-numbers))
+        evil-numbers
+        go-mode))
 
 (setq aa/all-packages
       (append aa/packages
