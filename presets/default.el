@@ -153,3 +153,5 @@
 (load "emacs-rc-wide-n.el")
 
 (load "emacs-rc-keyfreq.el")
+
+(load "emacs-rc-go-mode.el")
