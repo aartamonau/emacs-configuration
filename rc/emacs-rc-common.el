@@ -78,6 +78,8 @@
                   (when (and size
                              (> size 5000000))
                     (message "Disabling expensive modes for `%s'" file-name)
+                    (fundamental-mode)
+                    (font-lock-mode 0)
                     (linum-mode 0)
                     (flyspell-mode 0)
                     (auto-fill-mode 0)
