@@ -69,6 +69,18 @@
   ;; set threshold to something really big to prevent questions on start up;
   ;; those questions freeze the daemon
     (setq large-file-warning-threshold #x3fffffff))
+
+(defun disable-expensive-modes ()
+  (interactive)
+  (message "Disabling expensive modes for `%s'" file-name)
+  (fundamental-mode)
+  (font-lock-mode 0)
+  (linum-mode 0)
+  (flyspell-mode 0)
+  (auto-fill-mode 0)
+  (undo-tree-mode -1)
+  (toggle-truncate-lines 1))
+
 (add-hook 'find-file-hook
           (lambda ()
             (let ((file-name (buffer-file-name (current-buffer))))
@@ -77,15 +89,4 @@
                        (size (nth 7 attributes)))
                   (when (and size
                              (> size 5000000))
-                    (message "Disabling expensive modes for `%s'" file-name)
-                    (fundamental-mode)
-                    (font-lock-mode 0)
-                    (linum-mode 0)
-                    (flyspell-mode 0)
-                    (auto-fill-mode 0)
-                    (undo-tree-mode -1)
-                    (toggle-truncate-lines 1)))))))
-
-(defadvice universal-argument-more (before break-sequences (arg) activate)
-  (when (consp arg)
-    (setq arg (car arg))))
+                    (disable-expensive-modes)))))))
