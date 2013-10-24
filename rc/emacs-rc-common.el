@@ -72,7 +72,6 @@
 
 (defun disable-expensive-modes ()
   (interactive)
-  (message "Disabling expensive modes for `%s'" file-name)
   (fundamental-mode)
   (font-lock-mode 0)
   (linum-mode 0)
@@ -89,4 +88,5 @@
                        (size (nth 7 attributes)))
                   (when (and size
                              (> size 5000000))
+                    (message "Disabling expensive modes for `%s'" file-name)
                     (disable-expensive-modes)))))))
