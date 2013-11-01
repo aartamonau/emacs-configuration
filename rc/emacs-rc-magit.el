@@ -13,3 +13,10 @@
 (custom-set-variables
  ;; don't bother me when nothing staged; I very likely know what I'm doing.
  '(magit-commit-all-when-nothing-staged nil))
+
+(defun magit-commit-amend ()
+  (interactive)
+  (magit-commit t))
+
+(define-key magit-mode-map (kbd "C-c C-c") 'magit-commit)
+(define-key magit-mode-map (kbd "C-c C-a") 'magit-commit-amend)
