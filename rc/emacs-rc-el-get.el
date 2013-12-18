@@ -62,6 +62,8 @@
         emacs-w3m
         evil-numbers
         go-mode))
+        rust-mode
+        rusti))
 
 (setq aa/all-packages
       (append aa/packages
