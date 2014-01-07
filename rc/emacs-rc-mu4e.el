@@ -1,8 +1,5 @@
 (require 'mu4e)
 
-(setq user-mail-address "aliaksiej.artamonau@gmail.com")
-(setq user-full-name "Aliaksey Artamonau")
-
 (setq mu4e-maildir "~/mail/aliaksiej.artamonau@gmail.com")
 (setq mu4e-drafts-folder "/[Gmail].Drafts")
 (setq mu4e-sent-folder   "/[Gmail].Sent Mail")
