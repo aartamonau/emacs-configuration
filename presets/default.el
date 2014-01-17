@@ -155,3 +155,5 @@
 (load "emacs-rc-keyfreq.el")
 
 (load "emacs-rc-go-mode.el")
+
+(load "emacs-rc-mu4e.el")
