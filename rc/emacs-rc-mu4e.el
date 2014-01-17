@@ -1,5 +1,7 @@
 (require 'mu4e)
 
+(setq mu4e-hide-index-messages t)
+
 (setq mu4e-maildir "~/mail/aliaksiej.artamonau@gmail.com")
 (setq mu4e-drafts-folder "/[Gmail].Drafts")
 (setq mu4e-sent-folder   "/[Gmail].Sent Mail")
