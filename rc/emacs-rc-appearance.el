@@ -1,4 +1,4 @@
-(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-8"))
+(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-9"))
 
 (load-theme 'zenburn)
 
