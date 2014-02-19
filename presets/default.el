@@ -157,3 +157,5 @@
 (load "emacs-rc-go-mode.el")
 
 (load "emacs-rc-mu4e.el")
+
+(load "emacs-rc-vc.el")
