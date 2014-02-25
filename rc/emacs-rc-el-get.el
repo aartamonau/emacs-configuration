@@ -60,7 +60,7 @@
         ghc-mod
         emacs-w3m
         evil-numbers
-        go-mode))
+        go-mode
         rust-mode
         rusti))
 
