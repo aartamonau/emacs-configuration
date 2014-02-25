@@ -54,7 +54,6 @@
         ace-jump-mode
         workgroups
         magit
-        magithub
         ledger-mode
         eproject
         dired+
