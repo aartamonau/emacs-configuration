@@ -90,3 +90,5 @@
                              (> size 5000000))
                     (message "Disabling expensive modes for `%s'" file-name)
                     (disable-expensive-modes)))))))
+
+(global-auto-revert-mode 0)
