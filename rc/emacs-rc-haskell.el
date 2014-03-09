@@ -6,4 +6,8 @@
 (add-hook 'haskell-mode-hook #'(lambda () (require 'inf-haskell)))
 
 (autoload 'ghc-init "ghc" nil t)
-(add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))
+(add-hook 'haskell-mode-hook
+          (lambda ()
+            (ghc-init)
+            (setq ghc-ghc-options '("-Wall" "-fno-warn-name-shadowing"))
+            (flymake-mode)))
