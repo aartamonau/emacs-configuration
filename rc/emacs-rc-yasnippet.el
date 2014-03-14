@@ -19,3 +19,6 @@
             (define-key yas/keymap [S-iso-lefttab] 'yas/prev-field)
             (define-key yas/keymap [(shift tab)] 'yas/prev-field)
             (define-key yas/keymap [backtab] 'yas/prev-field)))
+
+(add-hook 'term-mode-hook (lambda()
+                            (yas-minor-mode -1)))
