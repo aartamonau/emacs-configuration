@@ -159,3 +159,5 @@
 (load "emacs-rc-mu4e.el")
 
 (load "emacs-rc-vc.el")
+
+(load "emacs-rc-which-func.el")
