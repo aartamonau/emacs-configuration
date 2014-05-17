@@ -19,3 +19,12 @@
 
 ;; magit-view-file-history needs this
 (setq magit-sha1-abbrev-length (magit-abbrev-length))
+
+(defadvice magit-view-file-at-commit (around
+                                      magit-view-file-at-commit-reuse-buffer
+                                      activate)
+  (flet ((generate-new-buffer (name)
+                              (if (get-buffer name)
+                                  (kill-buffer name))
+                              (get-buffer-create name)))
+    ad-do-it))
