@@ -62,7 +62,8 @@
         evil-numbers
         go-mode
         rust-mode
-        rusti))
+        rusti
+        guru-mode))
 
 (setq aa/all-packages
       (append aa/packages

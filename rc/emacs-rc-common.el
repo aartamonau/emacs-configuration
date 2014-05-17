@@ -92,3 +92,5 @@
                     (disable-expensive-modes)))))))
 
 (global-auto-revert-mode 0)
+
+(guru-global-mode 1)
