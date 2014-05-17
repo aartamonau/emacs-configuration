@@ -65,7 +65,8 @@
         rusti
         guru-mode
         hi2
-        magit-view-file))
+        magit-view-file
+        vkill))
 
 (setq aa/all-packages
       (append aa/packages
