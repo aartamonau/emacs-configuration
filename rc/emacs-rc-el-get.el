@@ -64,7 +64,8 @@
         rust-mode
         rusti
         guru-mode
-        hi2))
+        hi2
+        magit-view-file))
 
 (setq aa/all-packages
       (append aa/packages
