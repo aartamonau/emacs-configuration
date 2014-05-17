@@ -49,7 +49,7 @@
         rect-mark
         cmake-mode
         pkgbuild-mode
-        zenburn-theme
+        color-theme-zenburn
         switch-window
         ace-jump-mode
         workgroups

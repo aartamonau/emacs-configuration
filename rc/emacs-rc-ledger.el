@@ -1,4 +1,4 @@
-(require 'ledger)
+(require 'ledger-mode)
 
 (custom-set-variables
  '(ledger-reports
