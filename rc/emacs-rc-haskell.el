@@ -11,3 +11,4 @@
             (ghc-init)
             (setq ghc-ghc-options '("-Wall" "-fno-warn-name-shadowing"))
             (flymake-mode)))
+(add-hook 'haskell-mode-hook 'turn-on-hi2)

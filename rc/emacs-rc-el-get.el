@@ -63,7 +63,8 @@
         go-mode
         rust-mode
         rusti
-        guru-mode))
+        guru-mode
+        hi2))
 
 (setq aa/all-packages
       (append aa/packages
