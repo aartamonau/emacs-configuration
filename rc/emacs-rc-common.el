@@ -93,4 +93,5 @@
 
 (global-auto-revert-mode 0)
 
-(guru-global-mode 1)
+(if (fboundp 'guru-global-mode)
+    (guru-global-mode 1))
