@@ -142,3 +142,7 @@ point."
           (define-key haskell-interactive-mode-map (kbd "C-c C-y") 'cabal-toggle-sandboxing-local)
           (define-key haskell-cabal-mode-map (kbd "C-c C-c") 'haskell-process-cabal-build)
           (define-key haskell-cabal-mode-map (kbd "C-c c") 'haskell-process-cabal)))
+
+(custom-set-variables
+ '(haskell-doc-show-reserved nil)
+ '(haskell-doc-show-prelude nil))
