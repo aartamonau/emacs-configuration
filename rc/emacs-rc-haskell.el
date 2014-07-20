@@ -9,7 +9,8 @@
           (lambda ()
             (ghc-init)
             (setq ghc-ghc-options '("-Wall" "-fno-warn-name-shadowing"))
-            (flymake-mode)))
+            (flymake-mode)
+            (structured-haskell-mode 1)))
 (add-hook 'haskell-mode-hook 'turn-on-hi2)
 
 ;; Based upon https://github.com/paul7/dev-conf/blob/master/.emacs-haskell
