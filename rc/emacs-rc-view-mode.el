@@ -1,8 +1,7 @@
 (defun my/maybe-view-mode (&rest args)
   (let ((major-mode-name (symbol-name major-mode)))
     (unless (or (string-prefix-p "magit-" major-mode-name)
-                (string-equal 'rebase-mode major-mode)
-                (string-equal 'git-rebase-mode major-mode))
+                (memq major-mode '(rebase-mode git-rebase-mode doc-view-mode)))
       (apply 'view-mode args))))
 
 (defadvice toggle-read-only (after run-view-mode-on-read-only activate)
