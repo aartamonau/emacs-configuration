@@ -55,7 +55,8 @@
         magit-view-file
         vkill
         man-preview
-        llvm-mode))
+        llvm-mode
+        indirect-region))
 
 (setq aa/all-packages
       (append aa/packages
