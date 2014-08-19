@@ -66,7 +66,8 @@
         guru-mode
         hi2
         magit-view-file
-        vkill))
+        vkill
+        man-preview))
 
 (setq aa/all-packages
       (append aa/packages
