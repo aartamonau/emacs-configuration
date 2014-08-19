@@ -54,7 +54,8 @@
         hi2
         magit-view-file
         vkill
-        man-preview))
+        man-preview
+        llvm-mode))
 
 (setq aa/all-packages
       (append aa/packages
