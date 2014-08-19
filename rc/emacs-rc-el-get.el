@@ -3,20 +3,7 @@
 (require 'el-get)
 
 (setq el-get-sources
-      '((:name systemtap-mode
-               :type http
-               :url "http://coderepos.org/share/export/39195/lang/elisp/systemtap-mode/systemtap-mode.el"
-               :compile "systemtap-mode.el")
-        (:name undo-tree
-               :type http
-               :url "http://www.dr-qubit.org/undo-tree/undo-tree.el"
-               :compile "undo-tree")
-        (:name tomatinho
-               :description "Pomodoro technique timer with a lean and usable interface."
-               :type github
-               :branch "master"
-               :pkgname "konr/tomatinho")
-        (:name etags-select
+      '((:name etags-select
                :type github
                :branch "master"
                :pkgname "aartamonau/etags-select"
