@@ -57,7 +57,8 @@
         man-preview
         llvm-mode
         indirect-region
-        diff-hl))
+        diff-hl
+        wtf))
 
 (setq aa/all-packages
       (append aa/packages
