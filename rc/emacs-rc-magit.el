@@ -28,3 +28,5 @@
                                   (kill-buffer name))
                               (get-buffer-create name)))
     ad-do-it))
+
+(global-diff-hl-mode t)

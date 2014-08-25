@@ -56,7 +56,8 @@
         vkill
         man-preview
         llvm-mode
-        indirect-region))
+        indirect-region
+        diff-hl))
 
 (setq aa/all-packages
       (append aa/packages
