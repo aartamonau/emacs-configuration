@@ -95,3 +95,5 @@
 
 (if (fboundp 'guru-global-mode)
     (guru-global-mode 1))
+
+(electric-indent-mode -1)
