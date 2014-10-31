@@ -10,4 +10,4 @@
 
 (defun my/dont-highlight-tabs ()
   (make-variable-buffer-local 'whitespace-style)
-  (setq 'whitespace-style (delq 'tabs whitespace-style)))
+  (setq whitespace-style (delq 'tabs whitespace-style)))
