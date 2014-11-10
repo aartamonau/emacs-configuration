@@ -24,3 +24,8 @@
             file-list))))
 
 (define-key dired-mode-map (kbd "<C-return>") 'my/open-in-external-app)
+
+(define-key dired-mode-map (kbd "M-g") nil)
+(define-key dired-mode-map (kbd "M-g n") 'next-error)
+(define-key dired-mode-map (kbd "M-g p") 'previous-error)
+(define-key dired-mode-map (kbd "M-G") 'diredp-do-grep)
