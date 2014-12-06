@@ -58,7 +58,8 @@
         llvm-mode
         indirect-region
         diff-hl
-        wtf))
+        wtf
+        protobuf-mode))
 
 (setq aa/all-packages
       (append aa/packages
