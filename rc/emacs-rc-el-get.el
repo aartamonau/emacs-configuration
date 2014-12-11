@@ -48,6 +48,7 @@
         emacs-w3m
         evil-numbers
         go-mode
+        go-lint
         rust-mode
         rusti
         guru-mode
