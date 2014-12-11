@@ -49,6 +49,7 @@
         evil-numbers
         go-mode
         go-lint
+        go-flymake
         rust-mode
         rusti
         guru-mode
