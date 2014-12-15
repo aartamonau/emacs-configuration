@@ -50,6 +50,7 @@
         go-mode
         go-lint
         go-flymake
+        go-oracle
         rust-mode
         rusti
         guru-mode
