@@ -51,6 +51,7 @@
         go-lint
         go-flymake
         go-oracle
+        go-imports
         rust-mode
         rusti
         guru-mode
