@@ -62,7 +62,8 @@
         indirect-region
         diff-hl
         wtf
-        protobuf-mode))
+        protobuf-mode
+        idris-mode))
 
 (setq aa/all-packages
       (append aa/packages
