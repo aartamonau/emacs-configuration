@@ -64,7 +64,8 @@
         diff-hl
         wtf
         protobuf-mode
-        idris-mode))
+        idris-mode
+        ggtags))
 
 (setq aa/all-packages
       (append aa/packages
