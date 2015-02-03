@@ -161,3 +161,5 @@
 (load "emacs-rc-vc.el")
 
 (load "emacs-rc-which-func.el")
+
+(load "emacs-rc-tramp.el")
