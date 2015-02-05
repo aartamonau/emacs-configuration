@@ -17,8 +17,8 @@
 
 (defun my-c-mode-common-hook ()
   (c-set-style "k&r")
-  (my-build-tab-stop-list 2)
-  (setq c-basic-offset 2)
+  (my-build-tab-stop-list 4)
+  (setq c-basic-offset 4)
   (setq indent-tabs-mode nil)) ;; force only spaces for indentation
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
