@@ -65,7 +65,8 @@
         wtf
         protobuf-mode
         idris-mode
-        ggtags))
+        ggtags
+        yaml-mode))
 
 (setq aa/all-packages
       (append aa/packages
