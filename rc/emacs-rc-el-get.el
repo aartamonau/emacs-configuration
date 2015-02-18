@@ -66,7 +66,8 @@
         protobuf-mode
         idris-mode
         ggtags
-        yaml-mode))
+        yaml-mode
+        flymake))
 
 (setq aa/all-packages
       (append aa/packages
