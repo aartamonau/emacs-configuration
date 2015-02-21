@@ -26,9 +26,10 @@
      (defun sudo-reopen-file ()
        "Reopen file as root by prefixing its name with sudo-tramp-prefix and by clearing buffer-read-only"
        (interactive)
-       (let ((file-name (expand-file-name buffer-file-name)))
-         (kill-buffer (current-buffer))
-         (sudo-find-file file-name)))
+       (let ((file-name (expand-file-name buffer-file-name))
+             (buffer (current-buffer)))
+         (sudo-find-file file-name)
+         (kill-buffer buffer)))
 
      (global-set-key (kbd "C-c o") 'sudo-find-file)
      (global-set-key (kbd "C-c s") 'sudo-reopen-file)))
