@@ -69,7 +69,8 @@
         idris-mode
         ggtags
         yaml-mode
-        flymake))
+        flymake
+        expand-region))
 
 (setq aa/all-packages
       (append aa/packages
