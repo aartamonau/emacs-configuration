@@ -10,6 +10,8 @@
                :compile "etags-select.el")
         (:name wide-n
                :type emacswiki)
+        (:name unbound
+               :type emacswiki)
         (:name keyfreq
                :description "Track Emacs commands frequency"
                :type github
