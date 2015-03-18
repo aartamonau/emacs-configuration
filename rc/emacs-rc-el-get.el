@@ -27,14 +27,11 @@
         quack
         clojure-mode
         js2-mode
-        ;; seems to be incompatible with emacs24
-        ;; sml-mode
         haskell-mode haskell-mode-exts structured-haskell-mode
         markdown-mode
         doxymacs
         muse
         yasnippet
-        django-mode
         rect-mark
         cmake-mode
         pkgbuild-mode

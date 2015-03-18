@@ -46,9 +46,6 @@
 ;; Snippets
 (load "emacs-rc-yasnippet.el")
 
-;; Standard ML mode cusomization
-(load "emacs-rc-sml-mode.el")
-
 ;; Quack for Scheme programming
 (load "emacs-rc-quack.el")
 
@@ -69,9 +66,6 @@
 
 ;; Slime
 (load "emacs-rc-slime.el")
-
-;; django-html-mode
-(load "emacs-rc-django-html.el")
 
 ;; latex
 (load "emacs-rc-latex.el")
@@ -145,8 +139,6 @@
 (load "emacs-rc-undo-tree.el")
 
 (load "emacs-rc-dired.el")
-
-(load "emacs-rc-tomatinho.el")
 
 (load "emacs-rc-etags.el")
 
