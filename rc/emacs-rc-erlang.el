@@ -14,5 +14,10 @@
   (add-to-list 'load-path erlang-emacs-dir)
 
   (require 'erlang-start)
-  (require 'erlang-flymake)
-  (add-hook 'erlang-mode-hook 'global-hook-handler))
+  (add-hook 'erlang-mode-hook 'global-hook-handler)
+  (add-hook 'erlang-mode-hook 'edts-mode)
+  (add-hook 'edts-mode-hook
+            (lambda ()
+              (define-key edts-mode-map (kbd "M-*") 'edts-find-source-unwind)
+              (define-key edts-mode-map (kbd "C-c n") 'edts-code-next-issue)
+              (define-key edts-mode-map (kbd "C-c p") 'edts-code-previous-issue))))

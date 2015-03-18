@@ -16,7 +16,9 @@
                :description "Track Emacs commands frequency"
                :type github
                :branch "master"
-               :pkgname "dacap/keyfreq")))
+               :pkgname "dacap/keyfreq")
+        (:name edts
+               :type elpa)))
 
 (setq aa/packages
       '(package
@@ -67,7 +69,8 @@
         ggtags
         yaml-mode
         flymake
-        expand-region))
+        expand-region
+        edts))
 
 (setq aa/all-packages
       (append aa/packages
