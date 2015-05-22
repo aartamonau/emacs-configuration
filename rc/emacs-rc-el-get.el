@@ -18,7 +18,11 @@
                :branch "master"
                :pkgname "dacap/keyfreq")
         (:name edts
-               :type elpa)))
+               :type elpa)
+        (:name eclipse-mode
+               :type http-tar
+               :options ("xzf")
+               :url "http://eclipseclp.org/Distribution/pub/eclipse_emacs.tgz")))
 
 (setq aa/packages
       '(package
@@ -70,7 +74,8 @@
         yaml-mode
         flymake
         expand-region
-        edts))
+        edts
+        eclipse-mode))
 
 (setq aa/all-packages
       (append aa/packages
