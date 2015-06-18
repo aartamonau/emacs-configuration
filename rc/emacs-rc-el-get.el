@@ -22,7 +22,12 @@
         (:name eclipse-mode
                :type http-tar
                :options ("xzf")
-               :url "http://eclipseclp.org/Distribution/pub/eclipse_emacs.tgz")))
+               :url "http://eclipseclp.org/Distribution/pub/eclipse_emacs.tgz")
+        (:name annotate
+               :type github
+               :branch "master"
+               :pkgname "bastibe/annotate.el"
+               :compile "annotate.el")))
 
 (setq aa/packages
       '(package
@@ -75,7 +80,8 @@
         flymake
         expand-region
         edts
-        eclipse-mode))
+        eclipse-mode
+        annotate))
 
 (setq aa/all-packages
       (append aa/packages
