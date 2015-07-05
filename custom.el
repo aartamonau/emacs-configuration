@@ -12,9 +12,11 @@
  '(diredp-hide-details-initially-flag nil)
  '(ediff-split-window-function (quote split-window-horizontally))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
+ '(edts-inhibit-package-check t)
  '(fill-column 78)
  '(haskell-doc-show-prelude nil)
  '(haskell-doc-show-reserved nil)
+ '(hindent-style "chris-done")
  '(ibuffer-expert t)
  '(ibuffer-movement-cycle nil)
  '(ibuffer-saved-filter-groups
