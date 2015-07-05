@@ -104,6 +104,7 @@
               (mapcar 'el-get-source-name el-get-sources)))
 
 (el-get 'sync aa/all-packages)
+(package-initialize)
 
 ;; Work around epg issue with gnupg 2.1.0. I put it in here for greater chance
 ;; for me to remember to remove this when upstream fix arrives.
