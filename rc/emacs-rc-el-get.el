@@ -88,7 +88,8 @@
         expand-region
         edts
         eclipse-mode
-        annotate))
+        annotate
+        gist))
 
 (setq aa/all-packages
       (append aa/packages
