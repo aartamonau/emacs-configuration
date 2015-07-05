@@ -34,7 +34,14 @@
                :type github
                :branch "master"
                :pkgname "bastibe/annotate.el"
-               :compile "annotate.el")))
+               :compile "annotate.el")
+
+        ;; this requires hidnent to be installed and in the PATH
+        (:name hindent
+               :type github
+               :branch "master"
+               :pkgname "chrisdone/hindent"
+               :load-path "elisp")))
 
 (setq aa/packages
       '(package
@@ -89,7 +96,8 @@
         edts
         eclipse-mode
         annotate
-        gist))
+        gist
+        hindent))
 
 (setq aa/all-packages
       (append aa/packages

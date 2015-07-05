@@ -3,6 +3,7 @@
 (add-hook 'haskell-mode-hook 'global-hook-handler)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-decl-scan)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'hindent-mode)
 
 (autoload 'ghc-init "ghc" nil t)
 (add-hook 'haskell-mode-hook
@@ -150,4 +151,5 @@ point."
 
 (custom-set-variables
  '(haskell-doc-show-reserved nil)
- '(haskell-doc-show-prelude nil))
+ '(haskell-doc-show-prelude nil)
+ '(hindent-style "chris-done"))
