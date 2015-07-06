@@ -20,8 +20,6 @@
   (defconst couchbase-root (f-expand "~/dev/membase/"))
 
   (defun my/ns-server-project-selector (file-name)
-    (message "considering path %s" file-name)
-
     (let ((res (and (f-ancestor-of? couchbase-root file-name)
                     (f-traverse-upwards (lambda (path)
                                           (equal (f-base path) "ns_server"))
