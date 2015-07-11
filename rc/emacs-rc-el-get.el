@@ -84,7 +84,6 @@
         vkill
         man-preview
         llvm-mode
-        indirect-region
         diff-hl
         wtf
         protobuf-mode
@@ -97,7 +96,8 @@
         eclipse-mode
         annotate
         gist
-        hindent))
+        hindent
+        narrow-indirect))
 
 (setq aa/all-packages
       (append aa/packages
