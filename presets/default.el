@@ -40,6 +40,8 @@
 ;; Loading persistance features.
 (load "emacs-rc-persistance.el")
 
+(load "emacs-rc-comint.el")
+
 ;; Using Haskell goodies
 (load "emacs-rc-haskell.el")
 
@@ -158,3 +160,5 @@
 (load "emacs-rc-eclipse.el")
 
 (load "emacs-rc-narrow-indirect.el")
+
+(load "emacs-rc-httprepl.el")

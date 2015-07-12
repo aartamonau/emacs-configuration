@@ -97,7 +97,8 @@
         annotate
         gist
         hindent
-        narrow-indirect))
+        narrow-indirect
+        httprepl))
 
 (setq aa/all-packages
       (append aa/packages
