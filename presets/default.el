@@ -1,6 +1,9 @@
 ;; el-get
 (load "emacs-rc-el-get.el")
 
+;; daemon
+(load "emacs-rc-daemon.el")
+
 ;; global hook handler
 (load "emacs-rc-global-hook.el")
 
@@ -127,9 +130,6 @@
 
 ;; ledger
 (load "emacs-rc-ledger.el")
-
-;; daemon
-(load "emacs-rc-daemon.el")
 
 (load "emacs-rc-systemtap.el")
 
