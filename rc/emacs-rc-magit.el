@@ -12,6 +12,7 @@
 
 (define-key magit-mode-map (kbd "C-c C-c") 'magit-commit)
 (define-key magit-mode-map (kbd "C-c C-a") 'magit-commit-amend)
+(define-key magit-mode-map (kbd "R") 'magit-rebase-interactive)
 
 ;; magit-view-file-history needs this
 (setq magit-sha1-abbrev-length (magit-abbrev-length))
