@@ -39,7 +39,7 @@
               (lambda (fun args)
                 "don't run unit tests in ns_server"
                 (unless (eq (eproject-type) 'ns-server)
-                  (apply fun args))))
+                  (funcall fun args))))
 
   ;; override edts' hackish defadvice
   (defadvice eproject--all-types (around edts-eproject-types activate) ad-do-it))
