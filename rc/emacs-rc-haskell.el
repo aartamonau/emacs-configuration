@@ -116,7 +116,6 @@ point."
           (define-key haskell-mode-map (kbd "C-<") 'haskell-move-right)
           (define-key haskell-mode-map (kbd "C-c C-s") 'toggle-scc-at-point)
           (define-key haskell-mode-map (kbd "C-c l") 'hs-lint)
-          (define-key haskell-mode-map (kbd "C-c C-y") 'cabal-toggle-sandboxing-local)
 
           (define-key haskell-mode-map (kbd "C-c n") 'ghc-goto-next-error)
           (define-key haskell-mode-map (kbd "C-c p") 'ghc-goto-prev-error)
@@ -131,8 +130,7 @@ point."
   '(progn
      ;; Don't use C-c c or C-c C-c so that computations in ghci can still be killed.
      (define-key haskell-interactive-mode-map (kbd "C-z C-c") 'haskell-process-cabal-build)
-     (define-key haskell-interactive-mode-map (kbd "C-z c") 'haskell-process-cabal)
-     (define-key haskell-interactive-mode-map (kbd "C-c C-y") 'cabal-toggle-sandboxing-local)))
+     (define-key haskell-interactive-mode-map (kbd "C-z c") 'haskell-process-cabal)))
 
 (custom-set-variables
  '(haskell-doc-show-reserved nil)
