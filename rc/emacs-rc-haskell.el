@@ -9,6 +9,7 @@
 (add-hook 'haskell-mode-hook
           (lambda ()
             (ghc-init)
+            (setq ghc-display-error 'minibuffer)
             (setq ghc-ghc-options '("-Wall" "-fno-warn-name-shadowing"))))
 (add-hook 'haskell-mode-hook 'turn-on-hi2)
 
@@ -115,7 +116,11 @@ point."
           (define-key haskell-mode-map (kbd "C-<") 'haskell-move-right)
           (define-key haskell-mode-map (kbd "C-c C-s") 'toggle-scc-at-point)
           (define-key haskell-mode-map (kbd "C-c l") 'hs-lint)
-          (define-key haskell-mode-map (kbd "C-c C-y") 'cabal-toggle-sandboxing-local)))
+          (define-key haskell-mode-map (kbd "C-c C-y") 'cabal-toggle-sandboxing-local)
+
+          (define-key haskell-mode-map (kbd "C-c n") 'ghc-goto-next-error)
+          (define-key haskell-mode-map (kbd "C-c p") 'ghc-goto-prev-error)
+          (define-key haskell-mode-map (kbd "C-c ?") 'ghc-display-errors)))
 
 (eval-after-load "haskell-cabal"
   '(progn
