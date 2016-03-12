@@ -9,8 +9,7 @@
 (add-hook 'haskell-mode-hook
           (lambda ()
             (ghc-init)
-            (setq ghc-ghc-options '("-Wall" "-fno-warn-name-shadowing"))
-            (flymake-mode)))
+            (setq ghc-ghc-options '("-Wall" "-fno-warn-name-shadowing"))))
 (add-hook 'haskell-mode-hook 'turn-on-hi2)
 
 (setq haskell-process-type 'auto)
