@@ -100,9 +100,7 @@ point."
           (define-key haskell-mode-map [?\C-c ?\C-r] 'haskell-process-reload-file)
           (define-key haskell-mode-map [?\C-c ?\C-z] 'haskell-interactive-switch)
           ;; Build the Cabal project.
-          (define-key haskell-mode-map (kbd "C-c C-c") 'haskell-process-cabal-build)
-          ;; Interactively choose the Cabal command to run.
-          (define-key haskell-mode-map (kbd "C-c c") 'haskell-process-cabal)
+          (define-key haskell-mode-map (kbd "C-c c") 'haskell-process-cabal-build)
           ;; Get the type and info of the symbol at point, print it in the
           ;; message buffer.
           (define-key haskell-mode-map (kbd "C-c C-t") 'haskell-process-do-type)
@@ -123,14 +121,12 @@ point."
 
 (eval-after-load "haskell-cabal"
   '(progn
-     (define-key haskell-cabal-mode-map (kbd "C-c C-c") 'haskell-process-cabal-build)
-     (define-key haskell-cabal-mode-map (kbd "C-c c") 'haskell-process-cabal)))
+     (define-key haskell-cabal-mode-map (kbd "C-c c") 'haskell-process-cabal-build)))
 
 (eval-after-load "haskell-interactive-mode"
   '(progn
      ;; Don't use C-c c or C-c C-c so that computations in ghci can still be killed.
-     (define-key haskell-interactive-mode-map (kbd "C-z C-c") 'haskell-process-cabal-build)
-     (define-key haskell-interactive-mode-map (kbd "C-z c") 'haskell-process-cabal)))
+     (define-key haskell-interactive-mode-map (kbd "C-c c") 'haskell-process-cabal-build)))
 
 (custom-set-variables
  '(haskell-doc-show-reserved nil)
