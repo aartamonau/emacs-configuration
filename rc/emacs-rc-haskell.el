@@ -15,19 +15,6 @@
 
 (setq haskell-process-type 'auto)
 
-(defun haskell-insert-doc ()
-  "Insert the documentation syntax."
-  (interactive)
-  (insert "-- | "))
-
-(defun haskell-insert-undefined ()
-  "Insert undefined."
-  (interactive)
-  (if (and (boundp 'structured-haskell-mode)
-           structured-haskell-mode)
-      (shm-insert-string "undefined")
-    (insert "undefined")))
-
 (defun haskell-who-calls (&optional prompt)
   "Grep the codebase to see who uses the symbol at point."
   (interactive "P")
@@ -46,7 +33,6 @@
         (switch-to-buffer-other-window buffer)))))
 
 ;; Based upon http://www.serpentine.com/blog/2007/10/09/using-emacs-to-insert-scc-annotations-in-haskell-code/
-
 (defun toggle-scc-at-point (&optional arg)
   "Insert or kill (with universal-argument) an SCC annotation at
 point."
