@@ -28,14 +28,6 @@
       (shm-insert-string "undefined")
     (insert "undefined")))
 
-(defun haskell-move-right ()
-  (interactive)
-  (haskell-move-nested 1))
-
-(defun haskell-move-left ()
-  (interactive)
-  (haskell-move-nested -1))
-
 (defun haskell-who-calls (&optional prompt)
   "Grep the codebase to see who uses the symbol at point."
   (interactive "P")
@@ -108,10 +100,6 @@ point."
           ;; Jump to the definition of the current symbol.
           (define-key haskell-mode-map (kbd "M-.") 'haskell-mode-tag-find)
           (define-key haskell-mode-map (kbd "M-,") 'haskell-who-calls)
-          ;; Move the code below the current nesting left one.
-          (define-key haskell-mode-map (kbd "C->") 'haskell-move-left)
-          ;; Move the code below the current nesting right one.
-          (define-key haskell-mode-map (kbd "C-<") 'haskell-move-right)
           (define-key haskell-mode-map (kbd "C-c C-s") 'toggle-scc-at-point)
           (define-key haskell-mode-map (kbd "C-c l") 'hs-lint)
 
