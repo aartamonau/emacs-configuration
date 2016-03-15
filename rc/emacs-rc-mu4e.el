@@ -50,12 +50,14 @@
 (defconst other-unread-query
   (format "flag:unread AND NOT (maildir:\"%s\" OR maildir:\"%s\" OR maildir:\"%s\")"
           inbox-dir jira-dir code-review-dir))
+(defconst flagged-query "flag:flagged")
 
 (setq mu4e-bookmarks
       `((,all-unread-query "All unread messages" ?u)
         (,inbox-unread-query "Inbox unread messages" ?i)
         (,work-unread-query "Work-related unread messages" ?w)
-        (,other-unread-query "Other unread messages" ?o)))
+        (,other-unread-query "Other unread messages" ?o)
+        (,flagged-query "Flagged messages" ?f)))
 
 ;; allow for updating mail using 'U' in the main view:
 (setq mu4e-get-mail-command "mbsync -aVq")
