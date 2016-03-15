@@ -68,3 +68,19 @@
 
 ;; don't keep message buffers around
 (setq message-kill-buffer-on-exit t)
+
+(defun aa/mu4e-open-url ()
+  (interactive)
+  (or (mu4e~view-browse-url-from-binding)
+      (shr-browse-url)))
+
+(require 'mu4e-contrib)
+(setq mu4e-html2text-command 'mu4e-shr2text)
+(setq shr-color-visible-luminance-min 50)
+
+(add-hook 'mu4e-view-mode-hook
+          (lambda()
+            ;; try to emulate some of the eww key-bindings
+            (local-set-key (kbd "<tab>") 'shr-next-link)
+            (local-set-key (kbd "<backtab>") 'shr-previous-link)
+            (local-set-key (kbd "C-c C-o") 'aa/mu4e-open-url)))
