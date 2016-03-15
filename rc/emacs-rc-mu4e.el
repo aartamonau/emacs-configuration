@@ -2,7 +2,7 @@
 
 (setq mu4e-hide-index-messages t)
 (setq mu4e-headers-include-related nil)
-(setq mu4e-headers-results-limit 100)
+(setq mu4e-headers-results-limit 250)
 (setq mu4e-headers-skip-duplicates t)
 (setq mu4e-use-fancy-chars nil)
 (setq mu4e-change-filenames-when-moving t)
