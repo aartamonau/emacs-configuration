@@ -87,3 +87,28 @@
             (local-set-key (kbd "<tab>") 'shr-next-link)
             (local-set-key (kbd "<backtab>") 'shr-previous-link)
             (local-set-key (kbd "C-c C-o") 'aa/mu4e-open-url)))
+
+(require 'org-mu4e)
+(setq org-mu4e-convert-to-html t)
+
+(defun aa/mu4e-org-compose ()
+  "Switch to/from mu4e-compose-mode and org-mode"
+  (interactive)
+  (let ((p (point)))
+    (goto-char (point-min))
+    (let ((case-fold-search t))
+      (when (not (search-forward "#+OPTIONS: tex:imagemagick" nil t))
+        (goto-char (point-max))
+        (insert "
+#+OPTIONS: tex:imagemagick
+#+OPTIONS: toc:0
+#+OPTIONS: num:nil
+")))
+    (goto-char p))
+  (if (eq 'mu4e-compose-mode (buffer-local-value 'major-mode (current-buffer)))
+      (org~mu4e-mime-switch-headers-or-body)
+    (mu4e-compose-mode)))
+
+(add-hook 'mu4e-compose-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-c C-o") 'aa/mu4e-org-compose)))
