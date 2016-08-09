@@ -25,11 +25,6 @@
 ;; don't save message to Sent Messages, Gmail/IMAP takes care of this
 (setq mu4e-sent-messages-behavior 'delete)
 
-(add-hook 'mu4e-compose-mode-hook
-          (defun cpb-compose-setup ()
-            "Outgoing mails get format=flowed."
-            (use-hard-newlines t 'guess)))
-
 (defconst inbox-dir "/aliaksiej.artamonau@gmail.com/inbox")
 (defconst jira-dir "/aliaksiej.artamonau@gmail.com/Jira")
 (defconst code-review-dir "/aliaksiej.artamonau@gmail.com/Code Review")
