@@ -52,7 +52,8 @@
         quack
         clojure-mode
         js2-mode
-        haskell-mode haskell-mode-exts structured-haskell-mode
+        haskell-mode
+        structured-haskell-mode
         markdown-mode
         doxymacs
         muse
