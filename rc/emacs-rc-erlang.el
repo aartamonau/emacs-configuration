@@ -28,8 +28,7 @@
         ;; ugly but needed to let this project type overrule edts' and
         ;; generic-git for the same root
         (concat (f-expand res)
-                "/../"
-                (f-base res)))))
+                "/../ns_server/../ns_server/../ns_server/../ns_server"))))
 
   (define-project-type ns-server (edts)
     (my/ns-server-project-selector file)
