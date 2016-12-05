@@ -43,6 +43,11 @@
   ;; override edts' hackish defadvice
   (defadvice eproject--all-types (around edts-eproject-types activate) ad-do-it))
 
+(defun my/erlang-get-thing-at-point ()
+  (interactive)
+  (flet ((erlang-get-module () nil))
+    (erlang-find-tag-default)))
+
 (when (file-accessible-directory-p erlang-emacs-dir)
   (add-to-list 'load-path erlang-emacs-dir)
 
@@ -52,6 +57,10 @@
 
   (add-hook 'erlang-mode-hook 'global-hook-handler)
   (add-hook 'erlang-mode-hook 'edts-mode)
+  (add-hook 'erlang-mode-hook
+            (lambda ()
+              (set (make-local-variable 'find-tag-default-function)
+                   'my/erlang-get-thing-at-point)))
   (add-hook 'edts-mode-hook
             (lambda ()
               (define-key edts-mode-map (kbd "M-*") 'edts-find-source-unwind)

@@ -99,7 +99,8 @@
         gist
         hindent
         narrow-indirect
-        httprepl))
+        httprepl
+        grep-o-matic))
 
 (setq aa/all-packages
       (append aa/packages
