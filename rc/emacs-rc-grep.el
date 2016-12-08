@@ -5,10 +5,8 @@
 (defconst my/grep-extra-patterns
   '("*.[he]rl" "*.hs" "*.cmake" "CMakeLists" "*.bash" "*.rb"))
 
-(custom-set-variables
- '(grep-o-matic-use-git-grep nil)
- '(grep-o-matic-search-patterns (append my/grep-extra-patterns
-                                        grep-o-matic-search-patterns)))
+(setq grep-o-matic-search-patterns (append my/grep-extra-patterns
+                                           grep-o-matic-search-patterns))
 
 (defun my/grep-with-prompt (command)
   (lambda ()
