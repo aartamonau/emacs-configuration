@@ -100,7 +100,8 @@
         hindent
         narrow-indirect
         httprepl
-        grep-o-matic))
+        grep-o-matic
+        scratch))
 
 (setq aa/all-packages
       (append aa/packages
