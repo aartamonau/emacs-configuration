@@ -92,6 +92,7 @@
                     (disable-expensive-modes)))))))
 
 (global-auto-revert-mode 0)
+(setq auto-revert-use-notify nil)
 
 (if (fboundp 'guru-global-mode)
     (guru-global-mode 1))
