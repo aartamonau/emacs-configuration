@@ -16,4 +16,5 @@
   (setq whitespace-style (delq 'tabs whitespace-style)))
 
 (custom-set-variables
- '(godoc-use-completing-read t))
+ '(godoc-use-completing-read t)
+ '(godoc-command "godoc"))
