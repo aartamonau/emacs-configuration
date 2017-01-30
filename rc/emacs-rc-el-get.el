@@ -109,6 +109,9 @@
 (el-get 'sync aa/all-packages)
 (package-initialize)
 
+(custom-set-variables
+ '(el-get-verbose t))
+
 ;; Work around epg issue with gnupg 2.1.0. I put it in here for greater chance
 ;; for me to remember to remove this when upstream fix arrives.
 ;; See https://bbs.archlinux.org/viewtopic.php?id=190497 for details.
