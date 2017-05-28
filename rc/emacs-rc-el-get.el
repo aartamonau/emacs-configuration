@@ -47,7 +47,6 @@
       '(package
         org-mode
         auctex
-        ido-ubiquitous smex
         slime
         quack
         clojure-mode
