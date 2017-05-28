@@ -121,8 +121,8 @@
 ;; hippie expand
 (load "emacs-rc-hippie-expand.el")
 
-;; magit
-(load "emacs-rc-magit.el")
+;; git
+(load "emacs-rc-git.el")
 
 ;; compilation setup (must be placed after eproject)
 (load "emacs-rc-compile.el")

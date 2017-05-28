@@ -95,7 +95,7 @@
         edts
         eclipse-mode
         annotate
-        gist
+        yagist
         hindent
         narrow-indirect
         httprepl
