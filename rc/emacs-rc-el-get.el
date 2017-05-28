@@ -101,7 +101,8 @@
         scratch
         swiper
         avy
-        ace-window))
+        ace-window
+        ein))
 
 (setq aa/all-packages
       (append aa/packages
