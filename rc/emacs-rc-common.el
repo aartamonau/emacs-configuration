@@ -78,7 +78,9 @@
   (flyspell-mode 0)
   (auto-fill-mode 0)
   (undo-tree-mode -1)
-  (toggle-truncate-lines 1))
+  (toggle-truncate-lines 1)
+  (local-set-key (kbd "C-s") 'isearch-forward)
+  (local-set-key (kbd "C-s") 'isearch-backward))
 
 (add-hook 'find-file-hook
           (lambda ()

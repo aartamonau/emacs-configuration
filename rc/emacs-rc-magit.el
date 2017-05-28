@@ -1,5 +1,7 @@
 (require 'magit)
 
+(setq magit-completing-read-function 'ivy-completing-read)
+
 (global-set-key (kbd "C-x g") 'magit-status)
 
 (define-key magit-log-mode-map (kbd "j") 'magit-goto-next-section)

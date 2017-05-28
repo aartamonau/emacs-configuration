@@ -100,7 +100,8 @@
         narrow-indirect
         httprepl
         grep-o-matic
-        scratch))
+        scratch
+        swiper))
 
 (setq aa/all-packages
       (append aa/packages

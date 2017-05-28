@@ -46,7 +46,7 @@
 (load "emacs-rc-haskell.el")
 
 ;; Some eye candy including beautiful buffer switching (instead of iswitch)
-(load "emacs-rc-ido.el")
+(load "emacs-rc-swiper.el")
 
 ;; Snippets
 (load "emacs-rc-yasnippet.el")
