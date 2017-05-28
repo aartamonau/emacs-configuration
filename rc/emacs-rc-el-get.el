@@ -62,8 +62,6 @@
         cmake-mode
         pkgbuild-mode
         color-theme-zenburn
-        switch-window
-        ace-jump-mode
         workgroups
         magit
         ledger-mode
@@ -101,7 +99,9 @@
         httprepl
         grep-o-matic
         scratch
-        swiper))
+        swiper
+        avy
+        ace-window))
 
 (setq aa/all-packages
       (append aa/packages

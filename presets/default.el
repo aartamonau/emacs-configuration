@@ -112,8 +112,8 @@
 ;; view-mode
 (load "emacs-rc-view-mode.el")
 
-;; ace jump mode
-(load "emacs-rc-ace-jump-mode.el")
+;; avy
+(load "emacs-rc-avy.el")
 
 ;; workgroups
 (load "emacs-rc-workgroups.el")
