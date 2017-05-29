@@ -101,6 +101,7 @@
         swiper
         avy
         ace-window
+        ace-link
         ein))
 
 (setq aa/all-packages
