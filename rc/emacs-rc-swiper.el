@@ -21,3 +21,13 @@
 (global-set-key (kbd "C-x C-j") 'counsel-dired-jump)
 
 (define-key ivy-minibuffer-map (kbd "M-r") 'ivy-restrict-to-matches)
+
+(setq ivy-initial-inputs-alist
+      '((org-refile . "^")
+        (org-agenda-refile . "^")
+        (org-capture-refile . "^")
+        (counsel-M-x . "")
+        (counsel-describe-function . "")
+        (counsel-describe-variable . "")
+        (man . "^")
+        (woman . "^")))
