@@ -107,3 +107,6 @@
 (add-hook 'mu4e-compose-mode-hook
           (lambda ()
             (local-set-key (kbd "C-c C-o") 'aa/mu4e-org-compose)))
+
+(global-set-key (kbd "C-x m") 'mu4e)
+(global-set-key (kbd "C-x M") 'mu4e-compose-new)

@@ -19,7 +19,7 @@
 (global-set-key (kbd "M-y") 'counsel-yank-pop)
 (global-set-key (kbd "C-x j") 'counsel-file-jump)
 (global-set-key (kbd "C-x C-j") 'counsel-dired-jump)
-(global-set-key (kbd "C-x m") 'counsel-mark-ring)
+(global-set-key (kbd "C-x C-,") 'counsel-mark-ring)
 
 (define-key ivy-minibuffer-map (kbd "M-r") 'ivy-restrict-to-matches)
 
