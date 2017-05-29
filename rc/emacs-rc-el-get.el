@@ -103,7 +103,8 @@
         ace-window
         ace-link
         popwin
-        ein))
+        ein
+        pdf-tools))
 
 (setq aa/all-packages
       (append aa/packages

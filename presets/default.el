@@ -162,3 +162,5 @@
 (load "emacs-rc-ein.el")
 
 (load "emacs-rc-popwin.el")
+
+(load "emacs-rc-pdf-tools.el")
