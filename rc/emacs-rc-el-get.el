@@ -102,6 +102,7 @@
         avy
         ace-window
         ace-link
+        popwin
         ein))
 
 (setq aa/all-packages

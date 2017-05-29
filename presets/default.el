@@ -160,3 +160,5 @@
 (load "emacs-rc-grep.el")
 
 (load "emacs-rc-ein.el")
+
+(load "emacs-rc-popwin.el")
