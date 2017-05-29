@@ -127,9 +127,6 @@
 ;; compilation setup (must be placed after eproject)
 (load "emacs-rc-compile.el")
 
-;; switch window customizations
-(load "emacs-rc-switch-window.el")
-
 ;; ledger
 (load "emacs-rc-ledger.el")
 
