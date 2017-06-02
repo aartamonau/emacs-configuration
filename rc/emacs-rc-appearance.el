@@ -1,6 +1,6 @@
 (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-8"))
 
-(load-theme 'zenburn)
+(load-theme 'solarized)
 
 (custom-set-faces
  '(diff-added ((t (:foreground "green3" :weight bold))))

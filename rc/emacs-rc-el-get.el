@@ -60,7 +60,7 @@
         rect-mark
         cmake-mode
         pkgbuild-mode
-        color-theme-zenburn
+        color-theme-solarized
         workgroups
         magit
         ledger-mode
