@@ -45,8 +45,18 @@
 
 (defun my/erlang-get-thing-at-point ()
   (interactive)
-  (flet ((erlang-get-module () nil))
-    (erlang-find-tag-default)))
+  (my/identifier-to-string (erlang-get-identifier-at-point)))
+
+(defun my/identifier-to-string (identifier)
+  (pcase identifier
+    (`(qualified-function ,module ,name ,arity)
+     (if module
+         (format "%s:%s" module name)
+       name))
+    (`(record ,module ,name ,arity) (format "#%s" name))
+    (`(module ,module ,name ,arity) (format "%s:" name))
+    (`(macro ,module ,name ,arity) (format "?%s" name))
+    (`(nil ,module ,name ,arity) name)))
 
 (when (file-accessible-directory-p erlang-emacs-dir)
   (add-to-list 'load-path erlang-emacs-dir)
