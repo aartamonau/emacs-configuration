@@ -20,6 +20,7 @@
 (global-set-key (kbd "C-x j") 'counsel-file-jump)
 (global-set-key (kbd "C-x C-j") 'counsel-dired-jump)
 (global-set-key (kbd "C-x C-,") 'counsel-mark-ring)
+(global-set-key (kbd "C-c i") 'counsel-imenu)
 
 (define-key ivy-minibuffer-map (kbd "M-r") 'ivy-restrict-to-matches)
 
