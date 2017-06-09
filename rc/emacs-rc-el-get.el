@@ -61,7 +61,6 @@
         cmake-mode
         pkgbuild-mode
         color-theme-solarized
-        workgroups
         magit
         ledger-mode
         eproject

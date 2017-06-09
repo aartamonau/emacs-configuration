@@ -112,9 +112,6 @@
 ;; avy
 (load "emacs-rc-avy.el")
 
-;; workgroups
-(load "emacs-rc-workgroups.el")
-
 ;; hippie expand
 (load "emacs-rc-hippie-expand.el")
 
