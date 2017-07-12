@@ -88,6 +88,7 @@
         yaml-mode
         flymake
         expand-region
+        change-inner
         edts
         eclipse-mode
         annotate
