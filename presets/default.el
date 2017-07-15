@@ -37,8 +37,8 @@
 ;; Numbering lines
 (load "emacs-rc-linum.el")
 
-;; Loading persistance features.
-(load "emacs-rc-persistance.el")
+;; Loading persistence features.
+(load "emacs-rc-desktop.el")
 
 (load "emacs-rc-comint.el")
 
