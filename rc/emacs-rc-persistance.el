@@ -5,6 +5,8 @@
 (custom-set-variables
  '(desktop-restore-eager 10))
 
+(desktop-auto-save-enable 10)
+
 (defun desktop-force-read ()
   (interactive)
   (let ((desktop-load-locked-desktop t))
