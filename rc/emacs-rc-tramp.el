@@ -14,7 +14,8 @@
        "Reopen file as root by prefixing its name with
 sudo-tramp-prefix and by clearing buffer-read-only"
        (interactive)
-       (let ((file-name (expand-file-name buffer-file-name))
+       (let ((file-name (expand-file-name (or buffer-file-name
+                                              list-buffers-directory)))
              (buffer (current-buffer)))
          (sudo-find-file file-name)
          (kill-buffer buffer)))
