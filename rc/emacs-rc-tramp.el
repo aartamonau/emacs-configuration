@@ -1,4 +1,3 @@
-(set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
 (eval-after-load "tramp"
   '(progn
      (defun sudo-file-name (filename)
