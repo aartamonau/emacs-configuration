@@ -20,15 +20,15 @@
   (defconst couchbase-root (f-expand "~/dev/membase/"))
 
   (defun my/ns-server-project-selector (file-name)
-    (let ((res (and (f-ancestor-of? couchbase-root file-name)
-                    (f-traverse-upwards (lambda (path)
-                                          (equal (f-base path) "ns_server"))
-                                        file-name))))
-      (when res
-        ;; ugly but needed to let this project type overrule edts' and
-        ;; generic-git for the same root
-        (concat (f-expand res)
-                "/../ns_server/../ns_server/../ns_server/../ns_server"))))
+    (when (f-ancestor-of? couchbase-root file-name)
+      (let* ((parts (f-split file-name))
+             (ns-server (seq-position parts "ns_server")))
+        (when ns-server
+          ;; ugly but needed to let this project type overrule edts' and
+          ;; generic-git for the same root
+          (concat (f-expand (apply 'f-join
+                                   (seq-take parts (+ 1 ns-server))))
+                  "/../ns_server/../ns_server/../ns_server/../ns_server")))))
 
   (define-project-type ns-server (edts)
     (my/ns-server-project-selector file)
