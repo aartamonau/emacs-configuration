@@ -1,11 +1,3 @@
-(autoload 'doxymacs-mode "doxymacs" nil t)
-(autoload 'doxymacs-font-lock "doxymacs" nil t)
-
-(defun my-doxymacs-font-lock-hook ()
-  (if (or (eq major-mode 'c-mode) (eq major-mode 'c++-mode))
-      (doxymacs-font-lock)))
-(add-hook 'font-lock-mode-hook 'my-doxymacs-font-lock-hook)
-
 (defun my-build-tab-stop-list (width)
   (let ((num-tab-stops (/ 80 width))
 	(counter 1)
@@ -24,7 +16,5 @@
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
-;; doxymacs hook handler MUST be added after the previous handler
-(add-hook 'c-mode-common-hook 'doxymacs-mode)
 (add-hook 'c-mode-common-hook 'auto-fill-mode)
 (add-hook 'c-mode-common-hook 'flyspell-prog-mode)

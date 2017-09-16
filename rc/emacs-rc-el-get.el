@@ -54,7 +54,6 @@
         haskell-mode
         structured-haskell-mode
         markdown-mode
-        doxymacs
         muse
         yasnippet
         rect-mark
