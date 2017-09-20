@@ -101,6 +101,7 @@
         ace-window
         ace-link
         popwin
+	skewer-mode
         ein
         pdf-tools))
 
