@@ -15,8 +15,6 @@
                :branch "master"
                :pkgname "aartamonau/etags-select"
                :compile "etags-select.el")
-        (:name wide-n
-               :type emacswiki)
         (:name unbound
                :type emacswiki)
         (:name keyfreq
