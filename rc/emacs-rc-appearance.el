@@ -1,6 +1,6 @@
 (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-8"))
 
-(setq frame-background-mode 'dark)
+(setq frame-background-mode 'light)
 (load-theme 'solarized)
 
 (custom-set-faces
