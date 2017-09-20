@@ -52,7 +52,6 @@
         clojure-mode
         js2-mode
         haskell-mode
-        structured-haskell-mode
         markdown-mode
         muse
         yasnippet
