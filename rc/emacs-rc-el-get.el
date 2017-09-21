@@ -101,7 +101,8 @@
         popwin
 	skewer-mode
         ein
-        pdf-tools))
+        pdf-tools
+        zones))
 
 (setq aa/all-packages
       (append aa/packages
