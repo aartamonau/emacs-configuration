@@ -11,37 +11,32 @@
   (concat (file-name-as-directory erlang-tools-dir) "emacs"))
 
 (defun setup-edts ()
+  (setq edts-plugin-disabled-plugins '("edts_debug" "edts_dialyzer"))
+
+  (setq edts-log-level 'debug)
   (require 'edts-start)
-  (require 'edts-project)
 
-  (require 'eproject)
-  (require 'f)
-
-  (defconst couchbase-root (f-expand "~/dev/membase/"))
-
-  (defun my/ns-server-project-selector (file-name)
-    (when (f-ancestor-of? couchbase-root file-name)
-      (let* ((parts (f-split file-name))
-             (ns-server (seq-position parts "ns_server")))
-        (when ns-server
-          ;; ugly but needed to let this project type overrule edts' and
-          ;; generic-git for the same root
-          (concat (f-expand (apply 'f-join
-                                   (seq-take parts (+ 1 ns-server))))
-                  "/../ns_server/../ns_server/../ns_server/../ns_server")))))
-
-  (define-project-type ns-server (edts)
-    (my/ns-server-project-selector file)
-    :xref-error-whitelist ("Call to undefined function 'ale_logger"))
+  ;; workaround a bug in xref plugin
+  (add-to-list 'edts-project-valid-properties
+               '(:xref-file-whitelist . edts-project--string-list?))
+  (add-to-list 'edts-project-valid-properties
+               '(:xref-error-whitelist . edts-project--string-list?))
 
   (advice-add 'edts-code-eunit :around
               (lambda (fun args)
                 "don't run unit tests in ns_server"
-                (unless (eq (eproject-type) 'ns-server)
-                  (funcall fun args))))
+                (unless (equal (edts-project-name) "ns_server")
+                  (apply fun args))))
 
-  ;; override edts' hackish defadvice
-  (defadvice eproject--all-types (around edts-eproject-types activate) ad-do-it))
+  (advice-add 'f-this-file :around
+              (lambda (fun &optional args)
+                "if we are loading emacs.desktop, pretend we don't;
+otherwise edts fails start node on restart"
+                (if (and load-in-progress
+                         (equal (f-filename load-file-name) ".emacs.desktop"))
+                    (let ((load-in-progress nil))
+                      (apply fun args))
+                  (apply fun args)))))
 
 (defun my/erlang-get-thing-at-point ()
   (interactive)
@@ -62,11 +57,9 @@
   (add-to-list 'load-path erlang-emacs-dir)
 
   (require 'erlang-start)
-
   (setup-edts)
 
   (add-hook 'erlang-mode-hook 'global-hook-handler)
-  (add-hook 'erlang-mode-hook 'edts-mode)
   (add-hook 'erlang-mode-hook
             (lambda ()
               (set (make-local-variable 'find-tag-default-function)
