@@ -9,10 +9,9 @@
 (setq mu4e-change-filenames-when-moving t)
 
 (setq mu4e-maildir "~/mail")
-(setq mu4e-refile-folder "/aliaksiej.artamonau@gmail.com/[Gmail]/.All Mail")
-(setq mu4e-drafts-folder "/aliaksiej.artamonau@gmail.com/[Gmail]/.Drafts")
-(setq mu4e-sent-folder   "/aliaksiej.artamonau@gmail.com/[Gmail]/.Sent Mail")
-(setq mu4e-trash-folder  "/aliaksiej.artamonau@gmail.com/[Gmail]/.Trash")
+(setq mu4e-drafts-folder "/aliaksiej.artamonau@gmail.com/[Gmail]/Drafts")
+(setq mu4e-sent-folder   "/aliaksiej.artamonau@gmail.com/[Gmail]/Sent Mail")
+(setq mu4e-trash-folder  "/aliaksiej.artamonau@gmail.com/[Gmail]/Trash")
 (setq mu4e-headers-time-format "%T")
 (setq mu4e-headers-fields
       '((:human-date . 12)
