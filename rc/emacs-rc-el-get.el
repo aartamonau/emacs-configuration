@@ -56,7 +56,7 @@
         rect-mark
         cmake-mode
         pkgbuild-mode
-        color-theme-solarized
+        solarized-emacs
         magit
         ledger-mode
         eproject
