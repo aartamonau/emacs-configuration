@@ -1,8 +1,12 @@
-(defconst erlang-root-dir "/usr/lib/erlang")
+;; For some reason erlang likes adding /lib/erlang to the root dir on its own.
+(defconst erlang-root-dir "/usr")
+(defconst erlang-complete-root-dir
+  (concat (file-name-as-directory erlang-root-dir) "lib/erlang"))
+
 (defconst erlang-lib-dir
-  (concat (file-name-as-directory erlang-root-dir) "lib"))
+  (concat (file-name-as-directory erlang-complete-root-dir) "lib"))
 (defconst erlang-bin-dir
-  (concat (file-name-as-directory erlang-root-dir) "bin"))
+  (concat (file-name-as-directory erlang-complete-root-dir) "bin"))
 (defconst erlang-tools-dir
   (and (file-accessible-directory-p erlang-lib-dir)
        (concat (file-name-as-directory erlang-lib-dir)
