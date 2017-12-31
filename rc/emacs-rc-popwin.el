@@ -8,6 +8,9 @@
 (setq popwin:popup-window-position 'bottom)
 (setq popwin:popup-window-height 25)
 
+(add-to-list 'popwin:special-display-config
+             '("^\\*Man.*\\*$" :regexp t :position right :width 0.5))
+
 ;; https://github.com/m2ym/popwin-el/issues/131
 (defadvice display-buffer (around display-buffer-prevent-popwin-split last activate)
   (let* ((buffer (ad-get-arg 0)))
