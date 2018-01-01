@@ -20,6 +20,8 @@
   (setq edts-log-level 'debug)
   (require 'edts-start)
 
+  (edts-man-set-root erlang-complete-root-dir)
+
   ;; workaround a bug in xref plugin
   (add-to-list 'edts-project-valid-properties
                '(:xref-file-whitelist . edts-project--string-list?))
