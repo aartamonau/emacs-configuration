@@ -1,3 +1,4 @@
+(global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 

@@ -100,5 +100,3 @@
     (guru-global-mode 1))
 
 (electric-indent-mode -1)
-
-(define-key global-map (kbd "C-x k") 'kill-this-buffer)
