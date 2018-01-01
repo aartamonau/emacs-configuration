@@ -6,3 +6,5 @@
 (global-set-key (kbd "C-=") (lambda ()
                               (interactive)
                               (text-scale-set 0)))
+
+(global-set-key (kbd "C-h M") 'man)
