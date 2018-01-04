@@ -8,6 +8,7 @@
 (setq popwin:popup-window-position 'bottom)
 (setq popwin:popup-window-height 25)
 
+(setq Man-notify-method 'pushy)
 (add-to-list 'popwin:special-display-config
              '("^\\*\\(Wo\\)?Man.*\\*$" :regexp t :position right :width 0.5))
 
