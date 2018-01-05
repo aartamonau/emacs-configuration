@@ -4,6 +4,7 @@
 (require 'org-protocol)
 (require 'org-checklist)
 (require 'org-drill)
+(require 'org-pomodoro)
 (require 'cl)
 
 (defun org ()
@@ -181,6 +182,19 @@
 (add-to-list 'org-modules 'org-habit)
 
 (org-clock-persistence-insinuate)
+
+(custom-set-variables
+ '(org-pomodoro-length 60)
+ '(org-pomodoro-long-break-frequency 2)
+ '(org-pomodoro-short-break-length 10)
+ '(org-pomodoro-long-break-length 20)
+ '(org-pomodoro-start-sound-p t)
+ '(org-pomodoro-ticking-sound-p t)
+ '(org-pomodoro-ticking-frequency 5)
+ '(org-pomodoro-ticking-sound-states '(:pomodoro))
+ '(org-pomodoro-keep-killed-pomodoro-time t))
+
+(global-set-key (kbd "C-c C-x m") 'org-pomodoro)
 
 ;; automatically resume clocks when starting daemon
 (when (daemonp)

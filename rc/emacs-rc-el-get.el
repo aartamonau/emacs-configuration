@@ -44,6 +44,7 @@
 (setq aa/packages
       '(package
         org-mode
+        org-pomodoro
         auctex
         slime
         quack
