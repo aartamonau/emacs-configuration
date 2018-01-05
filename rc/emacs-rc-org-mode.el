@@ -149,7 +149,7 @@
      (search category-keep)))
 
  '(org-columns-default-format
-   "%30ITEM %SCHEDULED %TAGS %PRIORITY %8Effort(ESTIMATE){:} %8CLOCKSUM(CLOCK)")
+   "%75ITEM %SCHEDULED %TAGS %PRIORITY %8Effort(ESTIMATE){:} %8CLOCKSUM(CLOCK)")
 
  '(org-clock-in-switch-to-state "STARTED")
  '(org-clock-out-switch-to-state "PAUSED")
