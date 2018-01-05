@@ -195,6 +195,12 @@
  '(org-pomodoro-keep-killed-pomodoro-time t))
 
 (global-set-key (kbd "C-c C-x m") 'org-pomodoro)
+(global-set-key (kbd "C-c C-x j") 'my/org-open-and-goto)
+
+(defun my/org-open-and-goto ()
+  (interactive)
+  (org)
+  (org-goto))
 
 ;; automatically resume clocks when starting daemon
 (when (daemonp)
