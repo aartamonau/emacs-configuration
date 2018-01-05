@@ -165,7 +165,8 @@
  '(org-mobile-files-exclude-regexp "^\\(english\\|from-mobile\\)\\.org$")
  '(org-mobile-agendas '("A"))
 
- '(org-drill-maximum-duration 15))
+ '(org-drill-maximum-duration 15)
+ '(org-tags-column 80))
 
 (custom-set-faces
  '(org-level-1 ((t (:height 1.0))))
