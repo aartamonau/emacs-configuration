@@ -3,7 +3,7 @@
 
 (ivy-mode 1)
 
-(setq ivy-use-virtual-buffers t)
+(setq ivy-use-virtual-buffers nil)
 (setq ivy-count-format "(%d/%d) ")
 
 (global-set-key (kbd "C-s") 'swiper)
