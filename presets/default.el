@@ -15,6 +15,7 @@
 
 ;; appearance
 (load "emacs-rc-appearance.el")
+(load "emacs-rc-modeline.el")
 
 ;; rectangular selection
 (load "emacs-rc-rect-mark.el")

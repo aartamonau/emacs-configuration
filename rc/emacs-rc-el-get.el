@@ -104,7 +104,9 @@
         skewer-mode
         ein
         pdf-tools
-        zones))
+        zones
+        spaceline
+        diminish))
 
 (setq aa/all-packages
       (append aa/packages
