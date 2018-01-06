@@ -167,7 +167,8 @@
  '(org-mobile-agendas '("A"))
 
  '(org-drill-maximum-duration 15)
- '(org-tags-column 80))
+ '(org-tags-column 80)
+ '(org-insert-heading-respect-content t))
 
 (custom-set-faces
  '(org-level-1 ((t (:height 1.0))))
