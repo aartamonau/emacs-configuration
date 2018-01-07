@@ -216,6 +216,8 @@
     (my/org-goto-buffer))
   (org-goto alternative-interface))
 
+(setq org-use-speed-commands t)
+
 ;; automatically resume clocks when starting daemon
 (when (daemonp)
   (setq org-clock-persist-query-resume nil))
