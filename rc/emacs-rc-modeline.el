@@ -32,6 +32,10 @@
             (when lighter
               (powerline-raw (s-trim lighter) ',face))))))))
 
+(spaceline-define-segment major-mode-recursive
+    "Show major mode bracketed if recursive edit is on."
+    (format "%%[%s%%]" mode-name))
+
 ;; Just copied from spaceline-config.el with addition of edts-* segments and
 ;; higher priority for flycheck-*.
 (setq my/spaceline-theme
@@ -47,7 +51,7 @@
          auto-compile
          ((buffer-id remote-host)
           :priority 5)
-         major-mode
+         major-mode-recursive
          (process :when active)
          ((flycheck-error flycheck-warning flycheck-info edts-error edts-warning)
           :when active)
