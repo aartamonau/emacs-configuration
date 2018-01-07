@@ -7,10 +7,6 @@
 (require 'org-pomodoro)
 (require 'cl)
 
-(defun org ()
-  (interactive)
-  (find-file-existing "~/org/todo.org"))
-
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 (define-key global-map "\C-cr" 'org-capture)
@@ -197,12 +193,13 @@
  '(org-pomodoro-keep-killed-pomodoro-time t))
 
 (global-set-key (kbd "C-c C-x m") 'org-pomodoro)
-(global-set-key (kbd "C-c C-x j") 'my/org-open-and-goto)
+(global-set-key (kbd "C-c C-x C-j") 'my/org-dwim)
 
-(defun my/org-open-and-goto ()
-  (interactive)
-  (org)
-  (org-goto))
+(defun my/org-dwim (&optional select)
+  (interactive "@P")
+  (condition-case err (org-clock-goto select)
+    (error (message "Error in org-clock-goto: %s" (cdr err))
+           (find-file-existing "~/org/todo.org"))))
 
 ;; automatically resume clocks when starting daemon
 (when (daemonp)
