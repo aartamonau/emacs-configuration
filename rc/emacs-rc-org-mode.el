@@ -167,7 +167,9 @@
  '(org-tags-column 80)
  '(org-insert-heading-respect-content t)
  '(org-goto-interface 'outline-path-completion)
- '(org-enforce-todo-dependencies t))
+ '(org-enforce-todo-dependencies t)
+
+ '(org-clock-report-include-clocking-task t))
 
 (custom-set-faces
  '(org-level-1 ((t (:height 1.0))))
