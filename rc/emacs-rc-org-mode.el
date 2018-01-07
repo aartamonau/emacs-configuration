@@ -140,9 +140,10 @@
  '(org-habit-graph-column 60)
 
  '(org-agenda-time-grid
-   '((daily weekly)
-     ""
-     (600 800 1000 1200 1400 1600 1800 2000 2200 2359)))
+   '((daily today require-timed)
+     (600 800 1000 1200 1400 1600 1800 2000 2200 2359)
+     "......" "----------------"))
+
  '(org-agenda-sorting-strategy
    '((agenda time-up habit-down priority-down category-keep)
      (todo   priority-down category-keep)
