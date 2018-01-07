@@ -212,6 +212,12 @@
 
 (setq org-use-speed-commands t)
 
+(defadvice org-mark-element (after org-mark-element-activate last activate)
+  (activate-mark))
+
+(defadvice org-mark-subtree (after org-mark-subtree-activate last activate)
+  (activate-mark))
+
 ;; automatically resume clocks when starting daemon
 (when (daemonp)
   (setq org-clock-persist-query-resume nil))
