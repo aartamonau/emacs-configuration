@@ -38,15 +38,7 @@
                                  "|"
 
                                  "DONE(d@)"
-                                 "CANCELLED(c@)")
-                       (sequence "TODO(t)"
-                                 "ONLINE(n!)"
-                                 "OFFLINE(f!)"
-                                 "PAUSED(p@)"
-
-                                 "|"
-
-                                 "DONE(d@)")))
+                                 "CANCELLED(c@)")))
  `(org-agenda-files (quote
                      ,(my/org-files "~/org")))
  '(org-default-notes-file "~/org/notes.org")
