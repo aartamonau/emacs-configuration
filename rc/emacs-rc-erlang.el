@@ -59,6 +59,12 @@ otherwise edts fails start node on restart"
     (`(macro ,module ,name ,arity) (format "?%s" name))
     (`(nil ,module ,name ,arity) name)))
 
+(defadvice edts-face-update-buffer-mode-line
+    ;; Don't use edts way of indicating errors. It doesn't work well with
+    ;; spaceline.
+    (around edts-face-update-buffer-mode-line-disable last activate)
+  (force-mode-line-update))
+
 (when (file-accessible-directory-p erlang-emacs-dir)
   (add-to-list 'load-path erlang-emacs-dir)
 
