@@ -17,7 +17,7 @@
 (defun setup-edts ()
   (setq edts-plugin-disabled-plugins '("edts_debug" "edts_dialyzer"))
 
-  (setq edts-log-level 'debug)
+  (setq edts-log-level 'info)
   (require 'edts-start)
 
   (edts-man-set-root erlang-complete-root-dir)
