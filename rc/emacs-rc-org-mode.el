@@ -31,7 +31,7 @@
  '(org-extend-today-until 3)
  '(org-todo-keywords '((sequence "TODO(t)"
                                  "STARTED(s!)"
-                                 "PAUSED(p@)"
+                                 "PAUSED(p!)"
                                  "WAITING(w@)"
                                  "ASSIGN(a!)"
 
