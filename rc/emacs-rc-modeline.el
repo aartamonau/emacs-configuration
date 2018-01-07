@@ -84,7 +84,6 @@
 (setq spaceline-hud-p nil)
 (setq spaceline-buffer-encoding-abbrev-p nil)
 (setq spaceline-selection-info-p nil)
-(setq spaceline-line-column-p nil)
 
 (apply 'spaceline-compile my/spaceline-theme)
 (setq-default mode-line-format '("%e" (:eval (spaceline-ml-main))))
