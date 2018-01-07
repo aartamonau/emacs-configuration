@@ -39,7 +39,10 @@
                :type github
                :branch "master"
                :pkgname "chrisdone/hindent"
-               :load-path "elisp")))
+               :load-path "elisp")
+
+        (:name persistent-scratch
+               :type elpa)))
 
 (setq aa/packages
       '(package
