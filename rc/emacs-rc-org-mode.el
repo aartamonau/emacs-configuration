@@ -188,9 +188,9 @@
  '(org-pomodoro-ticking-sound-states '(:pomodoro))
  '(org-pomodoro-keep-killed-pomodoro-time t))
 
-(global-set-key (kbd "C-c C-x m") 'org-pomodoro)
-(global-set-key (kbd "C-c C-x j") 'my/org-goto)
-(global-set-key (kbd "C-c C-x C-j") 'my/org-open-dwim)
+(global-set-key (kbd "C-c x m") 'org-pomodoro)
+(global-set-key (kbd "C-c x J") 'my/org-goto)
+(global-set-key (kbd "C-c x j") 'my/org-open-dwim)
 
 (defun my/org-goto-buffer ()
   (find-file-existing "~/org/todo.org")
