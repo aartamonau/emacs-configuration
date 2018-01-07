@@ -2,4 +2,5 @@
 (custom-set-faces
  '(variable-pitch ((t (:family "DejaVu Sans Mono")))))
 
-(load-theme 'solarized-light)
+(setq frame-background-mode 'light)
+(load-theme 'solarized)

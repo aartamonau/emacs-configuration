@@ -58,6 +58,7 @@
         cmake-mode
         pkgbuild-mode
         solarized-emacs
+        color-theme-solarized
         magit
         ledger-mode
         eproject
