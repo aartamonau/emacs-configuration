@@ -194,13 +194,26 @@
  '(org-pomodoro-keep-killed-pomodoro-time t))
 
 (global-set-key (kbd "C-c C-x m") 'org-pomodoro)
-(global-set-key (kbd "C-c C-x C-j") 'my/org-dwim)
+(global-set-key (kbd "C-c C-x j") 'my/org-goto)
+(global-set-key (kbd "C-c C-x C-j") 'my/org-open-dwim)
 
-(defun my/org-dwim (&optional select)
+(defun my/org-goto-buffer ()
+  (find-file-existing "~/org/todo.org")
+  (goto-char 0))
+
+(defun my/org-open-dwim (&optional select)
   (interactive "@P")
   (condition-case err (org-clock-goto select)
     (error (message "Error in org-clock-goto: %s" (cdr err))
-           (find-file-existing "~/org/todo.org"))))
+           (my/org-goto-buffer))))
+
+(defun my/org-goto (&optional alternative-interface)
+  (interactive "P")
+
+  (unless (eq major-mode 'org-mode)
+      ;; switch to org buffer only if we're not already there
+    (my/org-goto-buffer))
+  (org-goto alternative-interface))
 
 ;; automatically resume clocks when starting daemon
 (when (daemonp)
