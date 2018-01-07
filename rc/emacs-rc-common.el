@@ -27,6 +27,9 @@
 ;; type "y"/"n" instead of "yes"/"no"
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; don't use GUI pop-up-s
+(setq use-dialog-box nil)
+
 ;; normal pasting from X applications
 (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 
