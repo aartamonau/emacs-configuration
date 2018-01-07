@@ -16,7 +16,7 @@
                :pkgname "aartamonau/etags-select"
                :compile "etags-select.el")
         (:name unbound
-               :type emacswiki)
+               :type emacswiki :features (unbound))
         (:name keyfreq
                :description "Track Emacs commands frequency"
                :type github
