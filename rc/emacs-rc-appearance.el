@@ -4,3 +4,10 @@
 
 (setq frame-background-mode 'light)
 (load-theme 'solarized)
+
+(let ((face '((t (:bold t :foreground "#FC5C94" :background "#DDE6A7")))))
+  (custom-set-faces
+   `(whitespace-tab      ,face)
+   `(whitespace-line     ,face)
+   `(whitespace-trailing ,face)
+   `(whitespace-empty    ,face)))
