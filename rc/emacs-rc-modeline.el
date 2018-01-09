@@ -83,6 +83,8 @@
 
         ))
 
+(setq spaceline-responsive nil)
+
 (setq spaceline-buffer-size-p nil)
 (setq spaceline-minor-modes-p t)
 (setq spaceline-hud-p nil)
