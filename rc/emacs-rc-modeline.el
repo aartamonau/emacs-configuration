@@ -51,6 +51,12 @@
          auto-compile
          ((buffer-id remote-host)
           :priority 5)
+         ((buffer-encoding-abbrev
+           point-position
+           line-column)
+          :separator " | "
+          :priority 3)
+         (buffer-position :pririty 0)
          major-mode-recursive
          (process :when active)
          ((flycheck-error flycheck-warning flycheck-info edts-error edts-warning)
@@ -71,16 +77,8 @@
          (battery :when active)
          (selection-info :priority 2)
          input-method
-         ((buffer-encoding-abbrev
-           point-position
-           line-column)
-          :separator " | "
-          :priority 3)
          (global :when active)
-         (buffer-position :priority 0)
-         (hud :priority 0))
-
-        ))
+         (hud :priority 0))))
 
 (setq spaceline-responsive nil)
 
