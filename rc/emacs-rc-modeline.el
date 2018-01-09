@@ -77,7 +77,6 @@
           :separator " | "
           :priority 3)
          (global :when active)
-         ,@additional-segments
          (buffer-position :priority 0)
          (hud :priority 0))
 
