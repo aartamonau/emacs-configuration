@@ -29,11 +29,12 @@
 (defconst code-review-dir "/aliaksiej.artamonau@gmail.com/Code Review")
 
 (setq mu4e-maildir-shortcuts
-      `((,inbox-dir         . ?i)
-        (,jira-dir          . ?j)
-        (,code-review-dir   . ?c)
-        (,mu4e-sent-folder  . ?s)
-        (,mu4e-trash-folder . ?t)))
+      `((,inbox-dir          . ?i)
+        (,jira-dir           . ?j)
+        (,code-review-dir    . ?c)
+        (,mu4e-sent-folder   . ?s)
+        (,mu4e-drafts-folder . ?d)
+        (,mu4e-trash-folder  . ?t)))
 
 (defconst all-unread-query "flag:unread AND NOT flag:trashed")
 (defconst inbox-unread-query
