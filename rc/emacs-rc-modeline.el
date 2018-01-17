@@ -88,6 +88,7 @@
 (setq spaceline-buffer-encoding-abbrev-p nil)
 (setq spaceline-selection-info-p nil)
 
+(set-face-attribute 'spaceline-highlight-face nil :inverse-video nil)
 (setq powerline-default-separator 'box)
 
 (apply 'spaceline-compile my/spaceline-theme)
