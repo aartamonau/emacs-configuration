@@ -7,6 +7,7 @@
 
 (setq grep-o-matic-search-patterns (append my/grep-extra-patterns
                                            grep-o-matic-search-patterns))
+(setq grep-o-matic-ask-about-save nil)
 
 (defun my/grep-with-prompt (command)
   (lambda ()
