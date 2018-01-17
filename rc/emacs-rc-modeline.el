@@ -88,6 +88,8 @@
 (setq spaceline-buffer-encoding-abbrev-p nil)
 (setq spaceline-selection-info-p nil)
 
+(setq powerline-default-separator 'box)
+
 (apply 'spaceline-compile my/spaceline-theme)
 (setq-default mode-line-format '("%e" (:eval (spaceline-ml-main))))
 
