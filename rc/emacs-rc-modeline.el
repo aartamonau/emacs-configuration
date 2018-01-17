@@ -49,6 +49,7 @@
           :priority 0)
          (anzu :priority 4)
          auto-compile
+         (org-pomodoro :when active :face org-pomodoro-segment-face)
          ((buffer-id remote-host)
           :priority 5)
          ((buffer-encoding-abbrev
@@ -66,7 +67,6 @@
          (erc-track :when active)
          (version-control :when active
                           :priority 7)
-         (org-pomodoro :when active)
          (org-clock :when active)
          nyan-cat)
 
@@ -87,6 +87,10 @@
 (setq spaceline-hud-p nil)
 (setq spaceline-buffer-encoding-abbrev-p nil)
 (setq spaceline-selection-info-p nil)
+
+(defface org-pomodoro-segment-face
+  '((t (:inverse-video t :inherit org-pomodoro-mode-line)))
+  "Face used to display current pomodoro")
 
 (set-face-attribute 'spaceline-highlight-face nil :inverse-video nil)
 (setq powerline-default-separator 'box)
