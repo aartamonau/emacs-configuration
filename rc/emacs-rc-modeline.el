@@ -49,7 +49,13 @@
           :priority 0)
          (anzu :priority 4)
          auto-compile
-         (org-pomodoro :when active :face org-pomodoro-segment-face)
+         (org-pomodoro :when (and active
+                                  (eq org-pomodoro-state :pomodoro))
+                       :face org-pomodoro-segment-face)
+         (org-pomodoro :when (and active
+                                  (or (eq org-pomodoro-state :short-break)
+                                      (eq org-pomodoro-state :long-break)))
+                       :face org-pomodoro-break-segment-face)
          ((buffer-id remote-host)
           :priority 5)
          ((buffer-encoding-abbrev
@@ -90,7 +96,11 @@
 
 (defface org-pomodoro-segment-face
   '((t (:inverse-video t :inherit org-pomodoro-mode-line)))
-  "Face used to display current pomodoro")
+  "Face used to display active pomodoro")
+
+(defface org-pomodoro-break-segment-face
+  '((t (:inverse-video t :inherit org-pomodoro-mode-line-break)))
+  "Face used to display pomodoro during break")
 
 (set-face-attribute 'spaceline-highlight-face nil :inverse-video nil)
 (setq powerline-default-separator 'box)
