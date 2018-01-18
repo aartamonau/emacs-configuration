@@ -30,3 +30,11 @@
 
 (global-diff-hl-mode t)
 (setq yagist-view-gist t)
+
+(setq git-commit-summary-max-length 65)
+(setq git-commit-style-convention-checks
+      '(non-empty-second-line overlong-summary-line))
+(add-hook 'git-commit-setup-hook
+          (lambda ()
+            (setq fill-column 70)
+            (setq-local whitespace-line-column 70)))
