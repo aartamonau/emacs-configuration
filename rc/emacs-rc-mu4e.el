@@ -115,4 +115,5 @@
           (lambda ()
             (auto-fill-mode -1)
 
-            (setq-local whitespace-style (delq 'lines-tail whitespace-style))))
+            (make-variable-buffer-local 'whitespace-style)
+            (delq 'lines-tail whitespace-style)))
