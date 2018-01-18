@@ -110,3 +110,7 @@
 
 (global-set-key (kbd "C-x m") 'mu4e)
 (global-set-key (kbd "C-x M") 'mu4e-compose-new)
+
+(add-hook 'mu4e-compose-mode-hook
+          (lambda ()
+            (auto-fill-mode -1)))
