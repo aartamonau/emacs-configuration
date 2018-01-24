@@ -73,6 +73,8 @@
   ;; those questions freeze the daemon
     (setq large-file-warning-threshold #x3fffffff))
 
+(defvar my/expensive-modes-disabled nil)
+
 (defun disable-expensive-modes ()
   (interactive)
   (fundamental-mode)
@@ -83,18 +85,25 @@
   (undo-tree-mode -1)
   (toggle-truncate-lines 1)
   (local-set-key (kbd "C-s") 'isearch-forward)
-  (local-set-key (kbd "C-r") 'isearch-backward))
+  (local-set-key (kbd "C-r") 'isearch-backward)
+  (setq-local my/expensive-modes-disabled t))
 
 (add-hook 'find-file-hook
           (lambda ()
             (let ((file-name (buffer-file-name (current-buffer))))
               (when file-name
                 (let* ((attributes (file-attributes file-name))
-                       (size (nth 7 attributes)))
-                  (when (and size
-                             (> size 5000000))
+                       (size (nth 7 attributes))
+                       (do-disable (and size (> size 5000000)))
+                  (when do-disable
                     (message "Disabling expensive modes for `%s'" file-name)
                     (disable-expensive-modes)))))))
+
+(defadvice revert-buffer (around revert-buffer-disable-expensive last activate)
+  (let ((was-disabled my/expensive-modes-disabled))
+    ad-do-it
+    (when was-disabled
+      (disable-expensive-modes))))
 
 (global-auto-revert-mode 0)
 (setq auto-revert-use-notify nil)
