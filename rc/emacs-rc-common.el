@@ -94,7 +94,7 @@
               (when file-name
                 (let* ((attributes (file-attributes file-name))
                        (size (nth 7 attributes))
-                       (do-disable (and size (> size 5000000)))
+                       (do-disable (and size (> size 5000000))))
                   (when do-disable
                     (message "Disabling expensive modes for `%s'" file-name)
                     (disable-expensive-modes)))))))
