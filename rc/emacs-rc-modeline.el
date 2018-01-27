@@ -92,6 +92,10 @@
   '((t (:inverse-video t :inherit org-pomodoro-mode-line-break)))
   "Face used to display pomodoro during break")
 
+(setq spaceline-org-clock-format-function
+      (lambda ()
+        (s-trim (org-clock-get-clock-string))))
+
 (set-face-attribute 'spaceline-highlight-face nil :inverse-video nil)
 (setq powerline-default-separator 'box)
 
