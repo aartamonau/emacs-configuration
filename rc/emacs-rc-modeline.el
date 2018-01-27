@@ -47,7 +47,6 @@
            buffer-size)
           :face highlight-face
           :priority 0)
-         (anzu :priority 4)
          auto-compile
          (org-pomodoro :when (and active
                                   (eq org-pomodoro-state :pomodoro))
@@ -70,27 +69,20 @@
           :when active)
          (minor-modes :when active)
          (mu4e-alert-segment :when active)
-         (erc-track :when active)
-         (org-clock :when active)
-         nyan-cat)
+         (org-clock :when active))
 
         ;; right
         (which-function
          (python-pyvenv :fallback python-pyenv)
          purpose
-         (battery :when active)
-         (selection-info :priority 2)
          input-method
-         (global :when active)
-         (hud :priority 0))))
+         (global :when active))))
 
 (setq spaceline-responsive nil)
 
 (setq spaceline-buffer-size-p nil)
 (setq spaceline-minor-modes-p t)
-(setq spaceline-hud-p nil)
 (setq spaceline-buffer-encoding-abbrev-p nil)
-(setq spaceline-selection-info-p nil)
 
 (defface org-pomodoro-segment-face
   '((t (:inverse-video t :inherit org-pomodoro-mode-line)))
