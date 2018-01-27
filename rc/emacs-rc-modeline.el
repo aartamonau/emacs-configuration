@@ -71,8 +71,6 @@
          (minor-modes :when active)
          (mu4e-alert-segment :when active)
          (erc-track :when active)
-         (version-control :when active
-                          :priority 7)
          (org-clock :when active)
          nyan-cat)
 
