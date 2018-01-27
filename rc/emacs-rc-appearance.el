@@ -1,4 +1,4 @@
-(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-8"))
+(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-8.5"))
 (custom-set-faces
  '(variable-pitch ((t (:family "DejaVu Sans Mono")))))
 
