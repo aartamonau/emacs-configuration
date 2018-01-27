@@ -57,6 +57,7 @@
                        :face org-pomodoro-break-segment-face)
          ((buffer-id remote-host)
           :priority 5)
+         (which-function :face which-func-segment-face)
          ((buffer-encoding-abbrev
            point-position
            line-column)
@@ -72,8 +73,7 @@
          (org-clock :when active))
 
         ;; right
-        (which-function
-         (python-pyvenv :fallback python-pyenv)
+        ((python-pyvenv :fallback python-pyenv)
          purpose
          input-method
          (global :when active))))
@@ -95,6 +95,10 @@
 (setq spaceline-org-clock-format-function
       (lambda ()
         (s-trim (org-clock-get-clock-string))))
+
+(defface which-func-segment-face
+  '((t (:inverse-video t :inherit which-func)))
+  "Face for the which-func spaceline segment")
 
 (set-face-attribute 'spaceline-highlight-face nil :inverse-video nil)
 (setq powerline-default-separator 'box)
