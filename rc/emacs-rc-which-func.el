@@ -1,18 +1,12 @@
-(eval-after-load "which-func"
-  (progn
-    (defun aa/which-func-header-line-toggle ()
-      (interactive)
-      (if which-func-mode
-          (progn (setq which-func-header-line-format
-                       '(which-func-mode ("" which-func-format)))
-                 (setq mode-line-misc-info
-                       (delete (assoc 'which-func-mode
-                                      mode-line-misc-info) mode-line-misc-info))
-                 (setq header-line-format (list which-func-header-line-format)))
-        (setq header-line-format nil)))
+(setq which-func-modes
+      '(emacs-lisp-mode
+        c-mode
+        c++-mode
+        python-mode
+        makefile-mode
+        sh-mode
+        diff-mode
+        erlang-mode
+        haskell-mode))
 
-    (defadvice which-func-ff-hook (after header-line activate)
-      (aa/which-func-header-line-toggle))
-
-    (defadvice which-function-mode (after which-function-mode activate)
-      (aa/which-func-header-line-toggle))))
+(which-function-mode)
