@@ -114,6 +114,4 @@
 (add-hook 'mu4e-compose-mode-hook
           (lambda ()
             (auto-fill-mode -1)
-
-            (make-variable-buffer-local 'whitespace-style)
-            (delq 'lines-tail whitespace-style)))
+            (setq-local whitespace-style (remq 'lines-tail whitespace-style))))
