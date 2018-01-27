@@ -6,6 +6,8 @@
 (setq avy-style 'de-bruijn)
 (setq avy-background t)
 (setq avy-timeout-seconds 0.3)
+(setq avy-all-windows nil)
+(setq avy-all-windows-alt t)
 
 (custom-set-faces
  '(avy-goto-char-timer-face ((t (:inherit isearch)))))
