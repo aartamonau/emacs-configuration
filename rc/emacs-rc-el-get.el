@@ -110,7 +110,8 @@
         pdf-tools
         zones
         spaceline
-        diminish))
+        diminish
+        thingatpt+))
 
 (setq aa/all-packages
       (append aa/packages
