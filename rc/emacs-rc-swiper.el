@@ -23,6 +23,8 @@
 (global-set-key (kbd "C-c i") 'counsel-imenu)
 
 (define-key ivy-minibuffer-map (kbd "M-r") 'ivy-restrict-to-matches)
+(define-key ivy-minibuffer-map (kbd "C-r") 'ivy-previous-line)
+(define-key ivy-minibuffer-map (kbd "C-s") 'ivy-next-line)
 
 (setq ivy-initial-inputs-alist
       '((org-refile . "^")
