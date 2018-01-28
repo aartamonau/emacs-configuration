@@ -26,6 +26,10 @@
 (define-key ivy-minibuffer-map (kbd "C-r") 'ivy-previous-line)
 (define-key ivy-minibuffer-map (kbd "C-s") 'ivy-next-line)
 
+(define-key isearch-mode-map (kbd "C-n") 'isearch-repeat-forward)
+(define-key isearch-mode-map (kbd "C-p") 'isearch-repeat-backward)
+(define-key isearch-mode-map (kbd "M-j") 'isearch-yank-word-or-char)
+
 (setq ivy-initial-inputs-alist
       '((org-refile . "^")
         (org-agenda-refile . "^")
