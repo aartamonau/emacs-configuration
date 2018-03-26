@@ -111,7 +111,8 @@
         zones
         spaceline
         diminish
-        thingatpt+))
+        thingatpt+
+        hungry-delete))
 
 (setq aa/all-packages
       (append aa/packages

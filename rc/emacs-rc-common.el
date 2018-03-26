@@ -112,3 +112,6 @@
     (guru-global-mode 1))
 
 (electric-indent-mode -1)
+
+(require 'hungry-delete)
+(global-hungry-delete-mode 1)
