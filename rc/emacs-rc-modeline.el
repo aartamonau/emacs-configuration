@@ -140,6 +140,7 @@
 (my/safe-diminish 'hindent-mode)
 (my/safe-diminish 'with-editor-mode)
 (my/safe-diminish 'smerge-mode)
+(my/safe-diminish 'hungry-delete-mode)
 
 (my/safe-diminish 'auto-revert-mode "AR")
 (my/safe-diminish 'overwrite-mode "O")
