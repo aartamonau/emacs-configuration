@@ -4,5 +4,4 @@
 (load "emacs-rc-linum.el")
 (load "emacs-rc-show-paren.el")
 (load "emacs-rc-flyspell.el")
-(load "emacs-rc-appearance.el")
 (load "emacs-rc-whitespace.el")
