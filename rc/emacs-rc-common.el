@@ -114,6 +114,5 @@
 (electric-indent-mode -1)
 
 (when (require 'hungry-delete nil 'noerror)
-  (require 'hungry-delete)
   (setq hungry-delete-chars-to-skip " \t\f\v")
   (global-hungry-delete-mode 1))
