@@ -5,6 +5,7 @@
 (defconst my/grep-extra-patterns
   '("*.[he]rl" "*.hs" "*.cmake" "CMakeLists" "*.bash" "*.rb"))
 
+(setq grep-find-ignored-directories (cons ".eunit" grep-find-ignored-directories))
 (setq grep-o-matic-search-patterns (append my/grep-extra-patterns
                                            grep-o-matic-search-patterns))
 (setq grep-o-matic-ask-about-save nil)
