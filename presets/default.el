@@ -13,6 +13,14 @@
 ;; misc keybindings
 (load "emacs-rc-misc-keybindings.el")
 
+;; Flyspell
+;;
+;; There's some weird interaction between theme loading and ispell
+;; initialization that I don't quite understand but that causes start-up to
+;; fail in ispell when custom.el is present. Loading this before loading
+;; emacs-rc-appearance.el helps for some reason.
+(load "emacs-rc-flyspell.el")
+
 ;; appearance
 (load "emacs-rc-appearance.el")
 (load "emacs-rc-modeline.el")
@@ -68,9 +76,6 @@
 
 ;; Org mode
 (load "emacs-rc-org-mode.el")
-
-;; Flyspell
-(load "emacs-rc-flyspell.el")
 
 ;; Slime
 (load "emacs-rc-slime.el")
