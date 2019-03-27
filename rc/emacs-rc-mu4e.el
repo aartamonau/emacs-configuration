@@ -1,4 +1,6 @@
 (require 'mu4e)
+(require 'mail-parse)
+(require 'cl)
 
 (setq mu4e-hide-index-messages t)
 (setq mu4e-headers-include-related nil)
@@ -115,3 +117,76 @@
           (lambda ()
             (auto-fill-mode -1)
             (setq-local whitespace-style (remq 'lines-tail whitespace-style))))
+
+(defvar my/alternate-email-accounts
+  '(((:name "Aliaksey Artamonau")
+     (:email "aliaksey.artamonau@couchbase.com")
+     (:pred my/use-couchbase-account-p))))
+
+(defun my/use-couchbase-account-p (recipient)
+  (let ((email (car recipient)))
+    (string-suffix-p "@couchbase.com" email)))
+
+(setq mu4e-user-mail-address-list
+      (cons user-mail-address
+            (mapcar (lambda (acc) (cadr (assq :email acc)))
+                    my/alternate-email-accounts)))
+
+(defun my/replace-existing-field (field value)
+  (save-excursion
+    (when (message-position-on-field field)
+      (message-beginning-of-header t)
+      (delete-region (point) (line-end-position))
+      (insert value))))
+
+(defun my/get-recipients (field)
+  (let ((value (message-field-value field)))
+    (when value
+      (mail-header-parse-addresses value))))
+
+(defun my/get-all-recipients ()
+  (let ((fields '("to" "cc" "bcc")))
+    (mapcan #'my/get-recipients fields)))
+
+(defun my/get-account-pred (acc)
+  (cadr (assq :pred acc)))
+
+(defun my/choose-account-by-recipients (recipients)
+  (let ((accs my/alternate-email-accounts)
+        (found-acc nil)
+        (acc nil)
+        (pred nil))
+    (while (not (or found-acc
+                    (null accs)))
+      (setq acc (car accs))
+      (setq accs (cdr accs))
+      (setq pred (my/get-account-pred acc))
+
+      (when (some pred recipients)
+        (setq found-acc acc)))
+    found-acc))
+
+(defun my/apply-account (acc)
+  (let* ((name (cadr (assq :name acc)))
+         (email (cadr (assq :email acc)))
+         (from (format "%s <%s>" name email))
+         (current-from (message-field-value "from")))
+    (unless (equal from current-from)
+      (my/replace-existing-field "from" from)
+      (message "Updated email account to \"%s\"" from)
+      t)))
+
+(defun my/maybe-update-email-account ()
+  (interactive)
+  (let* ((recipients (my/get-all-recipients))
+         (acc (my/choose-account-by-recipients recipients)))
+    (when acc
+      (my/apply-account acc))))
+
+(defun my/maybe-update-email-account-pre-send ()
+  (when (my/maybe-update-email-account)
+    (unless (y-or-n-p "From field was updated. Continue?")
+      (keyboard-quit))))
+
+(add-hook 'mu4e-compose-mode-hook 'my/maybe-update-email-account)
+(add-hook 'message-send-hook 'my/maybe-update-email-account-pre-send)
