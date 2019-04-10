@@ -9,6 +9,7 @@
 (setq avy-all-windows nil)
 (setq avy-all-windows-alt t)
 (setq avy-subword-extra-word-chars nil)
+(setq aw-scope 'frame)
 
 (custom-set-faces
  '(avy-goto-char-timer-face ((t (:inherit isearch)))))
