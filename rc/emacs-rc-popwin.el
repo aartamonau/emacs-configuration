@@ -20,3 +20,6 @@
         (let ((display-buffer-alist nil))
           ad-do-it)
       ad-do-it)))
+
+;; Prefer splitting windows vertically.
+(setq split-height-threshold nil)
