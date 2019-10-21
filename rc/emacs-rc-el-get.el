@@ -42,7 +42,13 @@
                :load-path "elisp")
 
         (:name persistent-scratch
-               :type elpa)))
+               :type elpa)
+
+        (:name ormolu
+               :type github
+               :branch "master"
+               :pkgname "vyorkin/ormolu.el"
+               :compile "ormolu.el")))
 
 (setq aa/packages
       '(package
@@ -96,6 +102,7 @@
         annotate
         yagist
         hindent
+        ormolu
         narrow-indirect
         httprepl
         grep-o-matic
