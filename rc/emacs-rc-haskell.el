@@ -5,12 +5,6 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'hindent-mode)
 
-(autoload 'ghc-init "ghc" nil t)
-(add-hook 'haskell-mode-hook
-          (lambda ()
-            (ghc-init)
-            (setq ghc-display-error 'minibuffer)
-            (setq ghc-ghc-options '("-Wall" "-fno-warn-name-shadowing"))))
 (add-hook 'haskell-mode-hook 'turn-on-hi2)
 
 (setq haskell-process-type 'auto)
@@ -87,11 +81,7 @@ point."
           (define-key haskell-mode-map (kbd "M-.") 'haskell-mode-tag-find)
           (define-key haskell-mode-map (kbd "M-,") 'haskell-who-calls)
           (define-key haskell-mode-map (kbd "C-c C-s") 'toggle-scc-at-point)
-          (define-key haskell-mode-map (kbd "C-c l") 'hs-lint)
-
-          (define-key haskell-mode-map (kbd "C-c n") 'ghc-goto-next-error)
-          (define-key haskell-mode-map (kbd "C-c p") 'ghc-goto-prev-error)
-          (define-key haskell-mode-map (kbd "C-c ?") 'ghc-display-errors)))
+          (define-key haskell-mode-map (kbd "C-c l") 'hs-lint)))
 
 (eval-after-load "haskell-cabal"
   '(progn

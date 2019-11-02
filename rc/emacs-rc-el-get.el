@@ -73,7 +73,6 @@
         eproject
         dired+
         dired-hacks
-        ghc-mod
         emacs-w3m
         evil-numbers
         go-mode
