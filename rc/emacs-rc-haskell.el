@@ -51,9 +51,9 @@ point."
         (error "No SCC at point")))))
 
 (eval-after-load "haskell-mode"
-  '(progn (define-key haskell-mode-map [?\C-c ?\C-l] 'haskell-process-load-file)
-          (define-key haskell-mode-map [?\C-c ?\C-r] 'haskell-process-reload-file)
-          (define-key haskell-mode-map [?\C-c ?\C-z] 'haskell-interactive-switch)
+  '(progn (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-file)
+          (define-key haskell-mode-map (kbd "C-c C-r") 'haskell-process-reload-file)
+          (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
           ;; Build the Cabal project.
           (define-key haskell-mode-map (kbd "C-c c") 'haskell-process-cabal-build)
           ;; Get the type and info of the symbol at point, print it in the
