@@ -76,5 +76,4 @@ point."
 
 (custom-set-variables
  '(haskell-doc-show-reserved nil)
- '(haskell-doc-show-prelude nil)
- '(hindent-style "chris-done"))
+ '(haskell-doc-show-prelude nil))
