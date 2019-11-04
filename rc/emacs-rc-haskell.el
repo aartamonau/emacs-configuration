@@ -9,23 +9,6 @@
 
 (setq haskell-process-type 'auto)
 
-(defun haskell-who-calls (&optional prompt)
-  "Grep the codebase to see who uses the symbol at point."
-  (interactive "P")
-  (let ((sym (if prompt
-                 (read-from-minibuffer "Look for: ")
-               (haskell-ident-at-point))))
-    (let ((existing (get-buffer "*who-calls*")))
-      (when existing
-        (kill-buffer existing)))
-    (let ((buffer
-           (grep-find (format "cd %s && find . -name '*.hs' -exec grep -inH -e %s {} +"
-                              (haskell-session-current-dir (haskell-session))
-                              sym))))
-      (with-current-buffer buffer
-        (rename-buffer "*who-calls*")
-        (switch-to-buffer-other-window buffer)))))
-
 ;; Based upon http://www.serpentine.com/blog/2007/10/09/using-emacs-to-insert-scc-annotations-in-haskell-code/
 (defun toggle-scc-at-point (&optional arg)
   "Insert or kill (with universal-argument) an SCC annotation at
@@ -79,7 +62,6 @@ point."
           (define-key haskell-mode-map (kbd "C-c C-i") 'haskell-process-do-info)
           ;; Jump to the definition of the current symbol.
           (define-key haskell-mode-map (kbd "M-.") 'haskell-mode-tag-find)
-          (define-key haskell-mode-map (kbd "M-,") 'haskell-who-calls)
           (define-key haskell-mode-map (kbd "C-c C-s") 'toggle-scc-at-point)
           (define-key haskell-mode-map (kbd "C-c l") 'hs-lint)))
 
