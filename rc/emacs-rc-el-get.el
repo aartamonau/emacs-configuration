@@ -110,7 +110,7 @@
         avy
         ace-window
         ace-link
-        popwin
+        shackle
         skewer-mode
         ein
         pdf-tools
