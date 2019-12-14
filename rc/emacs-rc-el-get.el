@@ -22,8 +22,6 @@
                :type github
                :branch "master"
                :pkgname "dacap/keyfreq")
-        (:name edts
-               :type elpa)
         (:name eclipse-mode
                :type http-tar
                :options ("xzf")
@@ -96,7 +94,6 @@
         flymake
         expand-region
         change-inner
-        edts
         eclipse-mode
         annotate
         yagist
