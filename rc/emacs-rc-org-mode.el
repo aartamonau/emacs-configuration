@@ -114,7 +114,7 @@
  '(remember-handler-functions (quote (org-remember-handler)))
 
  '(org-time-stamp-custom-formats
-   (cons "<%d/%m/%Y>" "<%d/%m/%Y %a %H:%M>"))
+   (cons "<%B %d, %Y>" "<%B %d, %Y %H:%M>"))
  '(org-display-custom-times t)
  '(org-clock-persist t)
 
@@ -162,6 +162,9 @@
  '(org-enforce-todo-dependencies t)
 
  '(org-clock-report-include-clocking-task t)
+
+ '(org-export-date-timestamp-format "%B %d, %Y")
+ '(org-odt-use-date-fields t)
 
  '(org-cycle-emulate-tab 'white))
 
