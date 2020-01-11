@@ -10,7 +10,7 @@
 (winner-mode)
 
 (setq shackle-rules
-      '((compilation-mode :select nil :align below :size 0.3)
+      '((compilation-mode :select nil :other t)
         ("\\*[Wo]*Man.*\\*" :regexp t :select t :other t)
         ("*undo-tree*" :regexp t :size 0.3 :align right)))
 
