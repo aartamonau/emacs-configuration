@@ -161,7 +161,9 @@
  '(org-goto-interface 'outline-path-completion)
  '(org-enforce-todo-dependencies t)
 
- '(org-clock-report-include-clocking-task t))
+ '(org-clock-report-include-clocking-task t)
+
+ '(org-cycle-emulate-tab 'white))
 
 (custom-set-faces
  '(org-level-1 ((t (:height 1.0))))
