@@ -8,6 +8,7 @@
 (add-hook 'haskell-mode-hook 'turn-on-hi2)
 
 (setq haskell-process-type 'auto)
+(setq haskell-compile-ignore-cabal t)
 
 ;; Based upon http://www.serpentine.com/blog/2007/10/09/using-emacs-to-insert-scc-annotations-in-haskell-code/
 (defun toggle-scc-at-point (&optional arg)
@@ -55,7 +56,10 @@ point."
           (define-key haskell-mode-map (kbd "C-c C-r") 'haskell-process-reload-file)
           (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
           ;; Build the Cabal project.
-          (define-key haskell-mode-map (kbd "C-c c") 'haskell-process-cabal-build)
+          (define-key haskell-mode-map (kbd "C-c c")
+            (lambda ()
+              (interactive)
+              (compile "stack build --fast")))
           ;; Get the type and info of the symbol at point, print it in the
           ;; message buffer.
           (define-key haskell-mode-map (kbd "C-c C-t") 'haskell-process-do-type)
