@@ -113,7 +113,6 @@
         shackle
         skewer-mode
         ein
-        pdf-tools
         zones
         spaceline
         diminish

@@ -168,6 +168,4 @@
 
 (load "emacs-rc-shackle.el")
 
-(load "emacs-rc-pdf-tools.el")
-
 (load "emacs-rc-shell.el")
