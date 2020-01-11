@@ -46,7 +46,10 @@
                :type github
                :branch "master"
                :pkgname "vyorkin/ormolu.el"
-               :compile "ormolu.el")))
+               :compile "ormolu.el")
+
+        (:name magit
+               :type elpa)))
 
 (setq aa/packages
       '(package
