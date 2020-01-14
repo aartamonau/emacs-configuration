@@ -70,6 +70,7 @@
         solarized-emacs
         color-theme-solarized
         magit
+        magit-todos
         ledger-mode
         eproject
         dired+
