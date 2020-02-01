@@ -49,11 +49,18 @@
                :compile "ormolu.el")
 
         (:name magit
-               :type elpa)))
+               :type elpa)
+
+        (:name org-drill
+               :type github
+               :branch "master"
+               :pkgname "hakanserce/org-drill"
+               :compile "org-drill.el")))
 
 (setq aa/packages
       '(package
         org-mode
+        org-drill
         org-pomodoro
         auctex
         slime
