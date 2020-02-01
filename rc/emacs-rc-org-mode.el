@@ -107,8 +107,23 @@
       (file+headline "" "Misc notes")
       "* %^{Title}\n  %u\n  %?")
      ("w" "word" entry
-      (file+headline "~/org/english.org" "Pending words")
-      "* %^{Word}\n  %u\n  %?")))
+      (file "~/org/english.org")
+      "
+* %^{Word}                                                   :drill:
+
+  :PROPERTIES:
+  :DRILL_CARD_TYPE: twosided
+  :END:
+
+  %u
+
+** Word
+   %\\1
+** Meaning
+   %?
+** Example
+
+")))
 
  '(remember-annotation-functions (quote (org-remember-annotation)))
  '(remember-handler-functions (quote (org-remember-handler)))
