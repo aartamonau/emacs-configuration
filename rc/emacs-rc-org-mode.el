@@ -109,7 +109,7 @@
      ("w" "word" entry
       (file "~/org/english.org")
       "
-* %^{Word}                                                   :drill:
+* %^{Part of speech|Noun|Adjective|Verb|Adverb}                         :drill:
 
   :PROPERTIES:
   :DRILL_CARD_TYPE: twosided
@@ -118,7 +118,7 @@
   %u
 
 ** Word
-   %\\1
+   %^{Word}
 ** Meaning
    %?
 ** Example
