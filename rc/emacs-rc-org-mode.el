@@ -110,7 +110,6 @@
       (file "~/org/english.org")
       "
 * %^{Part of speech|Noun|Adjective|Verb|Adverb}                         :drill:
-
   :PROPERTIES:
   :DRILL_CARD_TYPE: twosided
   :END:
