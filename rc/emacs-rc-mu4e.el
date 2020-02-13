@@ -64,7 +64,8 @@
 
 (require 'smtpmail)
 (setq message-send-mail-function 'message-send-mail-with-sendmail
-      sendmail-program "/usr/bin/msmtp")
+      sendmail-program "/usr/bin/msmtp"
+      message-sendmail-envelope-from 'header)
 
 ;; don't keep message buffers around
 (setq message-kill-buffer-on-exit t)
