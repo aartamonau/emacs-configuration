@@ -113,7 +113,10 @@
    %?
 ** Example
 
-")))
+")
+     ("p" "pending word" item
+      (file+headline "~/org/english-pending.org" "Words")
+      "%^{Word}" :immediate-finish t)))
 
  '(remember-annotation-functions (quote (org-remember-annotation)))
  '(remember-handler-functions (quote (org-remember-handler)))
