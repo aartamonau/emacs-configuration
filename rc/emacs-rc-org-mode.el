@@ -97,16 +97,7 @@
              (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
  '(org-remember-store-without-prompt t)
  '(org-capture-templates
-   '(("t" "todo" entry
-      (file+headline "~/org/todo.org" "Unsorted Tasks")
-      "* TODO %^{Title}\n  SCHEDULED: %t\n  %?")
-     ("p" "protocol-capture" entry
-      (file+headline "~/org/todo.org" "Unsorted Tasks")
-      "* TODO %c\n  SCHEDULED: %t\n\n  %i" :immediate-finish t)
-     ("n" "note" entry
-      (file+headline "" "Misc notes")
-      "* %^{Title}\n  %u\n  %?")
-     ("w" "word" entry
+   '(("w" "word" entry
       (file "~/org/english.org")
       "
 * %^{Part of speech|Noun|Adjective|Verb|Adverb|Expression}            :drill:
