@@ -40,6 +40,7 @@
         (:name ormolu
                :type github
                :branch "master"
+               :depends reformatter
                :pkgname "vyorkin/ormolu.el"
                :compile "ormolu.el")
 
