@@ -121,7 +121,8 @@
         spaceline
         diminish
         thingatpt+
-        hungry-delete))
+        hungry-delete
+        ivy-xref))
 
 (setq aa/all-packages
       (append aa/packages
