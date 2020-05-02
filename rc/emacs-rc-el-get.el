@@ -10,12 +10,7 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 
 (setq el-get-sources
-      '((:name etags-select
-               :type github
-               :branch "master"
-               :pkgname "aartamonau/etags-select"
-               :compile "etags-select.el")
-        (:name unbound
+      '((:name unbound
                :type emacswiki :features (unbound))
         (:name keyfreq
                :description "Track Emacs commands frequency"

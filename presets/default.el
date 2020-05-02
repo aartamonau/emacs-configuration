@@ -138,8 +138,6 @@
 
 (load "emacs-rc-dired.el")
 
-(load "emacs-rc-etags.el")
-
 (load "emacs-rc-zones.el")
 
 (load "emacs-rc-keyfreq.el")
