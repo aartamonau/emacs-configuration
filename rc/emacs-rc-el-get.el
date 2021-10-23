@@ -54,8 +54,6 @@
         org-mode
         org-drill
         auctex
-        slime
-        quack
         clojure-mode
         haskell-mode
         flycheck

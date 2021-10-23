@@ -60,9 +60,6 @@
 ;; Snippets
 (load "emacs-rc-yasnippet.el")
 
-;; Quack for Scheme programming
-(load "emacs-rc-quack.el")
-
 ;; Parantheses highlighting
 (load "emacs-rc-show-paren.el")
 
@@ -74,9 +71,6 @@
 
 ;; Org mode
 (load "emacs-rc-org-mode.el")
-
-;; Slime
-(load "emacs-rc-slime.el")
 
 ;; latex
 (load "emacs-rc-latex.el")
