@@ -17,10 +17,6 @@
                :type github
                :branch "master"
                :pkgname "dacap/keyfreq")
-        (:name eclipse-mode
-               :type http-tar
-               :options ("xzf")
-               :url "http://eclipseclp.org/Distribution/pub/eclipse_emacs.tgz")
         (:name annotate
                :type github
                :branch "master"
@@ -103,7 +99,6 @@
         flymake
         expand-region
         change-inner
-        eclipse-mode
         annotate
         yagist
         hindent

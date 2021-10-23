@@ -155,8 +155,6 @@
 
 (load "emacs-rc-expand-region.el")
 
-(load "emacs-rc-eclipse.el")
-
 (load "emacs-rc-narrow-indirect.el")
 
 (load "emacs-rc-httprepl.el")
