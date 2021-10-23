@@ -1,7 +1,8 @@
-(require 'lsp-mode)
 (custom-set-variables
  '(lsp-keymap-prefix "C-.")
  '(lsp-restart 'ignore))
+
+(require 'lsp-mode)
 
 (add-hook 'lsp-mode-hook
           (lambda nil
