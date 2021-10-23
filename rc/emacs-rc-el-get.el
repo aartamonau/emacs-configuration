@@ -67,6 +67,7 @@
         flycheck
         company
         lsp-mode
+        lsp-haskell
         markdown-mode
         muse
         yasnippet

@@ -6,6 +6,7 @@
 (add-hook 'haskell-mode-hook 'hindent-mode)
 (add-hook 'haskell-mode-hook 'turn-on-hi2)
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+(add-hook 'haskell-mode-hook 'lsp)
 
 (setq haskell-process-type 'auto)
 (setq haskell-compile-ignore-cabal t)
@@ -64,8 +65,6 @@ point."
           ;; message buffer.
           (define-key haskell-mode-map (kbd "C-c C-t") 'haskell-process-do-type)
           (define-key haskell-mode-map (kbd "C-c C-i") 'haskell-process-do-info)
-          ;; Jump to the definition of the current symbol.
-          (define-key haskell-mode-map (kbd "M-.") 'haskell-mode-tag-find)
           (define-key haskell-mode-map (kbd "C-c C-s") 'toggle-scc-at-point)
           (define-key haskell-mode-map (kbd "C-c l") 'hs-lint)))
 
