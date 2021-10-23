@@ -89,7 +89,6 @@
         idris-mode
         ggtags
         yaml-mode
-        flymake
         expand-region
         change-inner
         annotate
