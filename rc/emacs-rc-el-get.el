@@ -81,7 +81,6 @@
         guru-mode
         hi2
         magit-view-file
-        vkill
         man-preview
         llvm-mode
         diff-hl
