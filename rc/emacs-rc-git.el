@@ -1,7 +1,4 @@
 (require 'magit)
-(require 'magit-todos)
-
-(magit-todos-mode)
 
 (setq magit-completing-read-function 'ivy-completing-read)
 
