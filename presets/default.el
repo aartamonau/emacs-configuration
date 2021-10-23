@@ -31,8 +31,7 @@
 ;; auto-fill-mode adjustments
 (load "emacs-rc-auto-fill-mode.el")
 
-;; flymake
-(load "emacs-rc-flymake.el")
+(load "emacs-rc-flycheck.el")
 
 ;; user info
 (load "emacs-rc-user.el")
