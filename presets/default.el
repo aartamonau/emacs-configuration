@@ -66,9 +66,6 @@
 ;; Asm mode customizations
 (load "emacs-rc-asm-mode.el")
 
-;; Muse
-(load "emacs-rc-muse.el")
-
 ;; Org mode
 (load "emacs-rc-org-mode.el")
 
