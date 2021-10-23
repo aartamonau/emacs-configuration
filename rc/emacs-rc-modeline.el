@@ -48,13 +48,6 @@
           :face highlight-face
           :priority 0)
          auto-compile
-         (org-pomodoro :when (and active
-                                  (eq org-pomodoro-state :pomodoro))
-                       :face org-pomodoro-segment-face)
-         (org-pomodoro :when (and active
-                                  (or (eq org-pomodoro-state :short-break)
-                                      (eq org-pomodoro-state :long-break)))
-                       :face org-pomodoro-break-segment-face)
          ((buffer-id remote-host)
           :priority 5)
          (which-function :face which-func-segment-face)
@@ -83,14 +76,6 @@
 (setq spaceline-buffer-size-p nil)
 (setq spaceline-minor-modes-p t)
 (setq spaceline-buffer-encoding-abbrev-p nil)
-
-(defface org-pomodoro-segment-face
-  '((t (:inverse-video t :inherit org-pomodoro-mode-line)))
-  "Face used to display active pomodoro")
-
-(defface org-pomodoro-break-segment-face
-  '((t (:inverse-video t :inherit org-pomodoro-mode-line-break)))
-  "Face used to display pomodoro during break")
 
 (setq spaceline-org-clock-format-function
       (lambda ()

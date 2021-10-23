@@ -53,7 +53,6 @@
       '(package
         org-mode
         org-drill
-        org-pomodoro
         auctex
         slime
         quack
