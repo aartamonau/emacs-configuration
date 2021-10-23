@@ -84,7 +84,6 @@
         evil-numbers
         go-mode
         go-lint
-        go-flymake
         go-imports
         rust-mode
         rusti
