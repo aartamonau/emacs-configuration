@@ -117,8 +117,6 @@
         ace-window
         ace-link
         shackle
-        skewer-mode
-        ein
         zones
         spaceline
         diminish

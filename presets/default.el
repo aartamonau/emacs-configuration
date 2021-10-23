@@ -163,8 +163,6 @@
 
 (load "emacs-rc-grep.el")
 
-(load "emacs-rc-ein.el")
-
 (load "emacs-rc-windows.el")
 
 (load "emacs-rc-shell.el")
