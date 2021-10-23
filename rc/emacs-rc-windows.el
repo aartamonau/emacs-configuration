@@ -12,6 +12,7 @@
 (setq shackle-rules
       '((compilation-mode :select nil :other t)
         ("\\*[Wo]*Man.*\\*" :regexp t :select t :other t)
+        ("\\*godoc .*\\*" :regexp t :select t :other t)
         ("*undo-tree*" :regexp t :size 0.3 :align right)))
 
 (shackle-mode)
