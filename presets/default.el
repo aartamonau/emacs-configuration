@@ -37,6 +37,8 @@
 ;; user info
 (load "emacs-rc-user.el")
 
+(load "emacs-rc-lsp-mode.el")
+
 ;; c-mode
 (load "emacs-rc-c-mode.el")
 

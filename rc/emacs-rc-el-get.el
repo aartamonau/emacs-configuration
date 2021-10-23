@@ -64,6 +64,9 @@
         clojure-mode
         js2-mode
         haskell-mode
+        flycheck
+        company
+        lsp-mode
         markdown-mode
         muse
         yasnippet
