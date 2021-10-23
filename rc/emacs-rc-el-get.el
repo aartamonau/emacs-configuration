@@ -58,7 +58,6 @@
         slime
         quack
         clojure-mode
-        js2-mode
         haskell-mode
         flycheck
         company
