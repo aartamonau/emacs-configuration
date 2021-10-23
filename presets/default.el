@@ -118,9 +118,6 @@
 ;; compilation setup (must be placed after eproject)
 (load "emacs-rc-compile.el")
 
-;; ledger
-(load "emacs-rc-ledger.el")
-
 (load "emacs-rc-systemtap.el")
 
 (load "emacs-rc-undo-tree.el")
