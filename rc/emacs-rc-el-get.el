@@ -68,6 +68,7 @@
         solarized-emacs
         color-theme-solarized
         magit
+        browse-at-remote
         eproject
         dired+
         dired-hacks
