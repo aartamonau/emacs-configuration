@@ -6,7 +6,7 @@
 (add-hook 'haskell-mode-hook 'hindent-mode)
 (add-hook 'haskell-mode-hook 'turn-on-hi2)
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
-(add-hook 'haskell-mode-hook 'lsp)
+(add-hook 'haskell-mode-hook 'lsp-deferred)
 
 (setq haskell-process-type 'auto)
 (setq haskell-compile-ignore-cabal t)

@@ -3,7 +3,7 @@
 (add-hook 'go-mode-hook
           (lambda () (c-subword-mode)))
 (add-hook 'go-mode-hook 'my/dont-highlight-tabs)
-(add-hook 'go-mode-hook 'lsp)
+(add-hook 'go-mode-hook 'lsp-deferred)
 
 (defun my/dont-highlight-tabs ()
   (make-variable-buffer-local 'whitespace-style)
