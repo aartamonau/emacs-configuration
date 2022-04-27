@@ -45,7 +45,6 @@
         dired+
         dired-hacks
         emacs-w3m
-        evil-numbers
         go-mode
         go-lint
         go-imports
