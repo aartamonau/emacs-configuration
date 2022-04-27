@@ -84,9 +84,6 @@
 ;; prolog
 (load "emacs-rc-prolog-mode.el")
 
-;; clojure
-(load "emacs-rc-clojure-mode.el")
-
 (load "emacs-rc-gtags.el")
 
 (load "emacs-rc-cmake.el")

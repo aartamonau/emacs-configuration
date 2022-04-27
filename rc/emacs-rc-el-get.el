@@ -54,7 +54,6 @@
         org-mode
         org-drill
         auctex
-        clojure-mode
         haskell-mode
         flycheck
         company
