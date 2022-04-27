@@ -74,7 +74,8 @@
         diminish
         thingatpt+
         hungry-delete
-        ivy-xref))
+        ivy-xref
+        undo-tree))
 
 (setq aa/all-packages
       (append aa/packages
