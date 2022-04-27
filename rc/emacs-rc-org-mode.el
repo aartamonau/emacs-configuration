@@ -164,7 +164,3 @@
 
 (defadvice org-mark-subtree (after org-mark-subtree-activate last activate)
   (activate-mark))
-
-;; automatically resume clocks when starting daemon
-(when (daemonp)
-  (setq org-clock-persist-query-resume nil))

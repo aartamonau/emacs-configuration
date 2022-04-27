@@ -68,11 +68,6 @@
     (global-unset-key key)))
 
 
-(when (daemonp)
-  ;; set threshold to something really big to prevent questions on start up;
-  ;; those questions freeze the daemon
-    (setq large-file-warning-threshold #x3fffffff))
-
 (defvar my/expensive-modes-disabled nil)
 
 (defun disable-expensive-modes ()
