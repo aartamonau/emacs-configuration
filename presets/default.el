@@ -83,8 +83,6 @@
 
 (load "emacs-rc-gtags.el")
 
-(load "emacs-rc-cmake.el")
-
 ;; Erlang
 (load "emacs-rc-erlang.el")
 
