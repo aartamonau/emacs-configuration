@@ -3,12 +3,10 @@
 
 (require 'org-protocol)
 (require 'org-checklist)
-(require 'org-drill)
 (require 'cl)
 
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
-(define-key global-map "\C-cr" 'org-capture)
 
 (eval-after-load "org"
   '(progn
@@ -51,18 +49,18 @@
  '(org-fast-tag-selection-single-key (quote expert))
  '(org-agenda-custom-commands
    (quote (("A" agenda "Today"
-            ((org-agenda-tag-filter-preset '("-COUCHBASE" "-drill"))
+            ((org-agenda-tag-filter-preset '("-COUCHBASE"))
              (org-agenda-skip-function
               '(org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING")))))
            ("T" agenda "Tomorrow"
-            ((org-agenda-tag-filter-preset '("-COUCHBASE" "-drill"))
+            ((org-agenda-tag-filter-preset '("-COUCHBASE"))
              (org-agenda-start-day "+1")
              (org-agenda-ndays 1)
              (org-agenda-skip-function
               '(org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING")))))
            ("W" agenda "Week"
             ((org-agenda-ndays 7)
-             (org-agenda-tag-filter-preset '("-COUCHBASE" "-drill"))
+             (org-agenda-tag-filter-preset '("-COUCHBASE"))
              (org-agenda-skip-function
               '(org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING")))))
 
@@ -95,28 +93,6 @@
                                           (quote regexp) "<[^>\n]+>")))
              (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
  '(org-remember-store-without-prompt t)
- '(org-capture-templates
-   '(("w" "word" entry
-      (file "~/org/english.org")
-      "
-* %^{Part of speech|Noun|Adjective|Verb|Adverb|Expression}            :drill:
-  :PROPERTIES:
-  :DRILL_CARD_TYPE: twosided
-  :END:
-
-  %u
-
-** Word
-   %^{Word}
-** Meaning
-   %?
-** Example
-
-")
-     ("p" "pending word" item
-      (file+headline "~/org/english-pending.org" "Words")
-      "%^{Word}" :immediate-finish t)))
-
  '(remember-annotation-functions (quote (org-remember-annotation)))
  '(remember-handler-functions (quote (org-remember-handler)))
 
@@ -162,7 +138,6 @@
  '(org-mobile-files-exclude-regexp "^\\(english\\|from-mobile\\)\\.org$")
  '(org-mobile-agendas '("A"))
 
- '(org-drill-maximum-duration 15)
  '(org-tags-column 80)
  '(org-insert-heading-respect-content t)
  '(org-goto-interface 'outline-path-completion)

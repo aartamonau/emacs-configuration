@@ -17,18 +17,11 @@
                :type elpa)
 
         (:name magit
-               :type elpa)
-
-        (:name org-drill
-               :type github
-               :branch "master"
-               :pkgname "hakanserce/org-drill"
-               :compile "org-drill.el")))
+               :type elpa)))
 
 (setq aa/packages
       '(package
         org-mode
-        org-drill
         auctex
         haskell-mode
         flycheck
