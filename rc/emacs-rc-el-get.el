@@ -18,13 +18,6 @@
                :branch "master"
                :pkgname "dacap/keyfreq")
 
-        ;; this requires hidnent to be installed and in the PATH
-        (:name hindent
-               :type github
-               :branch "master"
-               :pkgname "chrisdone/hindent"
-               :load-path "elisp")
-
         (:name persistent-scratch
                :type elpa)
 
@@ -85,7 +78,6 @@
         expand-region
         change-inner
         yagist
-        hindent
         ormolu
         narrow-indirect
         grep-o-matic

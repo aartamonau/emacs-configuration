@@ -3,7 +3,6 @@
 (add-hook 'haskell-mode-hook 'global-hook-handler)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-decl-scan)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'hindent-mode)
 (add-hook 'haskell-mode-hook 'turn-on-hi2)
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 (add-hook 'haskell-mode-hook 'lsp-deferred)
