@@ -81,7 +81,6 @@
         hi2
         magit-view-file
         man-preview
-        llvm-mode
         diff-hl
         wtf
         protobuf-mode
