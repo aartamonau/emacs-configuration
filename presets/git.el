@@ -1,7 +1,0 @@
-(load "emacs-rc-common.el")
-(load "emacs-rc-auto-fill-mode.el")
-(load "emacs-rc-user.el")
-(load "emacs-rc-linum.el")
-(load "emacs-rc-show-paren.el")
-(load "emacs-rc-flyspell.el")
-(load "emacs-rc-whitespace.el")

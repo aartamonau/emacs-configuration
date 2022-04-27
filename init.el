@@ -9,4 +9,4 @@
       (append load-path '("~/emacs/rc")))
 
 ;; must be loaded after custom file
-(load "~/emacs/presets.el")
+(load "~/emacs/rc.el")
