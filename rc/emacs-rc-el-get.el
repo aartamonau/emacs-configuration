@@ -60,7 +60,6 @@
         lsp-mode
         lsp-haskell
         markdown-mode
-        yasnippet
         rect-mark
         cmake-mode
         pkgbuild-mode

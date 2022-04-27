@@ -57,9 +57,6 @@
 ;; Some eye candy including beautiful buffer switching (instead of iswitch)
 (load "emacs-rc-swiper.el")
 
-;; Snippets
-(load "emacs-rc-yasnippet.el")
-
 ;; Parantheses highlighting
 (load "emacs-rc-show-paren.el")
 
