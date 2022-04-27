@@ -60,7 +60,6 @@
         diff-hl
         wtf
         protobuf-mode
-        idris-mode
         ggtags
         yaml-mode
         expand-region
