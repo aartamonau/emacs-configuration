@@ -60,7 +60,6 @@
         ggtags
         yaml-mode
         expand-region
-        change-inner
         yagist
         narrow-indirect
         grep-o-matic
