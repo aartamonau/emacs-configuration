@@ -17,11 +17,6 @@
                :type github
                :branch "master"
                :pkgname "dacap/keyfreq")
-        (:name annotate
-               :type github
-               :branch "master"
-               :pkgname "bastibe/annotate.el"
-               :compile "annotate.el")
 
         ;; this requires hidnent to be installed and in the PATH
         (:name hindent
@@ -89,7 +84,6 @@
         yaml-mode
         expand-region
         change-inner
-        annotate
         yagist
         hindent
         ormolu
