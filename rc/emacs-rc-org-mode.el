@@ -134,10 +134,6 @@
  '(org-outline-path-complete-in-steps nil)
  '(org-refile-targets '((org-agenda-files . (:maxlevel . 3))))
 
- '(org-mobile-directory "~/Dropbox/MobileOrg")
- '(org-mobile-files-exclude-regexp "^\\(english\\|from-mobile\\)\\.org$")
- '(org-mobile-agendas '("A"))
-
  '(org-tags-column 80)
  '(org-insert-heading-respect-content t)
  '(org-goto-interface 'outline-path-completion)
