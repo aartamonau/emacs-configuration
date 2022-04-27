@@ -44,7 +44,6 @@
         eproject
         dired+
         dired-hacks
-        emacs-w3m
         go-mode
         go-lint
         go-imports
