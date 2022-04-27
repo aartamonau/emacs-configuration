@@ -139,8 +139,6 @@
 
 (load "emacs-rc-narrow-indirect.el")
 
-(load "emacs-rc-httprepl.el")
-
 (load "emacs-rc-grep.el")
 
 (load "emacs-rc-windows.el")

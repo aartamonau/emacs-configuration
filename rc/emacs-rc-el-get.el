@@ -96,7 +96,6 @@
         hindent
         ormolu
         narrow-indirect
-        httprepl
         grep-o-matic
         scratch
         swiper
