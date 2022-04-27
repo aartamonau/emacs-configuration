@@ -16,13 +16,6 @@
         (:name persistent-scratch
                :type elpa)
 
-        (:name ormolu
-               :type github
-               :branch "master"
-               :depends reformatter
-               :pkgname "vyorkin/ormolu.el"
-               :compile "ormolu.el")
-
         (:name magit
                :type elpa)
 
@@ -73,7 +66,6 @@
         expand-region
         change-inner
         yagist
-        ormolu
         narrow-indirect
         grep-o-matic
         scratch
