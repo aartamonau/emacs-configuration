@@ -12,11 +12,6 @@
 (setq el-get-sources
       '((:name unbound
                :type emacswiki :features (unbound))
-        (:name keyfreq
-               :description "Track Emacs commands frequency"
-               :type github
-               :branch "master"
-               :pkgname "dacap/keyfreq")
 
         (:name persistent-scratch
                :type elpa)
