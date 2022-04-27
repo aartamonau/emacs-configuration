@@ -49,38 +49,17 @@
  '(org-fast-tag-selection-single-key (quote expert))
  '(org-agenda-custom-commands
    (quote (("A" agenda "Today"
-            ((org-agenda-tag-filter-preset '("-COUCHBASE"))
-             (org-agenda-skip-function
+            ((org-agenda-skip-function
               '(org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING")))))
            ("T" agenda "Tomorrow"
-            ((org-agenda-tag-filter-preset '("-COUCHBASE"))
-             (org-agenda-start-day "+1")
+            ((org-agenda-start-day "+1")
              (org-agenda-ndays 1)
              (org-agenda-skip-function
               '(org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING")))))
            ("W" agenda "Week"
             ((org-agenda-ndays 7)
-             (org-agenda-tag-filter-preset '("-COUCHBASE"))
              (org-agenda-skip-function
               '(org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING")))))
-
-           ("C" . "Couchbase agendas")
-           ("CA" agenda "Today"
-            ((org-agenda-tag-filter-preset '("+COUCHBASE"))
-             (org-agenda-skip-function
-              '(org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING")))))
-           ("CT" agenda "Tomorrow"
-            ((org-agenda-tag-filter-preset '("+COUCHBASE"))
-             (org-agenda-start-day "+1")
-             (org-agenda-ndays 1)
-             (org-agenda-skip-function
-              '(org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING")))))
-           ("CW" agenda "Week"
-            ((org-agenda-tag-filter-preset '("+COUCHBASE"))
-             (org-agenda-ndays 7)
-             (org-agenda-skip-function
-              '(org-agenda-skip-entry-if 'todo '("ASSIGN" "WAITING")))))
-
            ("Q" . "Queries")
            ("QN" "Next" tags "NEXT")
            ("QW" "Waiting" tags-todo "TODO=\"WAITING\"|WAITING" nil)
