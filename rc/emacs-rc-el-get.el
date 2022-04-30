@@ -29,8 +29,7 @@
         lsp-mode
         lsp-haskell
         markdown-mode
-        solarized-emacs
-        color-theme-solarized
+        doom-themes
         magit
         browse-at-remote
         eproject

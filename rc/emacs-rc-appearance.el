@@ -2,8 +2,7 @@
 (custom-set-faces
  '(variable-pitch ((t (:family "DejaVu Sans Mono")))))
 
-(setq frame-background-mode 'light)
-(load-theme 'solarized)
+(load-theme 'doom-gruvbox)
 
 (let ((face '((t (:bold t :foreground "#FC5C94" :background "#DDE6A7")))))
   (custom-set-faces
