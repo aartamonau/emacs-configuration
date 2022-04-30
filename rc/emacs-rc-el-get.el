@@ -25,11 +25,12 @@
         auctex
         haskell-mode
         flycheck
-        company
+        ;; company
         lsp-mode
         lsp-haskell
         markdown-mode
         doom-themes
+        doom-modeline
         magit
         browse-at-remote
         eproject
@@ -60,8 +61,6 @@
         ace-link
         shackle
         zones
-        spaceline
-        diminish
         thingatpt+
         hungry-delete
         ivy-xref
