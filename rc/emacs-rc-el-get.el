@@ -45,7 +45,6 @@
         man-preview
         diff-hl
         wtf
-        protobuf-mode
         ggtags
         yaml-mode
         expand-region
