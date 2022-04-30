@@ -122,8 +122,6 @@
 
 (load "emacs-rc-expand-region.el")
 
-(load "emacs-rc-narrow-indirect.el")
-
 (load "emacs-rc-grep.el")
 
 (load "emacs-rc-windows.el")

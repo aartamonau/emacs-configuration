@@ -49,7 +49,6 @@
         yaml-mode
         expand-region
         yagist
-        narrow-indirect
         grep-o-matic
         scratch
         swiper
