@@ -56,7 +56,6 @@
         ace-window
         ace-link
         shackle
-        zones
         thingatpt+
         hungry-delete
         ivy-xref
