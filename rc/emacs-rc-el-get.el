@@ -29,7 +29,6 @@
         lsp-mode
         lsp-haskell
         markdown-mode
-        rect-mark
         solarized-emacs
         color-theme-solarized
         magit
