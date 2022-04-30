@@ -111,3 +111,5 @@
 (when (require 'hungry-delete nil 'noerror)
   (setq hungry-delete-chars-to-skip " \t\f\v")
   (global-hungry-delete-mode 1))
+
+(setq tags-revert-without-query t)
