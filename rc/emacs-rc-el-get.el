@@ -25,7 +25,6 @@
         auctex
         haskell-mode
         flycheck
-        ;; company
         lsp-mode
         lsp-haskell
         markdown-mode
