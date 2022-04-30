@@ -39,8 +39,6 @@
         go-mode
         go-lint
         go-imports
-        rust-mode
-        rusti
         guru-mode
         hi2
         magit-view-file
