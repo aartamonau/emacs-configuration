@@ -46,8 +46,6 @@
 ;; Using Haskell goodies
 (load "emacs-rc-haskell.el")
 
-(load "emacs-rc-thingatpt+.el")
-
 ;; Some eye candy including beautiful buffer switching (instead of iswitch)
 (load "emacs-rc-swiper.el")
 
