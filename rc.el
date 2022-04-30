@@ -61,9 +61,6 @@
 ;; make names of the buffer be unique
 (load "emacs-rc-uniquify.el")
 
-;; Agda
-(load "emacs-rc-agda.el")
-
 ;; whitespace mode
 (load "emacs-rc-whitespace.el")
 
