@@ -52,9 +52,6 @@
 ;; Parantheses highlighting
 (load "emacs-rc-show-paren.el")
 
-;; Asm mode customizations
-(load "emacs-rc-asm-mode.el")
-
 ;; Org mode
 (load "emacs-rc-org-mode.el")
 
