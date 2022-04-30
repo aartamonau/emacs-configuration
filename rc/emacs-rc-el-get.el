@@ -59,7 +59,8 @@
         thingatpt+
         hungry-delete
         ivy-xref
-        undo-tree))
+        undo-tree
+        erlang))
 
 (setq aa/all-packages
       (append aa/packages
