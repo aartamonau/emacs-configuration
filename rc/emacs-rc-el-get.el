@@ -39,7 +39,6 @@
         go-lint
         go-imports
         guru-mode
-        hi2
         magit-view-file
         man-preview
         diff-hl
