@@ -8,6 +8,7 @@
 
 (setq haskell-process-type 'auto)
 (setq haskell-compile-ignore-cabal t)
+(setq haskell-process-load-or-reload-prompt t)
 
 (eval-after-load "haskell-mode"
   '(progn (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-file)
