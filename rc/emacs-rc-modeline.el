@@ -1,7 +1,5 @@
 (require 'doom-modeline)
 
-(display-time-mode -1)
-
 ;; Whether display icons in the mode-line.
 ;; While using the server mode in GUI, should set the value explicitly.
 (setq doom-modeline-icon nil)

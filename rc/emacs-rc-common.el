@@ -7,9 +7,6 @@
 ;; No menubar
 (menu-bar-mode 0)
 
-;; Display time in status bar
-(display-time)
-
 ;; Display column number in status bar
 (column-number-mode 't)
 
