@@ -13,11 +13,7 @@
   '(progn (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-file)
           (define-key haskell-mode-map (kbd "C-c C-r") 'haskell-process-reload-file)
           (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
-          ;; Build the Cabal project.
-          (define-key haskell-mode-map (kbd "C-c c")
-            (lambda ()
-              (interactive)
-              (compile "stack build --fast --keep-going")))))
+          (define-key haskell-mode-map (kbd "C-c c") 'haskell-compile)))
 
 (custom-set-variables
  '(haskell-doc-show-reserved nil)
