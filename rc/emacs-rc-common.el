@@ -113,3 +113,8 @@
   (global-hungry-delete-mode 1))
 
 (setq tags-revert-without-query t)
+
+(when (eq system-type 'darwin)
+  (setq mac-option-modifier 'meta)
+  (setq ring-bell-function 'ignore)
+  (menu-bar-mode t))
