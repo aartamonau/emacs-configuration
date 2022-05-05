@@ -7,4 +7,5 @@
                                  magit-diff-mode
                                  magit-revision-mode
                                  magit-stash-mode))
- '(whitespace-style '(face tabs trailing lines-tail empty tab-mark)))
+ '(whitespace-style '(face tabs trailing lines-tail empty tab-mark))
+ '(whitespace-line-column 100))
