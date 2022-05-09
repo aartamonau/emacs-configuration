@@ -25,5 +25,3 @@
             file-list))))
 
 (define-key dired-mode-map (kbd "<C-return>") 'my/open-in-external-app)
-
-(add-hook 'dired-mode-hook (lambda () (dired-collapse-mode)))
