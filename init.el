@@ -8,7 +8,7 @@
 (setq load-path
       (append load-path '("~/emacs/rc")))
 
-;; ========================= el-get =========================
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; el-get ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
 (unless (require 'el-get nil 'noerror)
@@ -84,13 +84,13 @@
 (custom-set-variables
  '(el-get-verbose t))
 
-;; ========================= general configuration =========================
+;;;;;;;;;;;;;;;;;;;;;;; general configuration ;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package emacs
   :custom
   ;; Prefer splitting windows vertically.
   (split-height-threshold nil))
 
-;; ========================= tramp =========================
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; tramp ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package tramp
   :bind (("C-c o" . sudo-find-file)
          ("C-c s" . sudo-reopen-file))
@@ -116,7 +116,7 @@ sudo-tramp-prefix and by clearing buffer-read-only"
       (sudo-find-file file-name)
       (kill-buffer buffer))))
 
-;; ========================= which-function-mode =========================
+;;;;;;;;;;;;;;;;;;;;;;;; which-function-mode ;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package which-func
   :custom
   (which-func-modes '(emacs-lisp-mode
@@ -131,11 +131,11 @@ sudo-tramp-prefix and by clearing buffer-read-only"
   :config
   (which-function-mode t))
 
-;; ========================= hippie-expand =========================
+;;;;;;;;;;;;;;;;;;;;;;;;;;; hippie expand ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package hippie-exp
   :bind ("M-/" . hippie-expand))
 
-;; ========================= dired =========================
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; dired ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package dired
   :custom
   (dired-listing-switches "-alF")
@@ -148,7 +148,7 @@ sudo-tramp-prefix and by clearing buffer-read-only"
   :config
   (diredp-toggle-find-file-reuse-dir 1))
 
-;; ========================= window management =========================
+;;;;;;;;;;;;;;;;;;;;;;;;; window management ;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package winner
   :demand t
   :custom
