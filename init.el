@@ -82,6 +82,12 @@
 (custom-set-variables
  '(el-get-verbose t))
 
+;; ========================= general configuration =========================
+(use-package emacs
+  :custom
+  ;; Prefer splitting windows vertically.
+  (split-height-threshold nil))
+
 ;; ========================= tramp =========================
 (use-package tramp
   :bind (("C-c o" . sudo-find-file)
@@ -139,6 +145,27 @@ sudo-tramp-prefix and by clearing buffer-read-only"
   (diredp-hide-details-initially-flag nil)
   :config
   (diredp-toggle-find-file-reuse-dir 1))
+
+;; ========================= window management =========================
+(use-package winner
+  :demand t
+  :custom
+  (winner-dont-bind-my-keys t)
+  (winner-ring-size 20)
+  :bind (:map winner-mode-map
+              ("C-c [" . winner-undo)
+              ("C-c ]" . winner-redo))
+  :config
+  (winner-mode))
+
+(use-package shackle
+  :custom
+  (shackle-rules '((compilation-mode :select nil :other t)
+                   ("\\*[Wo]*Man.*\\*" :regexp t :select t :other t)
+                   ("\\*godoc .*\\*" :regexp t :select t :other t)
+                   ("*undo-tree*" :regexp t :size 0.3 :align right)))
+  :config
+  (shackle-mode))
 
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
