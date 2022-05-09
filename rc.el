@@ -100,8 +100,6 @@
 
 (load "emacs-rc-which-func.el")
 
-(load "emacs-rc-tramp.el")
-
 (load "emacs-rc-expand-region.el")
 
 (load "emacs-rc-grep.el")
