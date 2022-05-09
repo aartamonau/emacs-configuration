@@ -70,7 +70,9 @@
         ivy-xref
         undo-tree
         erlang
-        use-package))
+        use-package
+        line-comment-banner
+        ))
 
 (setq aa/all-packages
       (append aa/packages
@@ -166,6 +168,15 @@ sudo-tramp-prefix and by clearing buffer-read-only"
                    ("*undo-tree*" :regexp t :size 0.3 :align right)))
   :config
   (shackle-mode))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;; banner comments ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package line-comment-banner
+  :bind (("C-;" . (lambda (&optional width)
+                    (interactive "p")
+                    (unless (> width 1)
+                      ;; default to 70 column fill
+                      (setf width 70))
+                    (line-comment-banner width)))))
 
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
