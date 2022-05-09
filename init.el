@@ -108,5 +108,20 @@ sudo-tramp-prefix and by clearing buffer-read-only"
       (sudo-find-file file-name)
       (kill-buffer buffer))))
 
+;; ========================= which-function-mode =========================
+(use-package which-func
+  :custom
+  (which-func-modes '(emacs-lisp-mode
+                      c-mode
+                      c++-mode
+                      python-mode
+                      makefile-mode
+                      sh-mode
+                      diff-mode
+                      erlang-mode
+                      haskell-mode))
+  :config
+  (which-function-mode t))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
