@@ -182,5 +182,9 @@ sudo-tramp-prefix and by clearing buffer-read-only"
 (use-package expand-region
   :bind (("C-'" . er/expand-region)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;; spell-checking ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package flyspell
+  :hook (text-mode . flyspell-mode))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
