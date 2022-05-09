@@ -81,9 +81,6 @@
 ;; avy
 (load "emacs-rc-avy.el")
 
-;; hippie expand
-(load "emacs-rc-hippie-expand.el")
-
 ;; git
 (load "emacs-rc-git.el")
 

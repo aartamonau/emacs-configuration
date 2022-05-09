@@ -123,5 +123,9 @@ sudo-tramp-prefix and by clearing buffer-read-only"
   :config
   (which-function-mode t))
 
+;; ========================= hippie-expand =========================
+(use-package hippie-exp
+  :bind ("M-/" . hippie-expand))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
