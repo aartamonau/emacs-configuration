@@ -184,7 +184,8 @@ sudo-tramp-prefix and by clearing buffer-read-only"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;; spell-checking ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package flyspell
-  :hook (text-mode . flyspell-mode))
+  :hook ((text-mode . flyspell-mode)
+         (prog-mode . flyspell-prog-mode)))
 
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
