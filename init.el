@@ -72,6 +72,7 @@
         erlang
         use-package
         line-comment-banner
+        flyspell-correct-ivy
         ))
 
 (setq aa/all-packages
@@ -185,7 +186,13 @@ sudo-tramp-prefix and by clearing buffer-read-only"
 ;;;;;;;;;;;;;;;;;;;;;;;;;;; spell-checking ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package flyspell
   :hook ((text-mode . flyspell-mode)
-         (prog-mode . flyspell-prog-mode)))
+         (prog-mode . flyspell-prog-mode))
+  :bind (:map flyspell-mode-map
+              ("C-c $" . flyspell-correct-wrapper)))
+
+(use-package flyspell-correct-ivy
+  :custom
+  (flyspell-correct-interface #'flyspell-correct-ivy))
 
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
