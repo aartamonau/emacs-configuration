@@ -1,6 +1,3 @@
-;; el-get
-(load "emacs-rc-el-get.el")
-
 ;; global hook handler
 (load "emacs-rc-global-hook.el")
 
