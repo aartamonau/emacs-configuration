@@ -127,5 +127,18 @@ sudo-tramp-prefix and by clearing buffer-read-only"
 (use-package hippie-exp
   :bind ("M-/" . hippie-expand))
 
+;; ========================= dired =========================
+(use-package dired
+  :custom
+  (dired-listing-switches "-alF")
+  (dired-recursive-deletes 'always))
+
+(use-package dired+
+  :after dired
+  :custom
+  (diredp-hide-details-initially-flag nil)
+  :config
+  (diredp-toggle-find-file-reuse-dir 1))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")

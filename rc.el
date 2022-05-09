@@ -89,8 +89,6 @@
 
 (load "emacs-rc-undo-tree.el")
 
-(load "emacs-rc-dired.el")
-
 (load "emacs-rc-go-mode.el")
 
 (load "emacs-rc-vc.el")
