@@ -26,14 +26,4 @@
 
 (define-key dired-mode-map (kbd "<C-return>") 'my/open-in-external-app)
 
-(define-key dired-mode-map (kbd "M-g") nil)
-(define-key dired-mode-map (kbd "M-g n") 'next-error)
-(define-key dired-mode-map (kbd "M-g p") 'previous-error)
-(define-key dired-mode-map (kbd "M-G") 'diredp-do-grep)
-
-(require 'dired-ranger)
-(define-key dired-mode-map (kbd "W") 'dired-ranger-copy)
-(define-key dired-mode-map (kbd "X") 'dired-ranger-move)
-(define-key dired-mode-map (kbd "Y") 'dired-ranger-paste)
-
 (add-hook 'dired-mode-hook (lambda () (dired-collapse-mode)))
