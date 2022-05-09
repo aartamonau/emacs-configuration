@@ -178,5 +178,9 @@ sudo-tramp-prefix and by clearing buffer-read-only"
                       (setf width 70))
                     (line-comment-banner width)))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;; expand-region ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package expand-region
+  :bind (("C-'" . er/expand-region)))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")

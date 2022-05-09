@@ -93,6 +93,4 @@
 
 (load "emacs-rc-vc.el")
 
-(load "emacs-rc-expand-region.el")
-
 (load "emacs-rc-grep.el")
