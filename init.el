@@ -187,6 +187,9 @@ sudo-tramp-prefix and by clearing buffer-read-only"
 (use-package flyspell
   :hook ((text-mode . flyspell-mode)
          (prog-mode . flyspell-prog-mode))
+  :config
+  (unbind-key "C-;" flyspell-mode-map)
+  (unbind-key "C-." flyspell-mode-map)
   :bind (:map flyspell-mode-map
               ("C-c $" . flyspell-correct-wrapper)))
 
