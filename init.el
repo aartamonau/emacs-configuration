@@ -359,5 +359,11 @@ of listed in `linum-mode-excludes'."
   :config
   (global-hungry-delete-mode 1))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;; guru-mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package guru-mode
+  :demand t
+  :config
+  (guru-global-mode 1))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
