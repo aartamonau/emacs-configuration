@@ -1,6 +1,6 @@
 (require 'haskell-mode-autoloads)
 
-(add-hook 'haskell-mode-hook 'global-hook-handler)
+(add-hook 'haskell-mode-hook 'subword-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-decl-scan)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)

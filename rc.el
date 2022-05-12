@@ -1,6 +1,3 @@
-;; global hook handler
-(load "emacs-rc-global-hook.el")
-
 ;; Customizing common Emacs' appearance and behavior
 (load "emacs-rc-common.el")
 
