@@ -331,5 +331,25 @@ of listed in `linum-mode-excludes'."
     (unless (member major-mode linum-mode-excludes)
       ad-do-it)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;; mode-line ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package doom-modeline
+  :demand t
+  :custom
+  ;; Whether display icons in the mode-line.
+  ;; While using the server mode in GUI, should set the value explicitly.
+  (doom-modeline-icon nil)
+
+  ;; If non nil the perspective name is displayed alongside a folder icon.
+  (doom-modeline-persp-icon nil)
+
+  ;; Whether display the IRC notifications. It requires `circe' or `erc' package.
+  (doom-modeline-irc nil)
+
+  ;; Whether display the environment version.
+  (doom-modeline-env-version nil)
+
+  :config
+  (doom-modeline-mode 1))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")

@@ -6,7 +6,6 @@
 
 ;; appearance
 (load "emacs-rc-appearance.el")
-(load "emacs-rc-modeline.el")
 
 ;; auto-fill-mode adjustments
 (load "emacs-rc-auto-fill-mode.el")
