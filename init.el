@@ -190,6 +190,7 @@ sudo-tramp-prefix and by clearing buffer-read-only"
   :config
   (unbind-key "C-;" flyspell-mode-map)
   (unbind-key "C-." flyspell-mode-map)
+  (unbind-key "C-M-i" flyspell-mode-map)
   :bind (:map flyspell-mode-map
               ("C-c $" . flyspell-correct-wrapper)))
 
