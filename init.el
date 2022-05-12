@@ -119,6 +119,7 @@ sudo-tramp-prefix and by clearing buffer-read-only"
 
 ;;;;;;;;;;;;;;;;;;;;;;;; which-function-mode ;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package which-func
+  :demand t
   :custom
   (which-func-modes '(emacs-lisp-mode
                       c-mode
@@ -144,6 +145,7 @@ sudo-tramp-prefix and by clearing buffer-read-only"
 
 (use-package dired+
   :after dired
+  :demand t
   :custom
   (diredp-hide-details-initially-flag nil)
   :config
@@ -162,6 +164,7 @@ sudo-tramp-prefix and by clearing buffer-read-only"
   (winner-mode))
 
 (use-package shackle
+  :demand t
   :custom
   (shackle-rules '((compilation-mode :select nil :other t)
                    ("\\*[Wo]*Man.*\\*" :regexp t :select t :other t)
@@ -200,6 +203,7 @@ sudo-tramp-prefix and by clearing buffer-read-only"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; undo-tree ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package undo-tree
+  :demand t
   :custom
   (undo-tree-visualizer-timestamps t)
   (undo-tree-auto-save-history nil)
