@@ -79,8 +79,6 @@
 ;; compilation setup (must be placed after eproject)
 (load "emacs-rc-compile.el")
 
-(load "emacs-rc-undo-tree.el")
-
 (load "emacs-rc-go-mode.el")
 
 (load "emacs-rc-vc.el")

@@ -198,5 +198,13 @@ sudo-tramp-prefix and by clearing buffer-read-only"
   :custom
   (flyspell-correct-interface #'flyspell-correct-ivy))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;; undo-tree ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package undo-tree
+  :custom
+  (undo-tree-visualizer-timestamps t)
+  (undo-tree-auto-save-history nil)
+  :config
+  (global-undo-tree-mode 1))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
