@@ -310,5 +310,11 @@ sudo-tramp-prefix and by clearing buffer-read-only"
   :custom
   (show-paren-style 'mixed))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; uniquify ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package uniquify
+  :demand t
+  :custom
+  (uniquify-buffer-name-style 'post-forward-angle-brackets))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")

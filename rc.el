@@ -44,8 +44,7 @@
 ;; latex
 (load "emacs-rc-latex.el")
 
-;; make names of the buffer be unique
-(load "emacs-rc-uniquify.el")
+;; (load "emacs-rc-latex.el")
 
 (load "emacs-rc-gtags.el")
 
