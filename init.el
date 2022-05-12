@@ -351,5 +351,13 @@ of listed in `linum-mode-excludes'."
   :config
   (doom-modeline-mode 1))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;; hungry delete ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package hungry-delete
+  :demand t
+  :custom
+  (hungry-delete-chars-to-skip " \t\f\v")
+  :config
+  (global-hungry-delete-mode 1))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
