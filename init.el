@@ -234,5 +234,18 @@ sudo-tramp-prefix and by clearing buffer-read-only"
                          (interactive)
                          (grep-o-matic-visited-files t)))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;; compilation ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package compile
+  :after eproject
+  :init
+  (defun makefile-compile ()
+    (let* ((root (eproject-root))
+           (makefile (concat (file-name-as-directory root) "Makefile")))
+      (when (file-readable-p makefile)
+        (set (make-local-variable 'compile-command)
+             (format "make -k -C '%s'" root)))))
+  :bind ("C-c c" . compile)
+  :hook (generic-git-project-file-visit . makefile-compile))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
