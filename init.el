@@ -287,5 +287,20 @@ sudo-tramp-prefix and by clearing buffer-read-only"
               ("q" . delete-window)
               ("Q" . kill-buffer-and-window)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;; whitespace ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package whitespace
+  :demand t
+  :config
+  (global-whitespace-mode 1)
+  :custom
+  (whitespace-global-modes '(not org-mode
+                                 dired-mode
+                                 magit-status-mode
+                                 magit-diff-mode
+                                 magit-revision-mode
+                                 magit-stash-mode))
+  (whitespace-style '(face tabs trailing lines-tail empty tab-mark))
+  (whitespace-line-column 100))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")

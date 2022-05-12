@@ -50,9 +50,6 @@
 ;; make names of the buffer be unique
 (load "emacs-rc-uniquify.el")
 
-;; whitespace mode
-(load "emacs-rc-whitespace.el")
-
 (load "emacs-rc-gtags.el")
 
 ;; Erlang
