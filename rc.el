@@ -21,9 +21,6 @@
 ;; c-mode
 (load "emacs-rc-c-mode.el")
 
-;; Numbering lines
-(load "emacs-rc-linum.el")
-
 ;; Loading persistence features.
 (load "emacs-rc-desktop.el")
 
