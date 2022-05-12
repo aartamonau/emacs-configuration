@@ -80,5 +80,3 @@
 (load "emacs-rc-compile.el")
 
 (load "emacs-rc-go-mode.el")
-
-(load "emacs-rc-vc.el")
