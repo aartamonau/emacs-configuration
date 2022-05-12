@@ -247,5 +247,41 @@ sudo-tramp-prefix and by clearing buffer-read-only"
   :bind ("C-c c" . compile)
   :hook (generic-git-project-file-visit . makefile-compile))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;; view mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package view
+  :after emacs
+  :demand t
+  :config
+
+  (defun my/maybe-view-mode (&rest args)
+    (let ((major-mode-name (symbol-name major-mode)))
+      ;; don't activate view-mode in magit buffers
+      (unless (or (string-prefix-p "magit-" major-mode-name)
+                  (memq major-mode
+                        '(rebase-mode git-rebase-mode doc-view-mode pdf-view-mode)))
+        (apply 'view-mode args))))
+
+  (defadvice toggle-read-only (after run-view-mode-on-read-only activate)
+    "Activates view-mode in buffer if it is made read-only"
+    (let ((toggle (if buffer-read-only 1 0)))
+      (my/maybe-view-mode toggle)))
+
+  :hook (find-file . (lambda nil
+                       "Activates view-mode if buffer is read-only"
+                       (when buffer-read-only
+                         (my/maybe-view-mode))))
+  :bind (:map view-mode-map
+              ("j" . next-line)
+              ("k" . previous-line)
+              ("h" . backward-char)
+              ("l" . forward-char)
+
+              ("G" . (lambda ()
+                       (interactive)
+                       (View-goto-percent 100)))
+
+              ("q" . delete-window)
+              ("Q" . kill-buffer-and-window)))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
