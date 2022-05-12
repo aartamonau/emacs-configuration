@@ -82,5 +82,3 @@
 (load "emacs-rc-go-mode.el")
 
 (load "emacs-rc-vc.el")
-
-(load "emacs-rc-grep.el")

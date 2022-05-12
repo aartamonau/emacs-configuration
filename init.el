@@ -206,5 +206,33 @@ sudo-tramp-prefix and by clearing buffer-read-only"
   :config
   (global-undo-tree-mode 1))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;; grep-o-matic ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package grep-o-matic
+  :demand t
+  :config
+  ;; not using :custom because it doesn't allow updating default values
+  (setq grep-find-ignored-directories
+        (cons ".eunit" grep-find-ignored-directories))
+  (setq grep-o-matic-search-patterns
+        (append '("*.[he]rl" "*.hs" "*.cmake" "CMakeLists" "*.bash" "*.rb")
+                grep-o-matic-search-patterns))
+  (setq grep-o-matic-ask-about-save nil)
+
+  :bind (:map grep-o-matic-map
+              ("M-j" . grep-o-matic-repository)
+              ("M-k" . grep-o-matic-current-directory)
+              ("M-l" . grep-o-matic-visited-files)
+
+              ;; the following variations prompt to confirm the pattern
+              ("M-J" . (lambda nil
+                         (interactive)
+                         (grep-o-matic-repository t)))
+              ("M-K" . (lambda nil
+                         (interactive)
+                         (grep-o-matic-current-directory t)))
+              ("M-L" . (lambda nil
+                         (interactive)
+                         (grep-o-matic-visited-files t)))))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
