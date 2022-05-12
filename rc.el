@@ -38,9 +38,6 @@
 ;; Some eye candy including beautiful buffer switching (instead of iswitch)
 (load "emacs-rc-swiper.el")
 
-;; Parantheses highlighting
-(load "emacs-rc-show-paren.el")
-
 ;; Org mode
 (load "emacs-rc-org-mode.el")
 

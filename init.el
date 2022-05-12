@@ -302,5 +302,13 @@ sudo-tramp-prefix and by clearing buffer-read-only"
   (whitespace-style '(face tabs trailing lines-tail empty tab-mark))
   (whitespace-line-column 100))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;; show-paren-mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package paren
+  :demand t
+  :config
+  (show-paren-mode 1)
+  :custom
+  (show-paren-style 'mixed))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
