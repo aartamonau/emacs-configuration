@@ -188,8 +188,7 @@
     (when linum-mode
       (linum-delete-overlays)))
 
-  :hook ((text-mode . auto-fill-mode)
-         (prog-mode . auto-fill-mode))
+  :hook (text-mode . auto-fill-mode)
 
   :bind (;; kill current buffer (without a prompt)
          ("C-x k" . (lambda ()
