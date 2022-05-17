@@ -7,7 +7,10 @@
 
 (eval-after-load "org"
   '(progn
-     (add-hook 'org-mode-hook 'my/auto-fill-mode-comments-only-disable)
+     (add-hook 'org-mode-hook
+               (lambda ()
+                 ;; auto-fill everything, not just comments in org-mode
+                 (set-variable 'comment-auto-fill-only-comments nil t)))
 
      (define-key org-mode-map "\M-n"    'org-metadown)
      (define-key org-mode-map "\M-p"    'org-metaup)
