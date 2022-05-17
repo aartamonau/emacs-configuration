@@ -179,6 +179,11 @@
       (when was-disabled
         (disable-expensive-modes))))
 
+  :init
+  (defun my/linum-reset ()
+    (when linum-mode
+      (linum-delete-overlays)))
+
   :hook ((text-mode . auto-fill-mode)
          (prog-mode . auto-fill-mode))
 
@@ -191,13 +196,20 @@
          ("C-h M" . man)
 
          ;; zoom in
-         ("C-+" . text-scale-increase)
+         ("C-+" . (lambda ()
+                    (interactive)
+                    (text-scale-increase 1)
+                    (my/linum-reset)))
          ;; zoom out
-         ("C--" . text-scale-decrease)
+         ("C--" . (lambda ()
+                    (interactive)
+                    (text-scale-decrease 1)
+                    (my/linum-reset)))
          ;; reset zoom
          ("C-=" . (lambda ()
                     (interactive)
-                    (text-scale-set 0)))))
+                    (text-scale-set 0)
+                    (my/linum-reset)))))
 
 (use-package calendar
   :custom
