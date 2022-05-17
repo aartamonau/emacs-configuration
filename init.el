@@ -458,5 +458,12 @@ of listed in `linum-mode-excludes'."
   :config
   (guru-global-mode 1))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ediff ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package ediff
+  :defer t
+  :custom
+  (ediff-window-setup-function 'ediff-setup-windows-plain)
+  (ediff-split-window-function 'split-window-horizontally))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")

@@ -38,9 +38,6 @@
 ;; markdown mode
 (load "emacs-rc-markdown.el")
 
-;; ediff adjustments
-(load "emacs-rc-ediff.el")
-
 ;; ibuffer
 (load "emacs-rc-ibuffer.el")
 
