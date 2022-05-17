@@ -4,9 +4,6 @@
 ;; misc keybindings
 (load "emacs-rc-misc-keybindings.el")
 
-;; appearance
-(load "emacs-rc-appearance.el")
-
 ;; auto-fill-mode adjustments
 (load "emacs-rc-auto-fill-mode.el")
 

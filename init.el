@@ -87,9 +87,18 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;; general configuration ;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package emacs
+  :demand t
   :custom
   ;; Prefer splitting windows vertically.
-  (split-height-threshold nil))
+  (split-height-threshold nil)
+  :config
+  ;; set default font
+  (set-face-attribute 'default nil :font "Monaco-11"))
+
+(use-package doom-themes
+  :demand t
+  :config
+  (load-theme 'doom-gruvbox))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; tramp ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package tramp
