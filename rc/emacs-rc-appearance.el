@@ -1,5 +1,2 @@
-(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-9.5"))
-(custom-set-faces
- '(variable-pitch ((t (:family "DejaVu Sans Mono")))))
-
+(set-face-attribute 'default nil :font "Monaco-11")
 (load-theme 'doom-gruvbox)
