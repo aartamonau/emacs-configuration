@@ -1,9 +1,6 @@
 ;; misc keybindings
 (load "emacs-rc-misc-keybindings.el")
 
-;; auto-fill-mode adjustments
-(load "emacs-rc-auto-fill-mode.el")
-
 (load "emacs-rc-flycheck.el")
 
 (load "emacs-rc-lsp-mode.el")

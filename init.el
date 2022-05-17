@@ -125,6 +125,12 @@
   (tags-revert-without-query t)
   ;; don’t "ring the bell"
   (ring-bell-function 'ignore)
+
+  ;; in programming modes, auto-fill only comments
+  (comment-auto-fill-only-comments t)
+  ;; default fill column
+  (fill-column 78)
+
   :config
   ;; set default font
   (set-face-attribute 'default nil :font "Monaco-11")
@@ -171,7 +177,10 @@
     (let ((was-disabled my/expensive-modes-disabled))
       ad-do-it
       (when was-disabled
-        (disable-expensive-modes)))))
+        (disable-expensive-modes))))
+
+  :hook ((text-mode . auto-fill-mode)
+         (prog-mode . auto-fill-mode)))
 
 (use-package calendar
   :custom
