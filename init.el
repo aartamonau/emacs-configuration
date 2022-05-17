@@ -180,7 +180,24 @@
         (disable-expensive-modes))))
 
   :hook ((text-mode . auto-fill-mode)
-         (prog-mode . auto-fill-mode)))
+         (prog-mode . auto-fill-mode))
+
+  :bind (;; kill current buffer (without a prompt)
+         ("C-x k" . (lambda ()
+                      (interactive)
+                      (kill-buffer (current-buffer))))
+
+         ;; open a man page
+         ("C-h M" . man)
+
+         ;; zoom in
+         ("C-+" . text-scale-increase)
+         ;; zoom out
+         ("C--" . text-scale-decrease)
+         ;; reset zoom
+         ("C-=" . (lambda ()
+                    (interactive)
+                    (text-scale-set 0)))))
 
 (use-package calendar
   :custom

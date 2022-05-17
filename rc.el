@@ -1,6 +1,3 @@
-;; misc keybindings
-(load "emacs-rc-misc-keybindings.el")
-
 (load "emacs-rc-flycheck.el")
 
 (load "emacs-rc-lsp-mode.el")
