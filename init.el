@@ -506,5 +506,9 @@ of listed in `linum-mode-excludes'."
   (ediff-window-setup-function 'ediff-setup-windows-plain)
   (ediff-split-window-function 'split-window-horizontally))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; markdown ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package markdown-mode
+  :mode "\\.\\(md\\|markdown\\)\\'")
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
