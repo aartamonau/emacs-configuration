@@ -95,6 +95,12 @@
   ;; set default font
   (set-face-attribute 'default nil :font "Monaco-11"))
 
+(use-package calendar
+  :custom
+  (calendar-week-start-day 1)
+  (calendar-today-visible-hook 'calendar-mark-today)
+  (calendar-today-marker 'holiday))
+
 (use-package doom-themes
   :demand t
   :config

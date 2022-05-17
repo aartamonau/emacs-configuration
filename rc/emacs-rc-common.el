@@ -49,9 +49,6 @@
 ;; default font
 ;; (set-default-font "DejaVu Sans Mono-8")
 
-;; the first day of week is monday
-(setq calendar-week-start-day 1)
-
 ;; add new line at the end of file if there is no one on save
 (custom-set-variables
  '(require-final-newline t))
