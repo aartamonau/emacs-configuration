@@ -91,9 +91,87 @@
   :custom
   ;; Prefer splitting windows vertically.
   (split-height-threshold nil)
+  ;; Prevent the startup message
+  (inhibit-startup-message t)
+  ;; Disable tool-bar
+  (tool-bar-mode nil)
+  ;; Disable menu-bar (but not on darwin, where it exposes a bug)
+  (menu-bar-mode (eq system-type 'darwin))
+  ;; Display column number in status bar
+  (column-number-mode t)
+  ;; Disable the scroll bar
+  (scroll-bar-mode nil)
+  ;; Scrolling
+  (scroll-conservatively 50)
+  (scroll-preserve-screen-position t)
+  (scroll-margin 10)
+  ;; don't use GUI pop-ups
+  (use-dialog-box nil)
+  ;; don't highlight the region between the point and the mark by default
+  (transient-mark-mode nil)
+  ;; don't use tabs for indentation
+  (indent-tabs-mode nil)
+  ;; don't show a cursor in non-selected windows
+  (cursor-in-non-selected-windows nil)
+  ;; add a newline at the end of files
+  (require-final-newline t)
+  ;; don't auto-revert buffers
+  (global-auto-revert-mode nil)
+  ;; don't auto-indent on pressing enter
+  (electric-indent-mode nil)
+  ;; auto-insert matching parentheses, etc.
+  (electric-pair-mode t)
+  ;; don’t ask whether to rever TAGS file
+  (tags-revert-without-query t)
+  ;; don’t "ring the bell"
+  (ring-bell-function 'ignore)
   :config
   ;; set default font
-  (set-face-attribute 'default nil :font "Monaco-11"))
+  (set-face-attribute 'default nil :font "Monaco-11")
+  ;; type "y"/"n" instead of "yes"/"no"
+  (defalias 'yes-or-no-p 'y-or-n-p)
+
+  ;; unbind suspend-frame unless running in the terminal
+  (unless (controlling-tty-p)
+    (unbind-key "C-z" global-map)
+    (unbind-key "C-x C-z" global-map))
+
+  ;; allow using Option as Meta on macos
+  (when (eq system-type 'darwin)
+    (setq mac-option-modifier 'meta))
+
+  ;; disable expensive modes on large files
+  (defvar my/expensive-modes-disabled nil)
+
+  (defun disable-expensive-modes ()
+    (interactive)
+    (fundamental-mode)
+    (font-lock-mode 0)
+    (linum-mode 0)
+    (flyspell-mode 0)
+    (auto-fill-mode 0)
+    (undo-tree-mode -1)
+    (toggle-truncate-lines 1)
+    (local-set-key (kbd "C-s") 'isearch-forward)
+    (local-set-key (kbd "C-r") 'isearch-backward)
+    (setq-local my/expensive-modes-disabled t))
+
+  (add-hook 'find-file-hook
+            (lambda ()
+              (let ((file-name (buffer-file-name (current-buffer))))
+                (when file-name
+                  (let* ((attributes (file-attributes file-name))
+                         (size (nth 7 attributes))
+                         (do-disable (and size (> size 5000000))))
+                    (when do-disable
+                      (message "Disabling expensive modes for `%s'" file-name)
+                      (disable-expensive-modes)))))))
+
+  (defadvice revert-buffer (around revert-buffer-disable-expensive last activate)
+    (let ((was-disabled my/expensive-modes-disabled))
+      ad-do-it
+      (when was-disabled
+        (disable-expensive-modes)))))
 
 (use-package calendar
   :custom

@@ -1,6 +1,3 @@
-;; Customizing common Emacs' appearance and behavior
-(load "emacs-rc-common.el")
-
 ;; misc keybindings
 (load "emacs-rc-misc-keybindings.el")
 
