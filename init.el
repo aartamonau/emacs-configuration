@@ -548,5 +548,12 @@ of listed in `linum-mode-excludes'."
   (aw-scope 'frame)
   :bind (("C-x o" . ace-window)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ace-link ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package ace-link
+  :demand t
+  :bind (("M-o" . ace-link-addr))
+  :config
+  (ace-link-setup-default))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")

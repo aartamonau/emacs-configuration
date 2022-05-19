@@ -30,9 +30,6 @@
 ;; ibuffer
 (load "emacs-rc-ibuffer.el")
 
-;; avy
-(load "emacs-rc-avy.el")
-
 ;; git
 (load "emacs-rc-git.el")
 
