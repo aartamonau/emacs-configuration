@@ -551,8 +551,25 @@ of listed in `linum-mode-excludes'."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ace-link ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package ace-link
   :demand t
-  :bind (("M-o" . ace-link-addr))
+  :bind (("M-o" . ace-link-addr)
+         ;; open a link visible in other window
+         ("C-x 4 o" . my/ace-link-other-window))
   :config
+  (defun my/other-window ()
+    (interactive)
+    (let ((window (selected-window)))
+      (if (fboundp 'ace-window)
+          (ace-window 0)
+        (other-window 0))
+      (message "%s" window)
+      (message "%s" (selected-window))
+      (not (eq window (selected-window)))))
+
+  (defun my/ace-link-other-window ()
+    (interactive)
+    (when (my/other-window)
+      (ace-link)))
+
   (ace-link-setup-default))
 
 ;; must be loaded after custom file
