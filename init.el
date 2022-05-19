@@ -541,5 +541,12 @@ of listed in `linum-mode-excludes'."
          ("C-c m" . avy-move-region)
          ("C-c M" . avy-move-line)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ace-window ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package ace-window
+  :custom
+  (aw-dispatch-always nil)
+  (aw-scope 'frame)
+  :bind (("C-x o" . ace-window)))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
