@@ -561,14 +561,18 @@ of listed in `linum-mode-excludes'."
       (if (fboundp 'ace-window)
           (ace-window 0)
         (other-window 0))
-      (message "%s" window)
-      (message "%s" (selected-window))
-      (not (eq window (selected-window)))))
+      (when (not (eq window (selected-window)))
+        window)))
 
   (defun my/ace-link-other-window ()
     (interactive)
-    (when (my/other-window)
-      (ace-link)))
+    (let ((window (my/other-window)))
+      (when window
+        (condition-case err
+            (ace-link)
+          (error
+           (message "%s" err)
+           (select-window window))))))
 
   (ace-link-setup-default))
 
