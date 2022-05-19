@@ -1,5 +1,3 @@
-(load "emacs-rc-flycheck.el")
-
 (load "emacs-rc-lsp-mode.el")
 
 ;; c-mode

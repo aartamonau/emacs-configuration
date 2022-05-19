@@ -510,5 +510,18 @@ of listed in `linum-mode-excludes'."
 (use-package markdown-mode
   :mode "\\.\\(md\\|markdown\\)\\'")
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; flycheck ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package flycheck
+  :custom
+  (flycheck-standard-error-navigation nil)
+  :custom-face
+  ;; make errors more visible
+  (flycheck-error ((t (:background "#500000" :underline nil))))
+  (flycheck-info ((t (:background "#005000" :underline nil))))
+  (flycheck-warning ((t (:background "#d04000" :underline nil))))
+  :bind (("C-c ?" . flycheck-list-errors)
+         ("C-c n" . flycheck-next-error)
+         ("C-c p" . flycheck-previous-error)))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
