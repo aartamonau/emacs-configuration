@@ -22,8 +22,6 @@
 
 ;; (load "emacs-rc-latex.el")
 
-(load "emacs-rc-gtags.el")
-
 ;; Erlang
 (load "emacs-rc-erlang.el")
 

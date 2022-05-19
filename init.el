@@ -576,5 +576,18 @@ of listed in `linum-mode-excludes'."
 
   (ace-link-setup-default))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ggtags ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package ggtags
+  :hook (c-mode-common . ggtags-mode)
+  :bind (:map ggtags-navigation-map
+              ("M->" . nil)
+              ("M-<" . nil)
+              ("C-M-s" . nil)
+              ("C-c M-<" . fisrst-error)
+              ("C-c M->" . ggtags-navigation-last-error)
+         :map ggtags-mode-map
+              ;; interferes with grep-o-matic
+              ("M-]" . nil)))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
