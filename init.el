@@ -571,8 +571,8 @@ of listed in `linum-mode-excludes'."
         (condition-case err
             (ace-link)
           (error
-           (message "%s" err)
-           (select-window window))))))
+           (select-window window)
+           (signal (car err) (cdr err)))))))
 
   (ace-link-setup-default))
 
