@@ -523,5 +523,23 @@ of listed in `linum-mode-excludes'."
          ("C-c n" . flycheck-next-error)
          ("C-c p" . flycheck-previous-error)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; avy ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package avy
+  :custom
+  (avy-style 'de-bruijn)
+  (avy-background t)
+  (avy-timeout-seconds 0.3)
+  (avy-all-windows nil)
+  (avy-all-windows-alt t)
+  (avy-subword-extra-word-chars nil)
+  :bind (("C-c j" . avy-goto-subword-1)
+         ("C-c l" . avy-goto-line)
+         ("C-c C-j" . avy-goto-subword-1)
+         ("C-c C-l" . avy-goto-line)
+         ("C-c C-w" . avy-kill-region)
+         ("C-c M-w" . avy-kill-ring-save-region)
+         ("C-c m" . avy-move-region)
+         ("C-c M" . avy-move-line)))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
