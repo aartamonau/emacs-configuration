@@ -588,5 +588,61 @@ of listed in `linum-mode-excludes'."
               ;; interferes with grep-o-matic
               ("M-]" . nil)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;; swiper/ivy/counsel ;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package isearch
+  :demand t
+  :bind (;; extra bindings when swiper is in use
+         ("M-s s" . isearch-forward)
+         ("M-s r" . isearch-backward)
+
+         ;; make isearch a bit more like ivy/swiper
+         :map isearch-mode-map
+         ("C-n" . isearch-repeat-forward)
+         ("C-p" . isearch-repeat-backward)
+         ("M-j" . isearch-yank-word-or-char)))
+
+(use-package ivy
+  :demand t
+  :custom
+  (ivy-use-virtual-buffers nil)
+  (ivy-count-format "(%d/%d) ")
+  (ivy-initial-inputs-alist '((org-refile . "^")
+                              (org-agenda-refile . "^")
+                              (org-capture-refile . "^")
+                              (counsel-M-x . "^")
+                              (counsel-describe-function . "")
+                              (counsel-describe-variable . "")
+                              (man . "^")
+                              (woman . "^")))
+  :config
+  (ivy-mode 1)
+  :bind (("C-c C-r" . ivy-resume)
+         :map ivy-minibuffer-map
+         ("M-r" . ivy-restrict-to-matches)
+         ("C-r" . ivy-previous-line)
+         ("C-s" . ivy-next-line)))
+
+(use-package ivy-xref
+  :demand t
+  :custom
+  (xref-show-definitions-function #'ivy-xref-show-defs)
+  (xref-show-xrefs-function #'ivy-xref-show-xrefs))
+
+(use-package swiper
+  :bind (("C-s" . swiper)
+         ("C-r" . swiper)))
+
+(use-package counsel
+  :bind (("M-x" . counsel-M-x)
+         ("C-x C-f" . counsel-find-file)
+         ("C-h f" . counsel-describe-function)
+         ("C-h v" . counsel-describe-variable)
+         ("C-h S" . counsel-info-lookup-symbol)
+         ("M-y" . counsel-yank-pop)
+         ("C-x j" . counsel-file-jump)
+         ("C-x C-j" . counsel-dired-jump)
+         ("C-x C-," . counsel-mark-ring)
+         ("C-c i" . counsel-imenu)))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")

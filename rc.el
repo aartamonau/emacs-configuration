@@ -11,9 +11,6 @@
 ;; Using Haskell goodies
 (load "emacs-rc-haskell.el")
 
-;; Some eye candy including beautiful buffer switching (instead of iswitch)
-(load "emacs-rc-swiper.el")
-
 ;; Org mode
 (load "emacs-rc-org-mode.el")
 
