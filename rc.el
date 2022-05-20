@@ -6,8 +6,6 @@
 ;; Loading persistence features.
 (load "emacs-rc-desktop.el")
 
-(load "emacs-rc-comint.el")
-
 ;; Using Haskell goodies
 (load "emacs-rc-haskell.el")
 
