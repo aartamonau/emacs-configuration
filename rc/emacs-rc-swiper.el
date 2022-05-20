@@ -1,8 +1,3 @@
-(eval-after-load "thingatpt"
-  '(progn (require 'thingatpt+)
-          (setq tap-near-point-y-distance 0)
-          (setq tap-near-point-x-distance 10)))
-
 (require 'swiper)
 (require 'counsel)
 
@@ -44,16 +39,6 @@
         (counsel-describe-variable . "")
         (man . "^")
         (woman . "^")))
-
-(defun my/ivy-thing-nearest-point (orig-fun &rest args)
-  (let ((r (apply orig-fun args)))
-    (message "result %s" r)
-    (if (and r (not (string= r "")))
-        r
-      (or (tap-thing-nearest-point 'symbol) ""))))
-
-(advice-add 'ivy-thing-at-point :around #'my/ivy-thing-nearest-point)
-(advice-remove 'ivy-thing-at-point #'my/ivy-thing-nearest-point)
 
 (require 'ivy-xref)
 ;; xref initialization is different in Emacs 27 - there are two different

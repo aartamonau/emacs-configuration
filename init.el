@@ -65,7 +65,6 @@
         ace-window
         ace-link
         shackle
-        thingatpt+
         hungry-delete
         ivy-xref
         undo-tree

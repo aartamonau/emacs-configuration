@@ -20,8 +20,6 @@
 ;; latex
 (load "emacs-rc-latex.el")
 
-;; (load "emacs-rc-latex.el")
-
 ;; Erlang
 (load "emacs-rc-erlang.el")
 
