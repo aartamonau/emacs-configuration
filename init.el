@@ -676,5 +676,16 @@ of listed in `linum-mode-excludes'."
   ;; ignore whitespace in git blame
   (vc-git-annotate-switches '("-w")))
 
+(use-package git-commit
+  :demand t
+  :custom
+  (git-commit-summary-max-length 65)
+  (git-commit-style-convention-checks '(non-empty-second-line
+                                        overlong-summary-line))
+  :hook (git-commit-setup . (lambda ()
+                              (setq fill-column 70)
+                              (setq-local whitespace-line-column 70))))
+
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
