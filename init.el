@@ -655,5 +655,15 @@ of listed in `linum-mode-excludes'."
   :config
   (global-diff-hl-mode t))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; yagist ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package yagist
+  :custom
+  (yagist-view-gist t)
+  :commands (yagist-region
+             yagist-region-private
+             yagist-buffer
+             yagist-buffer-private
+             yagist-list))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")

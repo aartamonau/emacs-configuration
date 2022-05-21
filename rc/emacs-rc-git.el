@@ -30,8 +30,6 @@
                               (get-buffer-create name)))
     ad-do-it))
 
-(setq yagist-view-gist t)
-
 (setq git-commit-summary-max-length 65)
 (setq git-commit-style-convention-checks
       '(non-empty-second-line overlong-summary-line))
