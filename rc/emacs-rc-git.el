@@ -1,10 +1,8 @@
 (require 'magit)
-(require 'browse-at-remote)
 
 (setq magit-completing-read-function 'ivy-completing-read)
 
 (global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-c g g") 'browse-at-remote)
 
 (define-key magit-log-mode-map (kbd "j") 'magit-goto-next-section)
 (define-key magit-log-mode-map (kbd "k") 'magit-goto-previous-section)

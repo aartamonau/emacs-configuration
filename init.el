@@ -665,5 +665,9 @@ of listed in `linum-mode-excludes'."
              yagist-buffer-private
              yagist-list))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;; browse-at-remote ;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package browse-at-remote
+  :bind (("C-c g g" . browse-at-remote)))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
