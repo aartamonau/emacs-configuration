@@ -686,6 +686,18 @@ of listed in `linum-mode-excludes'."
                               (setq fill-column 70)
                               (setq-local whitespace-line-column 70))))
 
+(use-package magit-view-file
+  :bind (("C-x v H" . magit-view-file-history))
+  :config
+  ;; reuse buffers
+  (defadvice magit-view-file-at-commit (around
+                                        magit-view-file-at-commit-reuse-buffer
+                                        activate)
+    (flet ((generate-new-buffer (name)
+                                (if (get-buffer name)
+                                    (kill-buffer name))
+                                (get-buffer-create name)))
+      ad-do-it)))
 
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
