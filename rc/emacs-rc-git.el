@@ -30,7 +30,6 @@
                               (get-buffer-create name)))
     ad-do-it))
 
-(global-diff-hl-mode t)
 (setq yagist-view-gist t)
 
 (setq git-commit-summary-max-length 65)

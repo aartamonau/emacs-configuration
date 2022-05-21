@@ -644,5 +644,16 @@ of listed in `linum-mode-excludes'."
          ("C-x C-," . counsel-mark-ring)
          ("C-c i" . counsel-imenu)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; diff-hl ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package diff-hl
+  :demand t
+  :bind (:map diff-hl-mode-map
+              ("C-x v n" . diff-hl-next-hunk)
+              ("C-x v p" . diff-hl-previous-hunk)
+              ("C-x v k" . diff-hl-revert-hunk)
+              ("C-x v RET" . diff-hl-diff-goto-hunk))
+  :config
+  (global-diff-hl-mode t))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
