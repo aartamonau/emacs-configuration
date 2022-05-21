@@ -669,5 +669,12 @@ of listed in `linum-mode-excludes'."
 (use-package browse-at-remote
   :bind (("C-c g g" . browse-at-remote)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; git ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package vc
+  :demand t
+  :custom
+  ;; ignore whitespace in git blame
+  (vc-git-annotate-switches '("-w")))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
