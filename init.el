@@ -750,11 +750,14 @@ of listed in `linum-mode-excludes'."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; company ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package company
-  :commands (company-mode)
+  :demand t
   :custom
   (company-idle-delay nil)
+  (company-global-modes '(emacs-lisp-mode lisp-interaction-mode))
   :bind (:map company-mode-map
-              ("M-TAB" . 'company-complete)))
+              ("M-TAB" . 'company-complete))
+  :config
+  (global-company-mode))
 
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
