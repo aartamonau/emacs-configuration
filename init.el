@@ -72,6 +72,7 @@
         use-package
         line-comment-banner
         flyspell-correct-ivy
+        company
         ))
 
 (setq aa/all-packages
@@ -746,6 +747,14 @@ of listed in `linum-mode-excludes'."
              ;; better default search item for grep-o-matic
              (set (make-local-variable 'find-tag-default-function)
                   'my/erlang-get-thing-at-point))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; company ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package company
+  :commands (company-mode)
+  :custom
+  (company-idle-delay nil)
+  :bind (:map company-mode-map
+              ("M-TAB" . 'company-complete)))
 
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
