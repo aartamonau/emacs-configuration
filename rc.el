@@ -1,5 +1,3 @@
-(load "emacs-rc-lsp-mode.el")
-
 ;; Loading persistence features.
 (load "emacs-rc-desktop.el")
 

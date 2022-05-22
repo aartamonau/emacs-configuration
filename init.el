@@ -759,5 +759,15 @@ of listed in `linum-mode-excludes'."
   :config
   (global-company-mode))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; lsp ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package lsp
+  :commands (lsp-deferred)
+  :custom
+  (lsp-keymap-prefix "C-.")
+  (lsp-restart 'ignore)
+  (lsp-headerline-breadcrumb-enable nil)
+  (lsp-modeline-diagnostics-enable nil)
+  (lsp-modeline-code-actions-enable nil))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
