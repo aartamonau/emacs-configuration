@@ -723,5 +723,29 @@ of listed in `linum-mode-excludes'."
              (setq c-basic-offset 4)
              (c-set-offset 'inextern-lang 0))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; erlang ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package erlang
+  :config
+  (defun my/erlang-get-thing-at-point ()
+    (interactive)
+    (my/identifier-to-string (erlang-get-identifier-at-point)))
+
+  (defun my/identifier-to-string (identifier)
+    (pcase identifier
+      (`(qualified-function ,module ,name ,arity)
+       (if module
+           (format "%s:%s" module name)
+         name))
+      (`(record ,module ,name ,arity) (format "#%s" name))
+      (`(module ,module ,name ,arity) (format "%s:" name))
+      (`(macro ,module ,name ,arity) (format "?%s" name))
+      (`(nil ,module ,name ,arity) name)))
+
+  :hook (erlang-mode
+         . (lambda ()
+             ;; better default search item for grep-o-matic
+             (set (make-local-variable 'find-tag-default-function)
+                  'my/erlang-get-thing-at-point))))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
