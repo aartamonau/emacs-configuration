@@ -15,7 +15,6 @@
     (`(macro ,module ,name ,arity) (format "?%s" name))
     (`(nil ,module ,name ,arity) name)))
 
-(add-hook 'erlang-mode-hook 'subword-mode)
 (add-hook 'erlang-mode-hook
           (lambda ()
             (set (make-local-variable 'find-tag-default-function)

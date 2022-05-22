@@ -1,7 +1,5 @@
 (require 'go-mode)
 
-(add-hook 'go-mode-hook
-          (lambda () (c-subword-mode)))
 (add-hook 'go-mode-hook 'my/dont-highlight-tabs)
 (add-hook 'go-mode-hook 'lsp-deferred)
 

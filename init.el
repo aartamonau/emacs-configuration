@@ -134,6 +134,9 @@
   ;; default fill column
   (fill-column 78)
 
+  ;; enable subword-mode globally
+  (global-subword-mode t)
+
   :config
   ;; set default font
   (set-face-attribute 'default nil :font "Monaco-11")
