@@ -17,7 +17,7 @@
 ;; (add-hook 'after-init-hook 'session-initialize)
 
 ;; Save point in buffer
-(setq-default save-place t)
+(save-place-mode 1)
 
 (savehist-mode 1)
 (setq savehist-additional-variables '(search-ring regexp-search-ring))
