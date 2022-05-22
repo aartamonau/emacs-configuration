@@ -712,5 +712,13 @@ of listed in `linum-mode-excludes'."
          ("C-c C-a" . magit-commit-amend)
          ("R" . magit-rebase-interactive)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; cc-mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package cc-mode
+  :hook (c-mode-common
+         . (lambda ()
+             (c-set-style "k&r")
+             (setq c-basic-offset 4)
+             (c-set-offset 'inextern-lang 0))))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
