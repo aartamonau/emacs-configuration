@@ -21,7 +21,4 @@
 ;; ibuffer
 (load "emacs-rc-ibuffer.el")
 
-;; git
-(load "emacs-rc-git.el")
-
 (load "emacs-rc-go-mode.el")

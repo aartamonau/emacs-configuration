@@ -699,5 +699,18 @@ of listed in `linum-mode-excludes'."
                                 (get-buffer-create name)))
       ad-do-it)))
 
+(use-package magit
+  :after ivy
+  :custom
+  (magit-completing-read-function 'ivy-completing-read)
+  :bind (("C-x g" . magit-status)
+         :map magit-log-mode-map
+         ("j" . magit-section-forward)
+         ("k" . magit-section-backward)
+         :map magit-mode-map
+         ("C-c C-c" . magit-commit)
+         ("C-c C-a" . magit-commit-amend)
+         ("R" . magit-rebase-interactive)))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
