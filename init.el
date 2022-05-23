@@ -796,5 +796,19 @@ of listed in `linum-mode-excludes'."
   :custom
   (save-place-mode t))
 
+;;;;;;;;;;;;;;;;;;;;;;;;; persistent-scratch ;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package persistent-scratch
+  :demand t
+  :custom
+  (persistent-scratch-autosave-interval 60)
+  (persistent-scratch-scratch-buffer-p-function
+   (lambda ()
+     (or (persistent-scratch-default-scratch-buffer-p)
+         ;; buffers created by M-x scratch
+         (and (boundp 'scratch-buffer)
+              scratch-buffer))))
+  :config
+  (persistent-scratch-setup-default))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
