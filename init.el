@@ -788,5 +788,10 @@ of listed in `linum-mode-excludes'."
   :custom
   (savehist-mode t))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;; saveplace ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package saveplace
+  :custom
+  (save-place-mode t))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
