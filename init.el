@@ -783,5 +783,10 @@ of listed in `linum-mode-excludes'."
     (let ((desktop-load-locked-desktop t))
       (desktop-read))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; savehist ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package savehist
+  :custom
+  (savehist-mode t))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
