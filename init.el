@@ -215,7 +215,10 @@
          ("C-=" . (lambda ()
                     (interactive)
                     (text-scale-set 0)
-                    (my/linum-reset)))))
+                    (my/linum-reset)))
+
+         ;; create a scratch buffer
+         ("C-c C-s" . scratch)))
 
 (use-package calendar
   :custom
