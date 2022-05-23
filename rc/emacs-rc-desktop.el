@@ -1,21 +1,3 @@
-;; Save state of emacs on exit.
-
-;; Reopen files
-(desktop-save-mode 1)
-(custom-set-variables
- '(desktop-restore-eager 10))
-
-(desktop-auto-save-enable 10)
-
-(defun desktop-force-read ()
-  (interactive)
-  (let ((desktop-load-locked-desktop t))
-    (desktop-read)))
-
-;; Save environment
-;; (require 'session)
-;; (add-hook 'after-init-hook 'session-initialize)
-
 ;; Save point in buffer
 (save-place-mode 1)
 

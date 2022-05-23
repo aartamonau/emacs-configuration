@@ -769,5 +769,19 @@ of listed in `linum-mode-excludes'."
   (lsp-modeline-diagnostics-enable nil)
   (lsp-modeline-code-actions-enable nil))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; desktop ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package desktop
+  :custom
+  (desktop-save-mode t)
+  (desktop-restore-eager 20)
+  (desktop-auto-save-timeout 10)
+  :config
+
+  (defun desktop-force-read ()
+    "Read locked desktop file"
+    (interactive)
+    (let ((desktop-load-locked-desktop t))
+      (desktop-read))))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
