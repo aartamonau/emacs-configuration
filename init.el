@@ -72,6 +72,7 @@
         line-comment-banner
         flyspell-correct-ivy
         company
+        ibuffer-vc
         ))
 
 (setq aa/all-packages
@@ -842,6 +843,14 @@ of listed in `linum-mode-excludes'."
           (mode         . compilation-mode)))))
   :bind (:map ibuffer-mode-filter-group-map
               ("TAB" . ibuffer-toggle-filter-group)))
+
+(use-package ibuffer-vc
+  :after (ibuffer ibuf-ext)
+  :hook (ibuffer
+         . (lambda ()
+             (ibuffer-vc-set-filter-groups-by-vc-root)
+             (unless (eq ibuffer-sorting-mode 'alphabetic)
+               (ibuffer-do-sort-by-alphabetic)))))
 
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
