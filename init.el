@@ -73,6 +73,7 @@
         flyspell-correct-ivy
         company
         ibuffer-vc
+        yasnippet
         ))
 
 (setq aa/all-packages
@@ -851,6 +852,48 @@ of listed in `linum-mode-excludes'."
              (ibuffer-vc-set-filter-groups-by-vc-root)
              (unless (eq ibuffer-sorting-mode 'alphabetic)
                (ibuffer-do-sort-by-alphabetic)))))
+
+;; haskell
+(use-package haskell
+  :mode (("\\.hsc\\'" . haskell-mode)
+         ("\\.l[gh]s\\'" . haskell-literate-mode)
+         ("\\.hsig\\'" . haskell-mode)
+         ("\\.[gh]s\\'" . haskell-mode)
+         ("\\.cabal\\'\\|/cabal\\.project\\|/\\.cabal/config\\'" . haskell-cabal-mode)
+         ("\\.chs\\'" . haskell-c2hs-mode)
+         ("\\.ghci\\'" . ghci-script-mode)
+         ("\\.dump-simpl\\'" . ghc-core-mode)
+         ("\\.hcr\\'" . ghc-core-mode))
+  :interpreter (("runhaskell" . haskell-mode)
+                ("runghc" . haskell-mode))
+  :hook (haskell-mode
+         . (lambda ()
+             (haskell-decl-scan-mode)
+             (interactive-haskell-mode)))
+  :custom
+  (haskell-process-type 'auto)
+  (haskell-compile-ignore-cabal t)
+  (haskell-process-load-or-reload-prompt t)
+  :bind (:map haskell-mode-map
+              ("C-c C-l" . 'haskell-process-load-file)
+              ("C-c C-z" . 'haskell-interactive-switch)
+              ("C-c c" . 'haskell-compile)
+         :map haskell-indentation-mode-map
+              ;; don't auto-indent on RET
+              ("RET" . nil)
+         :map interactive-haskell-mode-map
+              ;; don't interfere with ivy-resume
+              ("C-c C-r" . nil)))
+
+(use-package lsp-haskell
+  :hook (haskell-mode
+         . (lambda ()
+             (lsp-deferred)
+             ;; lsp needs yasnippet
+             (yas-minor-mode)))
+  :bind (:map interactive-haskell-mode-map
+              ;; let xref do its thing
+              ("M-." . nil)))
 
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
