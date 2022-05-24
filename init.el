@@ -883,17 +883,16 @@ of listed in `linum-mode-excludes'."
               ("RET" . nil)
          :map interactive-haskell-mode-map
               ;; don't interfere with ivy-resume
-              ("C-c C-r" . nil)))
+              ("C-c C-r" . nil)
+              ;; let xref do its thing
+              ("M-." . nil)))
 
 (use-package lsp-haskell
   :hook (haskell-mode
          . (lambda ()
              (lsp-deferred)
              ;; lsp needs yasnippet
-             (yas-minor-mode)))
-  :bind (:map interactive-haskell-mode-map
-              ;; let xref do its thing
-              ("M-." . nil)))
+             (yas-minor-mode))))
 
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
