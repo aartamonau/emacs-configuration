@@ -809,5 +809,39 @@ of listed in `linum-mode-excludes'."
   :config
   (persistent-scratch-setup-default))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ibuffer ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package ibuffer
+  :custom
+  (ibuffer-sorting-mode 'alphabetic)
+  (ibuffer-movement-cycle nil)
+  (ibuffer-expert t)
+  :bind
+  (("C-x C-b" . ibuffer)
+   :map ibuffer-mode-map
+   ("TAB" . nil)))
+
+(use-package ibuf-ext
+  :after ibuffer
+  :custom
+  (ibuffer-show-empty-filter-groups nil)
+  (ibuffer-saved-filters
+   '(("Org" (mode . org-mode))
+     ("Haskell" (mode . haskell-mode))
+     ("C/C++" (or (mode . c-mode)
+                  (mode . c++-mode)))
+     ("Python" (mode . python-mode))
+     ("Erlang" (mode . erlang-mode))
+     ("Emacs" (mode . emacs-lisp-mode))
+     ("Grep" (mode . grep-mode))
+     ("Text"
+      (and (derived-mode . text-mode)
+           (not (starred-name))))
+     ("Programming"
+      (or (derived-mode . prog-mode)
+          (mode         . ess-mode)
+          (mode         . compilation-mode)))))
+  :bind (:map ibuffer-mode-filter-group-map
+              ("TAB" . ibuffer-toggle-filter-group)))
+
 ;; must be loaded after custom file
 (load "~/emacs/rc.el")
