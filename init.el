@@ -33,7 +33,6 @@
 (setq aa/packages
       '(package
         org-mode
-        auctex
         haskell-mode
         flycheck
         lsp-mode

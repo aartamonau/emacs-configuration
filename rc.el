@@ -4,9 +4,6 @@
 ;; Org mode
 (load "emacs-rc-org-mode.el")
 
-;; latex
-(load "emacs-rc-latex.el")
-
 ;; ibuffer
 (load "emacs-rc-ibuffer.el")
 
