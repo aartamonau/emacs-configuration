@@ -516,14 +516,26 @@ of listed in `linum-mode-excludes'."
 (use-package flycheck
   :custom
   (flycheck-standard-error-navigation nil)
+  ;; I prefer to get the pop-up by pressing "C-c ?"
+  (flycheck-display-errors-delay 100000)
   :custom-face
   ;; make errors more visible
   (flycheck-error ((t (:background "#500000" :underline nil))))
   (flycheck-info ((t (:background "#005000" :underline nil))))
   (flycheck-warning ((t (:background "#d04000" :underline nil))))
-  :bind (("C-c ?" . flycheck-list-errors)
+  :bind (("C-c ?" . flycheck-display-error-at-point)
          ("C-c n" . flycheck-next-error)
-         ("C-c p" . flycheck-previous-error)))
+         ("C-c p" . flycheck-previous-error)
+         ("C-g"
+          . (lambda ()
+              (interactive)
+              ;; hide flycheck error buffer on pressing "C-g"
+              (let* ((buffer (flycheck-error-message-buffer))
+                     (window (when buffer (get-buffer-window buffer))))
+                (when window
+                  (save-selected-window
+                    (quit-window nil window)))
+                (keyboard-quit))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; avy ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package avy
