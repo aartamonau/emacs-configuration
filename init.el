@@ -121,11 +121,6 @@
   ;; don't auto-indent on pressing enter
   (electric-indent-mode nil)
 
-  ;; auto-insert matching parentheses, etc.
-  (electric-pair-mode t)
-  ;; don't insert a matching symbol next to words
-  (electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit)
-
   ;; don’t ask whether to rever TAGS file
   (tags-revert-without-query t)
   ;; don’t "ring the bell"
