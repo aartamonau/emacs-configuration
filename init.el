@@ -46,7 +46,6 @@
         dired+
         dired-hacks
         go-mode
-        go-lint
         go-imports
         guru-mode
         magit-view-file
@@ -905,5 +904,20 @@ of listed in `linum-mode-excludes'."
              ;; lsp needs yasnippet
              (yas-minor-mode))))
 
-;; must be loaded after custom file
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; go ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package go-mode
+  :custom
+  ;; generating completion candidates is slow
+  (godoc-use-completing-read nil)
+  (godoc-command "go doc -all")
+  :hook (go-mode
+         ;; don't highlight tabs, since go really likes them
+         . (lambda ()
+             (setq-local whitespace-style
+                         (delq 'tabs whitespace-style)))))
+
+(use-package lsp-go
+  :hook (go-mode . lsp-deferred))
+
+;; Must be loaded after custom file
 (load "~/emacs/rc.el")
