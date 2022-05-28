@@ -30,6 +30,9 @@
         (:name magit
                :type elpa)
 
+        (:name org
+               :type elpa)
+
         (:name org-contrib
                :type elpa)))
 
