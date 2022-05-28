@@ -28,11 +28,15 @@
                :type elpa)
 
         (:name magit
+               :type elpa)
+
+        (:name org-contrib
                :type elpa)))
 
 (setq aa/packages
       '(package
-        org-mode
+        org
+        org-contrib
         haskell-mode
         flycheck
         lsp-mode
@@ -78,6 +82,8 @@
 (setq aa/all-packages
       (append aa/packages
               (mapcar 'el-get-source-name el-get-sources)))
+
+(add-to-list 'package-archives '("nongnu" . "https://elpa.nongnu.org/nongnu/") t)
 
 (el-get 'sync aa/all-packages)
 (package-initialize)
