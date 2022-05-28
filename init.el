@@ -134,6 +134,10 @@
   ;; enable subword-mode globally
   (global-subword-mode t)
 
+  ;; lsp recommends these
+  (gc-cons-threshold 100000000)
+  (read-process-output-max (* 1024 1024))
+
   :config
   ;; set default font
   (set-face-attribute 'default nil :font "Monaco-11")
