@@ -882,18 +882,44 @@ of listed in `linum-mode-excludes'."
          ("\\.hcr\\'" . ghc-core-mode))
   :interpreter (("runhaskell" . haskell-mode)
                 ("runghc" . haskell-mode))
+
+  :init
+  (defvar my/haskell-indent-dont-cycle nil)
+
+  (defun my/haskell-comment-dwim (arg)
+    (interactive "*P")
+    (let ((my/haskell-indent-dont-cycle t))
+      (comment-dwim arg)))
+
   :hook (haskell-mode
          . (lambda ()
              (haskell-decl-scan-mode)
-             (interactive-haskell-mode)))
+             (interactive-haskell-mode)
+
+             ;; haskell-mode indentation cycles through multiple possible
+             ;; indentation offsets and this throws comment-dwim off. It calls
+             ;; (indent-according-to-mode) multiple times and so new comments
+             ;; get indented somewhat randomly. This advice checks a
+             ;; dynamically scoped `my/haskell-indent-dont-cycle` to prevent
+             ;; the cycling behavior.
+             (defadvice indent-according-to-mode (around maybe-dont-cycle activate)
+               (if (and (eq major-mode 'haskell-mode)
+                        my/haskell-indent-dont-cycle)
+                   (let* ((indentations (haskell-indentation-find-indentations))
+                          (do-indent (save-excursion
+                                       (back-to-indentation)
+                                       (not (member (current-column) indentations)))))
+                     (when do-indent ad-do-it))
+                 ad-do-it))))
   :custom
   (haskell-process-type 'auto)
   (haskell-compile-ignore-cabal t)
   (haskell-process-load-or-reload-prompt t)
   :bind (:map haskell-mode-map
-              ("C-c C-l" . 'haskell-process-load-file)
-              ("C-c C-z" . 'haskell-interactive-switch)
-              ("C-c c" . 'haskell-compile)
+              ("C-c C-l" . haskell-process-load-file)
+              ("C-c C-z" . haskell-interactive-switch)
+              ("C-c c" . haskell-compile)
+              ("M-;" . my/haskell-comment-dwim)
          :map haskell-indentation-mode-map
               ;; don't auto-indent on RET
               ("RET" . nil)
