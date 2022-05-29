@@ -86,16 +86,13 @@
  ;; log time for done state
  '(org-log-done 'time)
 
- '(org-habit-show-habits-only-for-today nil)
- '(org-habit-graph-column 60)
-
  '(org-agenda-time-grid
    '((daily today require-timed)
      (600 800 1000 1200 1400 1600 1800 2000 2200 2359)
      "......" "----------------"))
 
  '(org-agenda-sorting-strategy
-   '((agenda time-up habit-down priority-down category-keep)
+   '((agenda time-up priority-down category-keep)
      (todo   priority-down category-keep)
      (tags   priority-down category-keep)
      (search category-keep)))
@@ -124,18 +121,6 @@
  '(org-odt-use-date-fields t)
 
  '(org-cycle-emulate-tab 'white))
-
-(custom-set-faces
- '(org-level-1 ((t (:height 1.0))))
- '(org-level-2 ((t (:height 1.0))))
- '(org-level-3 ((t (:height 1.0))))
- '(org-level-4 ((t (:height 1.0))))
- '(org-level-5 ((t (:height 1.0))))
- '(org-level-6 ((t (:height 1.0))))
- '(org-level-7 ((t (:height 1.0))))
- '(org-level-8 ((t (:height 1.0)))))
-
-(add-to-list 'org-modules 'org-habit)
 
 (org-clock-persistence-insinuate)
 
