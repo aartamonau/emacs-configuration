@@ -1,7 +1,9 @@
+*.elc
+*~
+
 /auto-save-list/
 /bookmarks
 /custom.el
-*.elc
 /el-get/
 /elpa/
 /.emacs.desktop

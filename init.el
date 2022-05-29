@@ -7,91 +7,66 @@
 ;; no disabled commands for novice (does not clobber .emacs file)
 (setq disabled-command-function nil)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; el-get ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; straight ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
 
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
-
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-
-(setq el-get-sources
-      '((:name unbound
-               :type emacswiki :features (unbound))
-
-        (:name persistent-scratch
-               :type elpa)
-
-        (:name magit
-               :type elpa)
-
-        (:name org
-               :type elpa)
-
-        (:name org-contrib
-               :type elpa)))
-
-(setq aa/packages
-      '(package
-        org
-        org-contrib
-        haskell-mode
-        flycheck
-        lsp-mode
-        lsp-haskell
-        markdown-mode
-        doom-themes
-        doom-modeline
-        magit
-        browse-at-remote
-        eproject
-        dired+
-        dired-hacks
-        go-mode
-        go-imports
-        guru-mode
-        magit-view-file
-        man-preview
-        diff-hl
-        wtf
-        ggtags
-        yaml-mode
-        expand-region
-        yagist
-        grep-o-matic
-        scratch
-        swiper
-        avy
-        ace-window
-        ace-link
-        shackle
-        hungry-delete
-        ivy-xref
-        undo-tree
-        erlang
-        use-package
-        line-comment-banner
-        flyspell-correct-ivy
-        company
-        ibuffer-vc
-        yasnippet
-        ))
-
-(setq aa/all-packages
-      (append aa/packages
-              (mapcar 'el-get-source-name el-get-sources)))
-
-(add-to-list 'package-archives '("nongnu" . "https://elpa.nongnu.org/nongnu/") t)
-
-(el-get 'sync aa/all-packages)
-(package-initialize)
-
-(custom-set-variables
- '(el-get-verbose t))
+(straight-use-package 'unbound)
+(straight-use-package 'org)
+(straight-use-package 'org-contrib)
+(straight-use-package 'haskell-mode)
+(straight-use-package 'flycheck)
+(straight-use-package 'lsp-mode)
+(straight-use-package 'lsp-haskell)
+(straight-use-package 'markdown-mode)   ;TODO
+(straight-use-package 'doom-themes)
+(straight-use-package 'doom-modeline)
+(straight-use-package 'magit)
+(straight-use-package 'browse-at-remote)
+(straight-use-package 'eproject)
+(straight-use-package 'dired+)
+(straight-use-package 'dired-hacks)
+(straight-use-package 'go-mode)
+(straight-use-package 'go-imports)
+(straight-use-package 'guru-mode)
+(straight-use-package 'magit-view-file)
+(straight-use-package 'man-preview)
+(straight-use-package 'diff-hl)
+(straight-use-package 'wtf)
+(straight-use-package 'ggtags)
+(straight-use-package 'yaml-mode)
+(straight-use-package 'expand-region)
+(straight-use-package 'yagist)
+(straight-use-package 'grep-o-matic)
+(straight-use-package 'scratch)
+(straight-use-package 'ivy)
+(straight-use-package 'counsel)
+(straight-use-package 'swiper)
+(straight-use-package 'avy)
+(straight-use-package 'ace-window)
+(straight-use-package 'ace-link)
+(straight-use-package 'shackle)
+(straight-use-package 'hungry-delete)
+(straight-use-package 'ivy-xref)
+(straight-use-package 'undo-tree)
+(straight-use-package 'erlang)
+(straight-use-package 'use-package)
+(straight-use-package 'line-comment-banner)
+(straight-use-package 'flyspell-correct-ivy)
+(straight-use-package 'company)
+(straight-use-package 'ibuffer-vc)
+(straight-use-package 'yasnippet)
+(straight-use-package 'git-commit)
 
 ;;;;;;;;;;;;;;;;;;;;;;; general configuration ;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package emacs
