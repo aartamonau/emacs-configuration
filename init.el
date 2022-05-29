@@ -1,3 +1,9 @@
+;; don't write custom settings to init.el
+(setq custom-file
+      (concat (file-name-as-directory user-emacs-directory)
+              "custom.el"))
+(load custom-file 'noerror)
+
 ;; no disabled commands for novice (does not clobber .emacs file)
 (setq disabled-command-function nil)
 
