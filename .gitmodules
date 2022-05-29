@@ -1,3 +1,0 @@
-[submodule "extensions/el-get"]
-	path = extensions/el-get
-	url = https://github.com/dimitri/el-get.git
