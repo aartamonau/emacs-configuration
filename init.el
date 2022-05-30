@@ -1075,3 +1075,7 @@ of listed in `linum-mode-excludes'."
              ;; auto-fill everything, not just comments in org-mode
              (set-variable 'comment-auto-fill-only-comments nil t)
              (require 'org-checklist))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; unbound ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package ubound
+  :commands (describe-unbound-keys))
