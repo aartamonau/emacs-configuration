@@ -1073,7 +1073,11 @@ of listed in `linum-mode-excludes'."
   :hook (org-mode
          . (lambda ()
              ;; auto-fill everything, not just comments in org-mode
-             (set-variable 'comment-auto-fill-only-comments nil t)
+             (set-variable 'comment-auto-fill-only-comments nil t))))
+
+(use-package org-contrib
+  :hook (org-mode
+         . (lambda ()
              (require 'org-checklist))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; unbound ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
