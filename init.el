@@ -67,6 +67,7 @@
 (straight-use-package 'ibuffer-vc)
 (straight-use-package 'yasnippet)
 (straight-use-package 'git-commit)
+(straight-use-package 'persistent-scratch)
 
 ;;;;;;;;;;;;;;;;;;;;;;; general configuration ;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package emacs
