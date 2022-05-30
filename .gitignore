@@ -8,6 +8,7 @@
 /elpa/
 /.emacs.desktop
 /.emacs.desktop.lock
+/eshell/
 /history
 /image-dired/
 /.lsp-session-v1
