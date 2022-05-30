@@ -21,53 +21,57 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-(straight-use-package 'unbound)
-(straight-use-package 'org)
-(straight-use-package 'org-contrib)
-(straight-use-package 'haskell-mode)
-(straight-use-package 'flycheck)
-(straight-use-package 'lsp-mode)
-(straight-use-package 'lsp-haskell)
-(straight-use-package 'markdown-mode)   ;TODO
-(straight-use-package 'doom-themes)
-(straight-use-package 'doom-modeline)
-(straight-use-package 'magit)
-(straight-use-package 'browse-at-remote)
-(straight-use-package 'eproject)
-(straight-use-package 'dired+)
-(straight-use-package 'dired-hacks)
-(straight-use-package 'go-mode)
-(straight-use-package 'go-imports)
-(straight-use-package 'guru-mode)
-(straight-use-package 'magit-view-file)
-(straight-use-package 'man-preview)
-(straight-use-package 'diff-hl)
-(straight-use-package 'wtf)
-(straight-use-package 'ggtags)
-(straight-use-package 'yaml-mode)
-(straight-use-package 'expand-region)
-(straight-use-package 'yagist)
-(straight-use-package 'grep-o-matic)
-(straight-use-package 'scratch)
-(straight-use-package 'ivy)
-(straight-use-package 'counsel)
-(straight-use-package 'swiper)
-(straight-use-package 'avy)
-(straight-use-package 'ace-window)
-(straight-use-package 'ace-link)
-(straight-use-package 'shackle)
-(straight-use-package 'hungry-delete)
-(straight-use-package 'ivy-xref)
-(straight-use-package 'undo-tree)
-(straight-use-package 'erlang)
-(straight-use-package 'use-package)
-(straight-use-package 'line-comment-banner)
-(straight-use-package 'flyspell-correct-ivy)
-(straight-use-package 'company)
-(straight-use-package 'ibuffer-vc)
-(straight-use-package 'yasnippet)
-(straight-use-package 'git-commit)
-(straight-use-package 'persistent-scratch)
+(setq my/packages
+      '(unbound
+        org
+        org-contrib
+        haskell-mode
+        flycheck
+        lsp-mode
+        lsp-haskell
+        markdown-mode
+        doom-themes
+        doom-modeline
+        magit
+        browse-at-remote
+        eproject
+        dired+
+        dired-hacks
+        go-mode
+        go-imports
+        guru-mode
+        magit-view-file
+        man-preview
+        diff-hl
+        wtf
+        ggtags
+        yaml-mode
+        expand-region
+        yagist
+        grep-o-matic
+        scratch
+        ivy
+        counsel
+        swiper
+        avy
+        ace-window
+        ace-link
+        shackle
+        hungry-delete
+        ivy-xref
+        undo-tree
+        erlang
+        use-package
+        line-comment-banner
+        flyspell-correct-ivy
+        company
+        ibuffer-vc
+        yasnippet
+        git-commit
+        persistent-scratch))
+
+(dolist (package my/packages)
+  (straight-use-package package))
 
 ;;;;;;;;;;;;;;;;;;;;;;; general configuration ;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package emacs
