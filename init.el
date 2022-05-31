@@ -1087,3 +1087,9 @@ of listed in `linum-mode-excludes'."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; unbound ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package ubound
   :commands (describe-unbound-keys))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; eshell ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package eshell
+  :bind ("C-c e" . (lambda ()
+                     (interactive)
+                     (eshell t))))
