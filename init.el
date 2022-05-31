@@ -531,7 +531,7 @@ of listed in `linum-mode-excludes'."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; avy ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package avy
   :custom
-  (avy-style 'de-bruijn)
+  (avy-style 'pre)
   (avy-background t)
   (avy-timeout-seconds 0.3)
   (avy-all-windows nil)
