@@ -205,7 +205,14 @@
                     (my/linum-reset)))
 
          ;; create a scratch buffer
-         ("C-c C-s" . scratch)))
+         ("C-c C-s" . scratch)
+
+         :map indent-rigidly-map
+         ("j" . indent-rigidly-left)
+         ("k" . indent-rigidly-right)
+         ("J" . indent-rigidly-left-to-tab-stop)
+         ("K" . indent-rigidly-right-to-tab-stop)
+         ("RET" . keyboard-quit)))
 
 (use-package calendar
   :custom
