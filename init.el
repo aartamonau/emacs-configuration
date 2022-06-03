@@ -33,7 +33,7 @@
         doom-themes
         doom-modeline
         magit
-        browse-at-remote
+        git-link
         eproject
         dired+
         dired-hacks
@@ -678,8 +678,12 @@ of listed in `linum-mode-excludes'."
              yagist-list))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; browse-at-remote ;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package browse-at-remote
-  :bind (("C-c g g" . browse-at-remote)))
+(use-package git-link
+  :bind (("C-c g g" . git-link)
+         ("C-c g c" . git-link-commit))
+  :custom
+  (git-link-open-in-browser t)
+  (git-link-use-commit t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; git ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package vc
