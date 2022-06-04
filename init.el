@@ -683,7 +683,38 @@ of listed in `linum-mode-excludes'."
          ("C-c g c" . git-link-commit))
   :custom
   (git-link-open-in-browser t)
-  (git-link-use-commit t))
+  (git-link-use-commit t)
+
+  :init
+  (defun crowdstrike-git-link (hostname dirname filename branch commit start end)
+    (-let [(repo project . _) (reverse (s-split "/" dirname))]
+      (format "https://%s/projects/%s/repos/%s/browse/%s%s?at=%s"
+              hostname
+              project
+              repo
+              filename
+              (if start (if end (format "#%s-%s" start end) (format "#%s" start)) "")
+              (or branch commit))))
+
+  (defun crowdstrike-git-link-commit (hostname dirname commit)
+    (-let [(repo project . _) (reverse (s-split "/" dirname))]
+      (format "https://%s/projects/%s/repos/%s/commits/%s"
+              hostname
+              project
+              repo
+              commit)))
+
+  (defun crowdstrike-git-link-homepage (hostname dirname)
+    (-let [(repo project . _) (reverse (s-split "/" dirname))]
+      (format "https://%s/projects/%s/repos/%s/browse"
+              hostname
+              project
+              repo)))
+
+  :config
+  (push '("bitbucket.cicd.dc" crowdstrike-git-link) git-link-remote-alist)
+  (push '("bitbucket.cicd.dc" crowdstrike-git-link-commit) git-link-commit-remote-alist)
+  (push '("bitbucket.cicd.dc" crowdstrike-git-link-homepage) git-link-homepage-remote-alist))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; git ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package vc
