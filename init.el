@@ -885,7 +885,6 @@ of listed in `linum-mode-excludes'."
               ("TAB" . ibuffer-toggle-filter-group)))
 
 (use-package ibuffer-vc
-  :after (ibuffer ibuf-ext)
   :hook (ibuffer
          . (lambda ()
              (ibuffer-vc-set-filter-groups-by-vc-root)
