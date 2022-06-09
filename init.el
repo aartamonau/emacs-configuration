@@ -702,13 +702,13 @@ of listed in `linum-mode-excludes'."
   :init
   (defun crowdstrike-git-link (hostname dirname filename branch commit start end)
     (-let [(repo project . _) (reverse (s-split "/" dirname))]
-      (format "https://%s/projects/%s/repos/%s/browse/%s%s?at=%s"
+      (format "https://%s/projects/%s/repos/%s/browse/%s?at=%s%s"
               hostname
               project
               repo
               filename
-              (if start (if end (format "#%s-%s" start end) (format "#%s" start)) "")
-              (or branch commit))))
+              (or branch commit)
+              (if start (if end (format "#%s-%s" start end) (format "#%s" start)) ""))))
 
   (defun crowdstrike-git-link-commit (hostname dirname commit)
     (-let [(repo project . _) (reverse (s-split "/" dirname))]
