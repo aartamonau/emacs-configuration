@@ -628,6 +628,20 @@ of listed in `linum-mode-excludes'."
                               (woman . "^")))
   :config
   (ivy-mode 1)
+
+  ;; switch buffer that always returns to the previous buffer, event if it's
+  ;; already visible
+  (defun my/ivy-switch-buffer ()
+    "Switch to another buffer with visible-ok preselection."
+    (interactive)
+    (ivy-read "Switch to buffer: " #'internal-complete-buffer
+              :keymap ivy-switch-buffer-map
+              :preselect (buffer-name (other-buffer (current-buffer) t))
+              :action #'ivy--switch-buffer-action
+              :matcher #'ivy--switch-buffer-matcher
+              :caller 'ivy-switch-buffer))
+  (advice-add 'ivy-switch-buffer :override #'my/ivy-switch-buffer)
+
   :bind (("C-c C-r" . ivy-resume)
          :map ivy-minibuffer-map
          ("M-r" . ivy-restrict-to-matches)
