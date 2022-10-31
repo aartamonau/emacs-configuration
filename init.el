@@ -373,6 +373,8 @@ sudo-tramp-prefix and by clearing buffer-read-only"
                          (grep-o-matic-visited-files t)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; compilation ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package eproject :demand t)
+
 (use-package compile
   :after eproject
   :init
