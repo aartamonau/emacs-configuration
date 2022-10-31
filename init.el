@@ -68,7 +68,10 @@
         ibuffer-vc
         yasnippet
         git-commit
-        persistent-scratch))
+        persistent-scratch
+        multi-compile
+        tuareg
+        merlin))
 
 (dolist (package my/packages)
   (straight-use-package package))
