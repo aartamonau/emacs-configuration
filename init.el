@@ -1152,3 +1152,7 @@ of listed in `linum-mode-excludes'."
   :bind ("C-c e" . (lambda ()
                      (interactive)
                      (eshell t))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; proced ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package proced
+  :bind ("C-c t" . proced))
