@@ -808,7 +808,8 @@ of listed in `linum-mode-excludes'."
          . (lambda ()
              ;; better default search item for grep-o-matic
              (set (make-local-variable 'find-tag-default-function)
-                  'my/erlang-get-thing-at-point))))
+                  'my/erlang-get-thing-at-point)
+             (setq inferior-erlang-machine-options '("-enable-feature" "maybe_expr")))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; company ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package company
