@@ -31,7 +31,7 @@
  ("ht.el" . "c4c1be487d6ecb353d07881526db05d7fc90ea87")
  ("hungry-delete" . "d919e555e5c13a2edf4570f3ceec84f0ade71657")
  ("hydra" . "9e9e00cb240ea1903ffd36a54956b3902c379d29")
- ("ibuffer-vc" . "5fa6aea09bc67f71ea743302d609f459967b1e81")
+ ("ibuffer-vc" . "9204001d1c5ca39409485c1574fd315b0e137a92")
  ("ivy-xref" . "a82e8e117d2dd62c28b6a3e3d6e4cfb11c0bda38")
  ("let-alist" . "592553db5929b54db40af0df90c5add0aaca045b")
  ("line-comment-banner" . "5d76b07f713c3a8f8d513cab0e24fa77a91f912d")
