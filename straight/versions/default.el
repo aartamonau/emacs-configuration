@@ -67,6 +67,6 @@
  ("with-editor" . "59867aebe16454be4d8c0c858f3b00b8a34f3f61")
  ("wtf" . "896353648212aa81a1b4334866db60cf52c45dea")
  ("yagist.el" . "dcdbd84f348414815d02f3da8a6ee0ac271632d4")
- ("yaml-mode" . "535273d5a1eb76999d20afbcf4d9f056d8ffd2da")
+ ("yaml-mode" . "3fcb36d6039bef57e2a0f6e24c51f623c0bf5fb7")
  ("yasnippet" . "5cbdbf0d2015540c59ed8ee0fcf4788effdf75b6"))
 :gamma
