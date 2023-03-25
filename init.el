@@ -217,6 +217,16 @@
          ("K" . indent-rigidly-right-to-tab-stop)
          ("RET" . keyboard-quit)))
 
+(use-package straight
+  :config
+  (defun my/straight-update-package (package &optional from-upstream)
+    "Pulls a package with its dependencies and freezes the versions."
+    (interactive (list (straight--select-package
+                        "Pull package and dependencies" #'straight--installed-p)
+                       current-prefix-arg))
+    (straight-pull-package-and-deps package from-upstream)
+    (straight-freeze-versions)))
+
 (use-package calendar
   :custom
   (calendar-week-start-day 1)
