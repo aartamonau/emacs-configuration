@@ -42,7 +42,7 @@
  ("man-preview" . "789e87c66d23acb4d20c25091af3deed7c61b231")
  ("markdown-mode" . "4477f381de0068a04b55e198c32614793f67b38a")
  ("melpa" . "221950c9703432a8e3c2a99f2cc709dff7bcbdbb")
- ("merlin" . "b442e09f7f317d59a5bbc3317b3838b73f8740b1")
+ ("merlin" . "85ad3a6b09edbf54685eb8e962e82c209f409951")
  ("nongnu-elpa" . "0120f3dfe80cffe0c3016080d9205d12be3b741d")
  ("org" . "44e1cbb09484c8f8c49ef49376ef7988b04decc2")
  ("org-contrib" . "223390ea2c2f728ca4bfd1c4a33cac25d003693a")
