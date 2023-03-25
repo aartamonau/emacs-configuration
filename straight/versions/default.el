@@ -4,7 +4,7 @@
  ("caml-mode" . "a970f303065fe176a920db0466dacf3e2a20b56b")
  ("company-mode" . "b3b9fa37ef9fd02471779130a0b53d87fa726ac1")
  ("compat" . "d22ccfd8b1f39656da70d9c1ab63c015abd473e7")
- ("dash.el" . "76606f90774c5349f7adac20c33e6d37a1939a1f")
+ ("dash.el" . "c30c6bea49b79d966c92ce606fea53dea647b959")
  ("diff-hl" . "d20f16bf5eadd66e775f215e800f25caddae8cb5")
  ("dired-hacks" . "1596e516835099b96cb65d1dc372cfbdff6aea96")
  ("dired-plus" . "90fc0d5a110063278e3fe320dd903ec07be5dba7")
