@@ -63,7 +63,7 @@
  ("tuareg" . "53ce2fdfdd372d52f3a6547c33b687e7d403357a")
  ("unbound" . "b57461a3978da4159231f9392cf9d84d49094882")
  ("undo-tree" . "16f4121032d09ef44b3d7d02c4d02c3c2f18041f")
- ("use-package" . "a7422fb8ab1baee19adb2717b5b47b9c3812a84c")
+ ("use-package" . "77945e002f11440eae72d8730d3de218163d551e")
  ("with-editor" . "59867aebe16454be4d8c0c858f3b00b8a34f3f61")
  ("wtf" . "896353648212aa81a1b4334866db60cf52c45dea")
  ("yagist.el" . "dcdbd84f348414815d02f3da8a6ee0ac271632d4")
