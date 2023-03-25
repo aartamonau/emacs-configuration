@@ -27,7 +27,7 @@
  ("go-mode.el" . "166dfb1e090233c4609a50c2ec9f57f113c1da72")
  ("grep-o-matic" . "19ca6183d727e9da2c21d9d0d96e8205aceea6ae")
  ("guru-mode" . "a3370e547eab260d24774cd50ccbe865373c8631")
- ("haskell-mode" . "5a9f8072c7b9168f0a8409adf9d62a3e4ad4ea3d")
+ ("haskell-mode" . "20d4e2300302a9af673e82d0185d3f489bfb0f59")
  ("helm" . "f1ef8689514b20cd2c2a6c6be987d2c40a8f4a09")
  ("ht.el" . "3c1677f1bf2ded2ab07edffb7d17def5d2b5b6f6")
  ("hungry-delete" . "d919e555e5c13a2edf4570f3ceec84f0ade71657")
