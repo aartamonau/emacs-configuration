@@ -43,8 +43,9 @@
  ("markdown-mode" . "4477f381de0068a04b55e198c32614793f67b38a")
  ("melpa" . "221950c9703432a8e3c2a99f2cc709dff7bcbdbb")
  ("merlin" . "b442e09f7f317d59a5bbc3317b3838b73f8740b1")
- ("org" . "a407a89c5f0bde830d2328f98d4e31b4187932db")
- ("org-contrib" . "15b03d5090cd6ef46bdfdd14a3f9e20c3dab60da")
+ ("nongnu-elpa" . "0120f3dfe80cffe0c3016080d9205d12be3b741d")
+ ("org" . "44e1cbb09484c8f8c49ef49376ef7988b04decc2")
+ ("org-contrib" . "223390ea2c2f728ca4bfd1c4a33cac25d003693a")
  ("otp" . "4b4a6d20a67ccf395f136429981bc3be5755abfa")
  ("persistent-scratch" . "4e159967801b75d07303221c4e5a2b89039c6a11")
  ("pkg-info" . "76ba7415480687d05a4353b27fea2ae02b8d9d61")
@@ -68,4 +69,4 @@
  ("yagist.el" . "dcdbd84f348414815d02f3da8a6ee0ac271632d4")
  ("yaml-mode" . "535273d5a1eb76999d20afbcf4d9f056d8ffd2da")
  ("yasnippet" . "5cbdbf0d2015540c59ed8ee0fcf4788effdf75b6"))
-:beta
+:gamma
