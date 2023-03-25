@@ -47,7 +47,7 @@
  ("org" . "44e1cbb09484c8f8c49ef49376ef7988b04decc2")
  ("org-contrib" . "223390ea2c2f728ca4bfd1c4a33cac25d003693a")
  ("otp" . "4b4a6d20a67ccf395f136429981bc3be5755abfa")
- ("persistent-scratch" . "4e159967801b75d07303221c4e5a2b89039c6a11")
+ ("persistent-scratch" . "5ff41262f158d3eb966826314516f23e0cb86c04")
  ("pkg-info" . "76ba7415480687d05a4353b27fea2ae02b8d9d61")
  ("popup-el" . "114d646f0f4dd49de19dfedd78630018f71470e5")
  ("queue" . "130c2d656cd5d7376552272fab9e50a7c37d0c4a")
