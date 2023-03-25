@@ -2,7 +2,7 @@
  ("ace-window" . "0577c426a9833ab107bab46c60d1885c611b2fb9")
  ("avy" . "ba5f035be33693d1a136a5cbeedb24327f551a92")
  ("caml-mode" . "a970f303065fe176a920db0466dacf3e2a20b56b")
- ("company-mode" . "d5145006b948f93e673f439a766da01f636d39fc")
+ ("company-mode" . "b3b9fa37ef9fd02471779130a0b53d87fa726ac1")
  ("compat" . "d22ccfd8b1f39656da70d9c1ab63c015abd473e7")
  ("dash.el" . "76606f90774c5349f7adac20c33e6d37a1939a1f")
  ("diff-hl" . "e84209e959a17c7b96148e099e391daa29a4835e")
