@@ -15,7 +15,7 @@
  ("emacsmirror-mirror" . "75fc16a034c76fd17b8efe724b60cc679b938d84")
  ("epl" . "78ab7a85c08222cd15582a298a364774e3282ce6")
  ("eproject" . "068218d2cf2138cb2e8fc29b57e773a0097a7e8b")
- ("expand-region.el" . "7e5bbe2763c12bae3e77fe0c49bcad05ff91dbfe")
+ ("expand-region.el" . "b70feaa644310dc2d599dc277cd20a1f2b6446ac")
  ("f.el" . "e0dc429f9c20322c7af735a828fe2404bb416715")
  ("flycheck" . "66a973afca1d03b8284baaa7590eb2b8615a1e6a")
  ("flyspell-correct" . "7d7b6b01188bd28e20a13736ac9f36c3367bd16e")
