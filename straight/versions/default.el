@@ -10,6 +10,7 @@
  ("dired-plus" . "90fc0d5a110063278e3fe320dd903ec07be5dba7")
  ("doom-modeline" . "236fa330c631228e9a513dea2f4598a29b7e8444")
  ("el-get" . "a620c91fe7d6d482c0e7538df75e10af0af1bb16")
+ ("eldoc" . "6be5936f3b82cf4bba97ed527230212502056b8b")
  ("emacs-async" . "34feabe1142863a2c96f75afda1a2ae4aa0813f6")
  ("emacs-multi-compile" . "5e1e63b6ae4bd94aab5902b14b2bf4238e502cfb")
  ("emacsmirror-mirror" . "75fc16a034c76fd17b8efe724b60cc679b938d84")
