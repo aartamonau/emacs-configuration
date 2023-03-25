@@ -1145,7 +1145,7 @@ of listed in `linum-mode-excludes'."
              (require 'org-checklist))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; unbound ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package ubound
+(use-package unbound
   :commands (describe-unbound-keys))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; eshell ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
