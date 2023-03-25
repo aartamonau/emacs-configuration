@@ -40,7 +40,7 @@
  ("magit" . "9f0f23fa25b4d60532147b48b79947d8365ced1f")
  ("magit-view-file" . "926079f30d11a95e5eace6e105375ac0f3421eb7")
  ("man-preview" . "789e87c66d23acb4d20c25091af3deed7c61b231")
- ("markdown-mode" . "4477f381de0068a04b55e198c32614793f67b38a")
+ ("markdown-mode" . "ece1dd845904b08ab78598dc7e1a2eaf7875d1c4")
  ("melpa" . "221950c9703432a8e3c2a99f2cc709dff7bcbdbb")
  ("merlin" . "85ad3a6b09edbf54685eb8e962e82c209f409951")
  ("nongnu-elpa" . "0120f3dfe80cffe0c3016080d9205d12be3b741d")
