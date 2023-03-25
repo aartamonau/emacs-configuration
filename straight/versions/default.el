@@ -7,7 +7,7 @@
  ("dash.el" . "76606f90774c5349f7adac20c33e6d37a1939a1f")
  ("diff-hl" . "d20f16bf5eadd66e775f215e800f25caddae8cb5")
  ("dired-hacks" . "1596e516835099b96cb65d1dc372cfbdff6aea96")
- ("dired-plus" . "93998768b36944a1fa0bca27207372c2f8f8daca")
+ ("dired-plus" . "90fc0d5a110063278e3fe320dd903ec07be5dba7")
  ("doom-modeline" . "3300a10a19aa3817a0ae660d821398b8c6e562e9")
  ("el-get" . "a620c91fe7d6d482c0e7538df75e10af0af1bb16")
  ("emacs-async" . "c78bab7506a70a735d2c3deab13fa87bf44a83d3")
