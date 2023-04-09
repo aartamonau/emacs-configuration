@@ -841,7 +841,9 @@ of listed in `linum-mode-excludes'."
   (lsp-restart 'ignore)
   (lsp-headerline-breadcrumb-enable nil)
   (lsp-modeline-diagnostics-enable nil)
-  (lsp-modeline-code-actions-enable nil))
+  (lsp-modeline-code-actions-enable nil)
+
+  :hook (lsp-mode . yas-minor-mode-on))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; desktop ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package desktop
@@ -983,11 +985,7 @@ of listed in `linum-mode-excludes'."
               ("M-." . nil)))
 
 (use-package lsp-haskell
-  :hook (haskell-mode
-         . (lambda ()
-             (lsp-deferred)
-             ;; lsp needs yasnippet
-             (yas-minor-mode))))
+  :hook (haskell-mode . lsp-deferred))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; go ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package go-mode
