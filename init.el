@@ -1166,3 +1166,7 @@ of listed in `linum-mode-excludes'."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; proced ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package proced
   :bind ("C-c t" . proced))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rust ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package lsp-rust
+  :hook (rust-mode . lsp-deferred))
