@@ -52,6 +52,7 @@
  ("pkg-info" . "76ba7415480687d05a4353b27fea2ae02b8d9d61")
  ("popup-el" . "71cede0588c10526f88dd0375bce776ec2eed05e")
  ("queue" . "130c2d656cd5d7376552272fab9e50a7c37d0c4a")
+ ("rust-mode" . "22fff6a049402584e7120146c3db141c6f530bf6")
  ("s.el" . "e957dcb0677da18b2bb60ad867db5df5c35b5616")
  ("scratch-el" . "39235696ad0b0137fda24e7676a61d33d50b6aad")
  ("shackle" . "f1467db75a8fa5d51c676181fb308ccbf7b05e6f")

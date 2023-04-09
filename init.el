@@ -71,7 +71,8 @@
         persistent-scratch
         multi-compile
         tuareg
-        merlin))
+        merlin
+        rust-mode))
 
 (dolist (package my/packages)
   (straight-use-package package))
