@@ -72,7 +72,8 @@
         multi-compile
         tuareg
         merlin
-        rust-mode))
+        rust-mode
+        cargo-mode))
 
 (dolist (package my/packages)
   (straight-use-package package))
@@ -398,6 +399,8 @@ sudo-tramp-prefix and by clearing buffer-read-only"
       (when (file-readable-p makefile)
         (set (make-local-variable 'compile-command)
              (format "make -k -C '%s'" root)))))
+  :config
+  (setq compilation-scroll-output t)
   :bind ("C-c c" . compile)
   :hook (generic-git-project-file-visit . makefile-compile))
 
@@ -1170,3 +1173,6 @@ of listed in `linum-mode-excludes'."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rust ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package lsp-rust
   :hook (rust-mode . lsp-deferred))
+
+(use-package cargo-mode
+  :hook (rust-mode . cargo-minor-mode))
