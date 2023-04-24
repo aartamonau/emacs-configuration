@@ -1177,7 +1177,7 @@ of listed in `linum-mode-excludes'."
 (use-package eshell
   :init
   (defun my/eshell-buffer-name (dir)
-    (format "*eshell:[%s]*" (expand-file-name dir)))
+    (format "*eshell:%s*" (expand-file-name dir)))
 
   (defun my/eshell-rename-buffer nil
     (rename-buffer (my/eshell-buffer-name default-directory)))
