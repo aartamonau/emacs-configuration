@@ -330,7 +330,7 @@ sudo-tramp-prefix and by clearing buffer-read-only"
          ("C-M-`" . popper-toggle-type))
   :init
   (setq popper-reference-buffers
-        '("^\\*eshell\\*.*$" eshell-mode))
+        '("^\\*eshell:.*$" eshell-mode))
   (setq popper-window-height 30)
   (popper-mode +1)
   (popper-echo-mode +1))
@@ -1175,9 +1175,29 @@ of listed in `linum-mode-excludes'."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; eshell ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package eshell
-  :bind ("C-c e" . (lambda ()
-                     (interactive)
-                     (eshell t))))
+  :init
+  (defun my/eshell-buffer-name (dir)
+    (format "*eshell:[%s]*" (expand-file-name dir)))
+
+  (defun my/eshell-rename-buffer nil
+    (rename-buffer (my/eshell-buffer-name default-directory)))
+
+  (defun my/eshell-here (&optional arg)
+    (interactive "P")
+    (let* ((dir (file-name-directory
+                 (or (buffer-file-name)
+                     default-directory)))
+           (eshell-buffer-name (my/eshell-buffer-name dir)))
+      (if arg
+          ;; always create a new window with a prefix argument
+          (eshell t)
+        (let ((buffer (get-buffer eshell-buffer-name)))
+          (if buffer
+              (pop-to-buffer buffer)
+            ;; create a new buffer if it doesn't already exist
+            (eshell t))))))
+  :bind ("C-c e" . my/eshell-here)
+  :hook (eshell-directory-change . my/eshell-rename-buffer))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; proced ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package proced
