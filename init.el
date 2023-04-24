@@ -331,12 +331,7 @@ sudo-tramp-prefix and by clearing buffer-read-only"
   :init
   (setq popper-reference-buffers
         '("^\\*eshell:.*$" eshell-mode))
-  (setq popper-window-height
-        (lambda (win)
-          (fit-window-to-buffer
-           win
-           (floor (* 0.45 (frame-height)))
-           (floor (* 0.45 (frame-height))))))
+  (setq popper-window-height 0.45)
   (popper-mode +1)
   (popper-echo-mode +1))
 
