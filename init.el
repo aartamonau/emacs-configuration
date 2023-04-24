@@ -73,7 +73,8 @@
         tuareg
         merlin
         rust-mode
-        cargo-mode))
+        cargo-mode
+        popper))
 
 (dolist (package my/packages)
   (straight-use-package package))
@@ -321,6 +322,18 @@ sudo-tramp-prefix and by clearing buffer-read-only"
                    ("*undo-tree*" :regexp t :size 0.3 :align right)))
   :config
   (shackle-mode))
+
+(use-package popper
+  :demand t
+  :bind (("C-`"   . popper-toggle-latest)
+         ("M-`"   . popper-cycle)
+         ("C-M-`" . popper-toggle-type))
+  :init
+  (setq popper-reference-buffers
+        '("^\\*eshell\\*.*$" eshell-mode))
+  (setq popper-window-height 30)
+  (popper-mode +1)
+  (popper-echo-mode +1))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; banner comments ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package line-comment-banner
