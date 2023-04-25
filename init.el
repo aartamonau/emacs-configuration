@@ -1180,7 +1180,8 @@ of listed in `linum-mode-excludes'."
     (format "*eshell:%s*" (expand-file-name dir)))
 
   (defun my/eshell-rename-buffer nil
-    (rename-buffer (my/eshell-buffer-name default-directory)))
+    (rename-buffer
+     (generate-new-buffer-name (my/eshell-buffer-name default-directory))))
 
   (defun my/eshell-here (&optional arg)
     (interactive "P")
