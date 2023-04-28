@@ -678,6 +678,8 @@ of listed in `linum-mode-excludes'."
   :bind (("C-c C-r" . ivy-resume)
          :map ivy-minibuffer-map
          ("M-r" . ivy-restrict-to-matches)
+         ;; the default binding for ivy-restrict-to-matches is very annoying
+         ("S-SPC" . nil)
          ("C-r" . ivy-previous-line)
          ("C-s" . ivy-next-line)))
 
