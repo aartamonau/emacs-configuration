@@ -688,8 +688,14 @@ of listed in `linum-mode-excludes'."
   (xref-show-xrefs-function #'ivy-xref-show-xrefs))
 
 (use-package swiper
-  :bind (("C-s" . swiper)
-         ("C-r" . swiper)))
+  :init
+  (defun my/swiper (do-all)
+    (interactive "P")
+    (if do-all
+        (swiper-all)
+      (swiper)))
+  :bind (("C-s" . my/swiper)
+         ("C-r" . my/swiper)))
 
 (use-package counsel
   :bind (("M-x" . counsel-M-x)
