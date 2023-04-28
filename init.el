@@ -691,11 +691,11 @@ of listed in `linum-mode-excludes'."
 
 (use-package swiper
   :init
-  (defun my/swiper (do-all)
-    (interactive "P")
-    (if do-all
-        (swiper-all)
-      (swiper)))
+  (defun my/swiper (mode)
+    (interactive "p")
+    (cond ((= mode 4) (swiper-all))
+          ((> mode 4) (swiper-multi))
+          (t (swiper))))
   :bind (("C-s" . my/swiper)
          ("C-r" . my/swiper)))
 
