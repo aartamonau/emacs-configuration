@@ -648,6 +648,7 @@ of listed in `linum-mode-excludes'."
 (use-package ivy
   :demand t
   :custom
+  (ivy-height 20)
   (ivy-use-virtual-buffers nil)
   (ivy-count-format "(%d/%d) ")
   (ivy-initial-inputs-alist '((org-refile . "^")
