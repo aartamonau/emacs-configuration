@@ -74,7 +74,8 @@
         merlin
         rust-mode
         cargo-mode
-        popper))
+        popper
+        cmake-mode))
 
 (dolist (package my/packages)
   (straight-use-package package))
@@ -1219,3 +1220,9 @@ of listed in `linum-mode-excludes'."
 
 (use-package cargo-mode
   :hook (rust-mode . cargo-minor-mode))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; cmake ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package cmake-mode
+  :bind
+  (:map cmake-mode-map
+        ("C-. h h" . cmake-help)))
