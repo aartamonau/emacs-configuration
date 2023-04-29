@@ -1001,6 +1001,7 @@ of listed in `linum-mode-excludes'."
               ("C-c C-z" . haskell-interactive-switch)
               ("C-c c" . haskell-compile)
               ("M-;" . my/haskell-comment-dwim)
+              ("C-. g i" . haskell-navigate-imports)
          :map haskell-indentation-mode-map
               ;; don't auto-indent on RET
               ("RET" . nil)
