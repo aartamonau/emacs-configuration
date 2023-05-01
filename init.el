@@ -75,7 +75,8 @@
         rust-mode
         cargo-mode
         popper
-        cmake-mode))
+        cmake-mode
+        ivy-avy))
 
 (dolist (package my/packages)
   (straight-use-package package))
@@ -683,6 +684,8 @@ of listed in `linum-mode-excludes'."
          ("S-SPC" . nil)
          ("C-r" . ivy-previous-line)
          ("C-s" . ivy-next-line)))
+
+(use-package ivy-avy :demand t)
 
 (use-package ivy-xref
   :demand t
