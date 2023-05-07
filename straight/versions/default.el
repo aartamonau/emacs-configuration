@@ -46,6 +46,7 @@
  ("markdown-mode" . "ece1dd845904b08ab78598dc7e1a2eaf7875d1c4")
  ("melpa" . "221950c9703432a8e3c2a99f2cc709dff7bcbdbb")
  ("merlin" . "85ad3a6b09edbf54685eb8e962e82c209f409951")
+ ("nerd-fonts.el" . "eb187fd3a356032f4796d92fbb12225d32c8d973")
  ("nongnu-elpa" . "0120f3dfe80cffe0c3016080d9205d12be3b741d")
  ("org" . "44e1cbb09484c8f8c49ef49376ef7988b04decc2")
  ("org-contrib" . "223390ea2c2f728ca4bfd1c4a33cac25d003693a")

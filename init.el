@@ -76,7 +76,8 @@
         cargo-mode
         popper
         cmake-mode
-        ivy-avy))
+        ivy-avy
+        (nerd-fonts :type git :host github :repo "twlz0ne/nerd-fonts.el")))
 
 (dolist (package my/packages)
   (straight-use-package package))
