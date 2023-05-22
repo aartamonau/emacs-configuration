@@ -223,6 +223,13 @@
          ("K" . indent-rigidly-right-to-tab-stop)
          ("RET" . keyboard-quit)))
 
+;; native compilation
+(use-package comp
+  :custom
+  ;; log warnings and errors from native compilation, but don't raise the
+  ;; *Warning* buffer
+  (native-comp-async-report-warnings-errors 'silent))
+
 (use-package straight
   :config
   (defun my/straight-update-package (package &optional from-upstream)
