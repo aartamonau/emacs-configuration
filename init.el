@@ -619,13 +619,10 @@ of listed in `linum-mode-excludes'."
 
   (defun my/ace-link-other-window ()
     (interactive)
-    (let ((window (my/other-window)))
-      (when window
-        (condition-case err
-            (ace-link)
-          (error
-           (select-window window)
-           (signal (car err) (cdr err)))))))
+    (save-window-excursion
+      (let ((window (my/other-window)))
+        (when window
+          (ace-link)))))
 
   (ace-link-setup-default))
 
