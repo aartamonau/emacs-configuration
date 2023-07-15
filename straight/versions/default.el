@@ -3,7 +3,7 @@
  ("avy" . "be612110cb116a38b8603df367942e2bb3d9bdbe")
  ("caml-mode" . "959a5a27bfdbaa43a9ff99be136d62e0798f5e01")
  ("cargo-mode" . "6e128f08692aae5723122e039e8871a57141e868")
- ("cmake" . "73ebfe661309a4a9f52d000eccd5a546cbf139ef")
+ ("cmake" . "2a68ba31175f4a908fd0a64386623e05153a0e08")
  ("company-mode" . "3ec40b0a0ea751b6c48f24abd58c8304deb53014")
  ("compat" . "e07c0f29d45a73cc0bdf9423780979978c1d9d22")
  ("dash.el" . "f46268c75cb7c18361d3cee942cd4dc14a03aef4")
