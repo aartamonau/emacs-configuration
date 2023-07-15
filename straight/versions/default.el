@@ -54,7 +54,7 @@
  ("otp" . "de4ff98a6e4039f16f8869ffe94cabadb8cdf985")
  ("persistent-scratch" . "5ff41262f158d3eb966826314516f23e0cb86c04")
  ("pkg-info" . "76ba7415480687d05a4353b27fea2ae02b8d9d61")
- ("popper" . "76b1a1f1bce412296d564056c76dd174bcf8ec64")
+ ("popper" . "809ec965d8f6f74ce408e3a8b5974b43371c1528")
  ("popup-el" . "69efb517f3b8ba8ed82dfb4e39b74b325bc98a59")
  ("queue" . "130c2d656cd5d7376552272fab9e50a7c37d0c4a")
  ("rust-mode" . "e443ccf2884028d3b6cc550ff20e7c92dadccb68")
