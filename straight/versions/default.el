@@ -70,7 +70,7 @@
  ("tuareg" . "53ce2fdfdd372d52f3a6547c33b687e7d403357a")
  ("unbound" . "b57461a3978da4159231f9392cf9d84d49094882")
  ("undo-tree" . "16f4121032d09ef44b3d7d02c4d02c3c2f18041f")
- ("use-package" . "77945e002f11440eae72d8730d3de218163d551e")
+ ("use-package" . "a6e856418d2ebd053b34e0ab2fda328abeba731c")
  ("wfnames" . "4447417c58b063df1fca1ba4bec9cb650c7beb60")
  ("with-editor" . "a4853781835346aabf083d2d9cb87f656d01ccac")
  ("wtf" . "896353648212aa81a1b4334866db60cf52c45dea")
