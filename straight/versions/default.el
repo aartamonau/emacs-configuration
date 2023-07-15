@@ -26,7 +26,7 @@
  ("git-link" . "aded95807f277f30e1607313bdf9ac9a016a2305")
  ("gnu-elpa-mirror" . "be1351c478935b8348c19d3197cd5d84330c708d")
  ("go-imports" . "55681e815da93b6f927213c4aa352ae33db97c37")
- ("go-mode.el" . "166dfb1e090233c4609a50c2ec9f57f113c1da72")
+ ("go-mode.el" . "f21347ae9cf68ea33031bf5125896e8f16c8183c")
  ("grep-o-matic" . "19ca6183d727e9da2c21d9d0d96e8205aceea6ae")
  ("guru-mode" . "a3370e547eab260d24774cd50ccbe865373c8631")
  ("haskell-mode" . "6f0bad7c730b99f4702267355656655b8b10049d")
