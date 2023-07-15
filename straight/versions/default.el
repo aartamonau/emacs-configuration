@@ -22,7 +22,7 @@
  ("f.el" . "19e1da061e759b05e8c480b426287a063ca39484")
  ("flycheck" . "5f2ef177cb21ae8b73714575802beef04abd0f5e")
  ("flyspell-correct" . "7d7b6b01188bd28e20a13736ac9f36c3367bd16e")
- ("ggtags" . "40635a1effd3a9c2adef63c4760010c9468a7a4d")
+ ("ggtags" . "4e3630c30fb836872b5d8f2ae3e5d5ae003365d8")
  ("git-link" . "aded95807f277f30e1607313bdf9ac9a016a2305")
  ("gnu-elpa-mirror" . "be1351c478935b8348c19d3197cd5d84330c708d")
  ("go-imports" . "55681e815da93b6f927213c4aa352ae33db97c37")
