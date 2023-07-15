@@ -45,7 +45,7 @@
  ("man-preview" . "789e87c66d23acb4d20c25091af3deed7c61b231")
  ("markdown-mode" . "8dc04cc6762e1863474eb60739a31e45df487f14")
  ("melpa" . "4d787fbfd3b555a637cae7c5b352900ffd1f5eaa")
- ("merlin" . "85ad3a6b09edbf54685eb8e962e82c209f409951")
+ ("merlin" . "4f6c7cfee2344dd75e9568f25c0c1576521ec049")
  ("nerd-fonts.el" . "eb187fd3a356032f4796d92fbb12225d32c8d973")
  ("nerd-icons.el" . "a83d47f6dc4db0ae2f38c0c534de58f02285cea6")
  ("nongnu-elpa" . "c0840d025ba5ad3fc3f2dbd08d3b4ab72cf07574")
