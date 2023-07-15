@@ -7,7 +7,7 @@
  ("company-mode" . "b3b9fa37ef9fd02471779130a0b53d87fa726ac1")
  ("compat" . "e07c0f29d45a73cc0bdf9423780979978c1d9d22")
  ("dash.el" . "f46268c75cb7c18361d3cee942cd4dc14a03aef4")
- ("diff-hl" . "d20f16bf5eadd66e775f215e800f25caddae8cb5")
+ ("diff-hl" . "d9e34f7b8110b7f753c237d0d0b3f267f3ca4779")
  ("dired-hacks" . "874449d6fc98aee565e1715ec18acec3c1c2cafb")
  ("dired-plus" . "850f80756b4e95035735e4af3ce5da31f612de13")
  ("doom-modeline" . "41dff2c9d9f6968f15afe7d710111b4340bc9b0d")
