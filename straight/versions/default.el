@@ -64,7 +64,7 @@
  ("shrink-path.el" . "c14882c8599aec79a6e8ef2d06454254bb3e1e41")
  ("spinner" . "634529bb3173e09b37499f636de70abf29d9fa8a")
  ("straight.el" . "3eca39dfc6797243ec7d1c6a7d45142407f73f88")
- ("swiper" . "d28225e86f8dfb3825809ad287f759f95ee9e479")
+ ("swiper" . "9d630d800e856a2c984c5a62a6f0ad313a9d2228")
  ("themes" . "e4f0b006a516a35f53df2dce2ec116876c5cd7f9")
  ("transient" . "e163a904b5b98f9a43299805296934da27fc1f55")
  ("tuareg" . "53ce2fdfdd372d52f3a6547c33b687e7d403357a")
