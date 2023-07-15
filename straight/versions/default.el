@@ -1,6 +1,6 @@
 (("ace-link" . "06ab398df85e81d1dc763b3210732dd26cba60a1")
  ("ace-window" . "77115afc1b0b9f633084cf7479c767988106c196")
- ("avy" . "d9634efe2631b608cb28c420f54d6e6689805cf7")
+ ("avy" . "be612110cb116a38b8603df367942e2bb3d9bdbe")
  ("caml-mode" . "a970f303065fe176a920db0466dacf3e2a20b56b")
  ("cargo-mode" . "6e128f08692aae5723122e039e8871a57141e868")
  ("cmake" . "73ebfe661309a4a9f52d000eccd5a546cbf139ef")
