@@ -57,7 +57,7 @@
  ("popper" . "76b1a1f1bce412296d564056c76dd174bcf8ec64")
  ("popup-el" . "69efb517f3b8ba8ed82dfb4e39b74b325bc98a59")
  ("queue" . "130c2d656cd5d7376552272fab9e50a7c37d0c4a")
- ("rust-mode" . "22fff6a049402584e7120146c3db141c6f530bf6")
+ ("rust-mode" . "e443ccf2884028d3b6cc550ff20e7c92dadccb68")
  ("s.el" . "dda84d38fffdaf0c9b12837b504b402af910d01d")
  ("scratch" . "f000648c9663833a76a8de9b1e78c99a9d698e48")
  ("shackle" . "f1467db75a8fa5d51c676181fb308ccbf7b05e6f")
