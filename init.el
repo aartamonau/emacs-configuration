@@ -77,7 +77,8 @@
         popper
         cmake-mode
         ivy-avy
-        (nerd-fonts :type git :host github :repo "twlz0ne/nerd-fonts.el")))
+        (nerd-fonts :type git :host github :repo "twlz0ne/nerd-fonts.el")
+        (ivy-hoogle :type git :host github :repo "aartamonau/ivy-hoogle")))
 
 (dolist (package my/packages)
   (straight-use-package package))
@@ -1021,6 +1022,13 @@ of listed in `linum-mode-excludes'."
 
 (use-package lsp-haskell
   :hook (haskell-mode . lsp-deferred))
+
+(use-package ivy-hoogle
+  :bind (:map haskell-mode-map
+              ("C-. H" . ivy-hoogle-thing-at-point))
+  :hook (lsp-mode . (lambda ()
+                      (when (eq major-mode 'haskell-mode)
+                        (local-set-key (kbd "C-. H") #'ivy-hoogle-thing-at-point)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; go ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package go-mode
