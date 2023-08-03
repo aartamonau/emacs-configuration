@@ -1026,6 +1026,7 @@ of listed in `linum-mode-excludes'."
 
 (use-package ivy-hoogle
   :bind (:map haskell-mode-map
+              ("C-. i" . ivy-hoogle)
               ("C-. H" . ivy-hoogle-thing-at-point))
   :hook (lsp-mode . (lambda ()
                       (when (eq major-mode 'haskell-mode)
