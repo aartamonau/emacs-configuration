@@ -78,7 +78,8 @@
         cmake-mode
         ivy-avy
         (nerd-fonts :type git :host github :repo "twlz0ne/nerd-fonts.el")
-        (ivy-hoogle :type git :host github :repo "aartamonau/ivy-hoogle")))
+        (ivy-hoogle :type git :host github :repo "aartamonau/ivy-hoogle")
+        nhexl-mode))
 
 (dolist (package my/packages)
   (straight-use-package package))
