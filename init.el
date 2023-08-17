@@ -1012,6 +1012,7 @@ of listed in `linum-mode-excludes'."
               ("C-c c" . haskell-compile)
               ("M-;" . my/haskell-comment-dwim)
               ("C-. g i" . haskell-navigate-imports)
+              ("C-. H" . ivy-hoogle-thing-at-point)
          :map haskell-indentation-mode-map
               ;; don't auto-indent on RET
               ("RET" . nil)
@@ -1025,9 +1026,7 @@ of listed in `linum-mode-excludes'."
   :hook (haskell-mode . lsp-deferred))
 
 (use-package ivy-hoogle
-  :bind (("C-. i" . ivy-hoogle)
-         :map haskell-mode-map
-              ("C-. H" . ivy-hoogle-thing-at-point))
+  :bind (("C-. i" . ivy-hoogle))
   :hook (lsp-mode . (lambda ()
                       (when (eq major-mode 'haskell-mode)
                         (local-set-key (kbd "C-. H") #'ivy-hoogle-thing-at-point)))))
