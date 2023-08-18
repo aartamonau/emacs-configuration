@@ -35,7 +35,7 @@
  ("hungry-delete" . "d919e555e5c13a2edf4570f3ceec84f0ade71657")
  ("hydra" . "317e1de33086637579a7aeb60f77ed0405bf359b")
  ("ibuffer-vc" . "ac07ed3db55059bfa4b22e762ad9475dda37f1a1")
- ("ivy-hoogle" . "1c61e862b5f419e011e2ab9110e8b22f3df5f6ec")
+ ("ivy-hoogle" . "e05547b880e63d8988e41f41066b53aaf2f91ab2")
  ("ivy-xref" . "a82e8e117d2dd62c28b6a3e3d6e4cfb11c0bda38")
  ("let-alist" . "021fc10df2e44faba4728d849ee767cf890aa51a")
  ("line-comment-banner" . "5d76b07f713c3a8f8d513cab0e24fa77a91f912d")
