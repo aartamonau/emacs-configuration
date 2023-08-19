@@ -65,7 +65,7 @@
  ("shackle" . "f1467db75a8fa5d51c676181fb308ccbf7b05e6f")
  ("shrink-path.el" . "c14882c8599aec79a6e8ef2d06454254bb3e1e41")
  ("spinner" . "634529bb3173e09b37499f636de70abf29d9fa8a")
- ("straight.el" . "3eca39dfc6797243ec7d1c6a7d45142407f73f88")
+ ("straight.el" . "ff63b154bef1ef8d92c141bd189001bff74f6982")
  ("swiper" . "9d630d800e856a2c984c5a62a6f0ad313a9d2228")
  ("themes" . "e4f0b006a516a35f53df2dce2ec116876c5cd7f9")
  ("transient" . "e163a904b5b98f9a43299805296934da27fc1f55")
