@@ -148,9 +148,16 @@
     (unbind-key "C-z" global-map)
     (unbind-key "C-x C-z" global-map))
 
-  ;; allow using Option as Meta on macos
   (when (eq system-type 'darwin)
-    (setq mac-option-modifier 'meta))
+    ;; allow using Option as Meta on macos
+    (setq mac-option-modifier 'meta)
+
+    ;; no title bar
+    (add-to-list 'default-frame-alist '(undecorated . t))
+
+    ;; without this, there will be a gap between the emacs window and other
+    ;; windows
+    (setq frame-resize-pixelwise t))
 
   ;; disable expensive modes on large files
   (defvar my/expensive-modes-disabled nil)
