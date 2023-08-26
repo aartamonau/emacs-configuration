@@ -80,7 +80,8 @@
         (nerd-fonts :type git :host github :repo "twlz0ne/nerd-fonts.el")
         (ivy-hoogle :type git :host github :repo "aartamonau/ivy-hoogle")
         nhexl-mode
-        ivy-hydra))
+        ivy-hydra
+        editorconfig))
 
 (dolist (package my/packages)
   (straight-use-package package))
@@ -1252,3 +1253,9 @@ of listed in `linum-mode-excludes'."
   :bind
   (:map cmake-mode-map
         ("C-. h h" . cmake-help)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;; editorconfig ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))

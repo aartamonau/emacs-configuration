@@ -11,6 +11,7 @@
  ("dired-hacks" . "874449d6fc98aee565e1715ec18acec3c1c2cafb")
  ("dired-plus" . "850f80756b4e95035735e4af3ce5da31f612de13")
  ("doom-modeline" . "41dff2c9d9f6968f15afe7d710111b4340bc9b0d")
+ ("editorconfig-emacs" . "df0e5180db1d1267c9ea39abbe98b7993e83bae7")
  ("el-get" . "d8321df8c44102afcba4d0e5bc6f2c2f85149adc")
  ("eldoc" . "bf2e88dcf00e6554e24b517aa315527011042fae")
  ("emacs-async" . "3ae74c0a4ba223ba373e0cb636c385e08d8838be")
