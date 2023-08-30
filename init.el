@@ -81,7 +81,8 @@
         (ivy-hoogle :type git :host github :repo "aartamonau/ivy-hoogle")
         nhexl-mode
         ivy-hydra
-        editorconfig))
+        editorconfig
+        edit-indirect))
 
 (dolist (package my/packages)
   (straight-use-package package))
