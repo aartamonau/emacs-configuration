@@ -83,7 +83,8 @@
         ivy-hydra
         editorconfig
         edit-indirect
-        package-lint))
+        package-lint
+        flycheck-package))
 
 (dolist (package my/packages)
   (straight-use-package package))

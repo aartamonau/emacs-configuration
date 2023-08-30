@@ -23,6 +23,7 @@
  ("expand-region.el" . "b70feaa644310dc2d599dc277cd20a1f2b6446ac")
  ("f.el" . "19e1da061e759b05e8c480b426287a063ca39484")
  ("flycheck" . "5f2ef177cb21ae8b73714575802beef04abd0f5e")
+ ("flycheck-package" . "3a6aaed29ff61418c48c0251e1432c30748ae739")
  ("flyspell-correct" . "7d7b6b01188bd28e20a13736ac9f36c3367bd16e")
  ("ggtags" . "4e3630c30fb836872b5d8f2ae3e5d5ae003365d8")
  ("git-link" . "aded95807f277f30e1607313bdf9ac9a016a2305")
