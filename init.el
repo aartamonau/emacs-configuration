@@ -82,7 +82,8 @@
         nhexl-mode
         ivy-hydra
         editorconfig
-        edit-indirect))
+        edit-indirect
+        package-lint))
 
 (dolist (package my/packages)
   (straight-use-package package))

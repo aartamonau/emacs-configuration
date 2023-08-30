@@ -56,6 +56,7 @@
  ("org" . "c0dbcf361ee317795355db4d6ad279a3f53b04e4")
  ("org-contrib" . "aed67d095de23bc45446777f7b8fb30b8e5c0c51")
  ("otp" . "de4ff98a6e4039f16f8869ffe94cabadb8cdf985")
+ ("package-lint" . "91d0f1077c78753e09973d63fb3e571413a4c206")
  ("persistent-scratch" . "5ff41262f158d3eb966826314516f23e0cb86c04")
  ("pkg-info" . "76ba7415480687d05a4353b27fea2ae02b8d9d61")
  ("popper" . "809ec965d8f6f74ce408e3a8b5974b43371c1528")
