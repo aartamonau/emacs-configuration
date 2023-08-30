@@ -631,10 +631,18 @@ of listed in `linum-mode-excludes'."
 
   (defun my/ace-link-other-window ()
     (interactive)
-    (save-window-excursion
-      (let ((window (my/other-window)))
-        (when window
-          (ace-link)))))
+    (let ((old-window (selected-window))
+          (window (my/other-window)))
+      (when window
+        ;; open link in the same window
+        (same-window-prefix)
+        (condition-case err
+            (ace-link)
+          (error
+           ;; restore the active window if the other window has an unsupported
+           ;; mode
+           (select-window old-window)
+           (error (error-message-string err)))))))
 
   (ace-link-setup-default))
 
