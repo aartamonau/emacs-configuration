@@ -837,6 +837,8 @@ of listed in `linum-mode-excludes'."
   :custom
   (magit-completing-read-function 'ivy-completing-read)
   :bind (("C-x g" . magit-status)
+         ("C-x C-g" . magit-dispatch)
+         ("C-c f" . magit-file-dispatch)
          :map magit-log-mode-map
          ("j" . magit-section-forward)
          ("k" . magit-section-backward)
