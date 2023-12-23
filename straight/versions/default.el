@@ -15,7 +15,7 @@
  ("editorconfig-emacs" . "df0e5180db1d1267c9ea39abbe98b7993e83bae7")
  ("el-get" . "d8321df8c44102afcba4d0e5bc6f2c2f85149adc")
  ("eldoc" . "bf2e88dcf00e6554e24b517aa315527011042fae")
- ("emacs-async" . "af62573547904045a155c481ed61c093381722dd")
+ ("emacs-async" . "d604187c3c8a3290e78c00b4532b83d8d908b5c3")
  ("emacs-multi-compile" . "5e1e63b6ae4bd94aab5902b14b2bf4238e502cfb")
  ("emacsmirror-mirror" . "d012c184ca3ef4a43236f3c7608cf51a6b53b01d")
  ("epl" . "78ab7a85c08222cd15582a298a364774e3282ce6")
