@@ -265,6 +265,14 @@
   :config
   (load-theme 'doom-gruvbox))
 
+;; highlight and make links clickable
+(use-package goto-addr
+  :demand t
+  :bind (:map goto-address-highlight-keymap
+              ("C-c C-o" . goto-address-at-point))
+  :config
+  (global-goto-address-mode 1))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; tramp ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package tramp
   :bind (("C-c o" . sudo-find-file)
