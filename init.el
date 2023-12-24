@@ -584,7 +584,8 @@ of listed in `linum-mode-excludes'."
           . (lambda ()
               (interactive)
               ;; hide flycheck error buffer on pressing "C-g"
-              (let* ((buffer (flycheck-error-message-buffer))
+              (let* ((buffer (and (fboundp 'flycheck-error-message-buffer)
+                                  (flycheck-error-message-buffer)))
                      (window (when buffer (get-buffer-window buffer))))
                 (when window
                   (save-selected-window
