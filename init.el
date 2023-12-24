@@ -273,6 +273,22 @@
   :config
   (global-goto-address-mode 1))
 
+(use-package browse-url
+  :config
+  (defun my/browse-url-firefox-raise (url &optional new-window)
+    "Open a URL in firefox and focus its window"
+    (interactive (browse-url-interactive-arg "URL: "))
+    (browse-url-firefox url new-window)
+    ;; switch to the browser window
+    (let* ((process-environment (browse-url-process-environment)))
+      (start-process
+       "raise firefox"
+       nil
+       "xdotool"
+       "search" "--class" "firefox" "windowactivate")))
+  (when (eq window-system 'x)
+    (setq browse-url-browser-function #'my/browse-url-firefox-raise)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; tramp ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package tramp
   :bind (("C-c o" . sudo-find-file)
