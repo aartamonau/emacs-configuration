@@ -765,7 +765,10 @@ of listed in `linum-mode-excludes'."
          ("C-x j" . counsel-file-jump)
          ("C-x C-j" . counsel-dired-jump)
          ("C-x C-," . counsel-mark-ring)
-         ("C-c i" . counsel-imenu)))
+         ("C-c i" . counsel-imenu))
+  :config
+  (ivy-configure 'counsel-mark-ring
+    :sort-fn #'ignore))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; diff-hl ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package diff-hl
