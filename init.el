@@ -84,7 +84,8 @@
         editorconfig
         edit-indirect
         package-lint
-        flycheck-package))
+        flycheck-package
+        helpful))
 
 (dolist (package my/packages)
   (straight-use-package package))
@@ -766,6 +767,9 @@ of listed in `linum-mode-excludes'."
          ("C-x C-j" . counsel-dired-jump)
          ("C-x C-," . counsel-mark-ring)
          ("C-c i" . counsel-imenu))
+  :custom
+  (counsel-describe-function-function 'helpful-callable)
+  (counsel-describe-variable-function 'helpful-variable)
   :config
   (ivy-configure 'counsel-mark-ring
     :sort-fn #'ignore))
@@ -1300,3 +1304,8 @@ of listed in `linum-mode-excludes'."
   :ensure t
   :config
   (editorconfig-mode 1))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; helpful ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package helpful
+  :bind (("C-h k" . helpful-key)
+         ("C-h x" . helpful-command)))
