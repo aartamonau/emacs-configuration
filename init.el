@@ -290,6 +290,12 @@
   (when (eq window-system 'x)
     (setq browse-url-browser-function #'my/browse-url-firefox-raise)))
 
+(use-package hl-line
+  :demand t
+  :config
+  ;; highlight the current line
+  (global-hl-line-mode 1))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; tramp ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package tramp
   :bind (("C-c o" . sudo-find-file)
