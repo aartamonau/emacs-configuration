@@ -613,9 +613,21 @@ of listed in `linum-mode-excludes'."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; flycheck ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package flycheck
   :init
+  ;; tell my/flycheck-display-error-messages to actually display errors
+  ;;
+  ;; this is so the error buffer is only popped up when I explicitly ask for
+  ;; it, not when flycheck feels like popping it on me
+  ;;
+  ;; just setting flycheck-display-errors-delay is not sufficient
+  (defvar-local my/flycheck-do-display-errors nil)
+  (defun my/flycheck-display-error-at-point ()
+    (interactive)
+    (let ((my/flycheck-do-display-errors t))
+      (flycheck-display-error-at-point)))
   (defun my/flycheck-display-error-messages (errors)
-    (let ((resize-mini-windows nil))
-      (flycheck-display-error-messages errors)))
+    (when my/flycheck-do-display-errors
+      (let ((resize-mini-windows nil))
+        (flycheck-display-error-messages errors))))
   :custom
   (flycheck-standard-error-navigation nil)
   ;; I prefer to get the pop-up by pressing "C-c ?"
@@ -627,7 +639,7 @@ of listed in `linum-mode-excludes'."
   (flycheck-error ((t (:background "#500000" :underline nil))))
   (flycheck-info ((t (:background "#005000" :underline nil))))
   (flycheck-warning ((t (:background "#d04000" :underline nil))))
-  :bind (("C-c ?" . flycheck-display-error-at-point)
+  :bind (("C-c ?" . my/flycheck-display-error-at-point)
          ("C-c n" . flycheck-next-error)
          ("C-c p" . flycheck-previous-error)
          ("C-g"
