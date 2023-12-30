@@ -86,7 +86,8 @@
         package-lint
         flycheck-package
         helpful
-        lin))
+        lin
+        pabbrev))
 
 (dolist (package my/packages)
   (straight-use-package package))
@@ -1327,3 +1328,10 @@ of listed in `linum-mode-excludes'."
 (use-package helpful
   :bind (("C-h k" . helpful-key)
          ("C-h x" . helpful-command)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; pabbrev ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package pabbrev
+  :demand t
+  :custom (pabbrev-idle-timer-verbose nil)
+  :config
+  (global-pabbrev-mode 1))
