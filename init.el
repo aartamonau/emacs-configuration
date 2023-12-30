@@ -85,7 +85,8 @@
         edit-indirect
         package-lint
         flycheck-package
-        helpful))
+        helpful
+        lin))
 
 (dolist (package my/packages)
   (straight-use-package package))
@@ -290,11 +291,22 @@
   (when (eq window-system 'x)
     (setq browse-url-browser-function #'my/browse-url-firefox-raise)))
 
-(use-package hl-line
+;; enable hl-line in certain modes only
+(use-package lin
   :demand t
+  :custom
+  (lin-mode-hooks
+   '(dired-mode-hook
+     git-rebase-mode-hook
+     grep-mode-hook
+     ibuffer-mode-hook
+     log-view-mode-hook
+     magit-log-mode-hook
+     occur-mode-hook
+     proced-mode-hook
+     package-menu-mode-hook))
   :config
-  ;; highlight the current line
-  (global-hl-line-mode 1))
+  (lin-global-mode 1))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; tramp ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package tramp

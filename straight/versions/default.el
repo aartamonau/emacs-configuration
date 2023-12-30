@@ -43,6 +43,7 @@
  ("ivy-hoogle" . "fb82ed8702550bab35e725c93bc416ee92051b66")
  ("ivy-xref" . "a82e8e117d2dd62c28b6a3e3d6e4cfb11c0bda38")
  ("let-alist" . "0c968ff216a2c91080d79272e85132fef6f14988")
+ ("lin" . "2aeeb64769f7770df8511d34e6ff8280d0a27a8b")
  ("line-comment-banner" . "5d76b07f713c3a8f8d513cab0e24fa77a91f912d")
  ("lsp-haskell" . "3249cde75fb411f95fe173c222b848182fd0b752")
  ("lsp-mode" . "5550e12616cbe7fbe9d85bd0a8bd504abeb54f4b")
