@@ -612,10 +612,16 @@ of listed in `linum-mode-excludes'."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; flycheck ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package flycheck
+  :init
+  (defun my/flycheck-display-error-messages (errors)
+    (let ((resize-mini-windows nil))
+      (flycheck-display-error-messages errors)))
   :custom
   (flycheck-standard-error-navigation nil)
   ;; I prefer to get the pop-up by pressing "C-c ?"
   (flycheck-display-errors-delay 100000)
+  ;; always display error messages in a dedicated buffer
+  (flycheck-display-errors-function 'my/flycheck-display-error-messages)
   :custom-face
   ;; make errors more visible
   (flycheck-error ((t (:background "#500000" :underline nil))))
