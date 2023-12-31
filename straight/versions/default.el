@@ -40,7 +40,7 @@
  ("hungry-delete" . "d919e555e5c13a2edf4570f3ceec84f0ade71657")
  ("hydra" . "317e1de33086637579a7aeb60f77ed0405bf359b")
  ("ibuffer-vc" . "ac07ed3db55059bfa4b22e762ad9475dda37f1a1")
- ("ivy-hoogle" . "fb82ed8702550bab35e725c93bc416ee92051b66")
+ ("ivy-hoogle" . "157e6ce0240198f779e1dba4a24b20b30a57dcb7")
  ("ivy-xref" . "a82e8e117d2dd62c28b6a3e3d6e4cfb11c0bda38")
  ("let-alist" . "0c968ff216a2c91080d79272e85132fef6f14988")
  ("lin" . "2aeeb64769f7770df8511d34e6ff8280d0a27a8b")
