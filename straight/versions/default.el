@@ -60,6 +60,7 @@
  ("org" . "c0dbcf361ee317795355db4d6ad279a3f53b04e4")
  ("org-contrib" . "aed67d095de23bc45446777f7b8fb30b8e5c0c51")
  ("otp" . "de4ff98a6e4039f16f8869ffe94cabadb8cdf985")
+ ("pabbrev" . "56400d5d256b42ffe45c229ea9827f026b650cf5")
  ("package-lint" . "b82deb8d5b0d9515f8d026af183758a069ba6f69")
  ("persistent-scratch" . "5ff41262f158d3eb966826314516f23e0cb86c04")
  ("pkg-info" . "76ba7415480687d05a4353b27fea2ae02b8d9d61")
