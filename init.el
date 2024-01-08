@@ -1350,6 +1350,8 @@ of listed in `linum-mode-excludes'."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; pabbrev ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package pabbrev
   :demand t
-  :custom (pabbrev-idle-timer-verbose nil)
+  :custom
+  (pabbrev-idle-timer-verbose nil)
+  (pabbrev-minimal-expansion-p t)
   :config
   (global-pabbrev-mode 1))
