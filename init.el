@@ -87,7 +87,8 @@
         flycheck-package
         helpful
         lin
-        pabbrev))
+        pabbrev
+        crux))
 
 (dolist (package my/packages)
   (straight-use-package package))
@@ -308,6 +309,9 @@
      package-menu-mode-hook))
   :config
   (lin-global-mode 1))
+
+(use-package crux
+  :bind (("C-M-z" . crux-indent-defun)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; tramp ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package tramp
