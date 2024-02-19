@@ -145,6 +145,9 @@
   (gc-cons-threshold 100000000)
   (read-process-output-max (* 1024 1024))
 
+  ;; ask to confirm before killing emacs
+  (confirm-kill-emacs 'yes-or-no-p)
+
   :config
   ;; set default font
   (set-face-attribute 'default nil :font "Monaco-11")
