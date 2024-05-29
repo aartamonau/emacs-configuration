@@ -28,6 +28,7 @@
         haskell-mode
         flycheck
         lsp-mode
+        lsp-pyright
         lsp-haskell
         markdown-mode
         doom-themes
@@ -978,6 +979,11 @@ of listed in `linum-mode-excludes'."
   (lsp-modeline-code-actions-enable nil)
 
   :hook (lsp-mode . yas-minor-mode-on))
+
+(use-package lsp-pyright
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp-deferred))))  ; or lsp-deferred
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; desktop ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package desktop

@@ -48,6 +48,7 @@
  ("line-comment-banner" . "5d76b07f713c3a8f8d513cab0e24fa77a91f912d")
  ("lsp-haskell" . "3249cde75fb411f95fe173c222b848182fd0b752")
  ("lsp-mode" . "5550e12616cbe7fbe9d85bd0a8bd504abeb54f4b")
+ ("lsp-pyright" . "2f2631ae242d5770dbe6cb924e44c1ee5671789d")
  ("magit" . "f9268a959828d0c6ab26171dd2fb1ffc55e5ae70")
  ("magit-view-file" . "926079f30d11a95e5eace6e105375ac0f3421eb7")
  ("man-preview" . "789e87c66d23acb4d20c25091af3deed7c61b231")
