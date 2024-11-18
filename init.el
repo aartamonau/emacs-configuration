@@ -913,6 +913,8 @@ of listed in `linum-mode-excludes'."
   :after ivy
   :custom
   (magit-completing-read-function 'ivy-completing-read)
+  (magit-diff-refine-hunk t)
+  (magit-diff-ignore-whitespace t)
   :bind (("C-x g" . magit-status)
          ("C-c d" . magit-dispatch)
          ("C-c f" . magit-file-dispatch)
