@@ -89,10 +89,16 @@
         helpful
         lin
         pabbrev
-        crux))
+        crux
+        exec-path-from-shell))
 
 (dolist (package my/packages)
   (straight-use-package package))
+
+(use-package exec-path-from-shell
+  :init
+  (exec-path-from-shell-initialize)
+  (exec-path-from-shell-copy-envs '("LIBRARY_PATH" "INFOPATH" "CPATH" "MANPATH" "PATH")))
 
 ;;;;;;;;;;;;;;;;;;;;;;; general configuration ;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package emacs
