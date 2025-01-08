@@ -169,7 +169,9 @@
 
     ;; without this, there will be a gap between the emacs window and other
     ;; windows
-    (setq frame-resize-pixelwise t))
+    (setq frame-resize-pixelwise t)
+
+    (unbind-key "<f11>" global-map))
 
   ;; disable expensive modes on large files
   (defvar my/expensive-modes-disabled nil)
