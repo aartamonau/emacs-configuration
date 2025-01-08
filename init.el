@@ -1131,7 +1131,11 @@ of listed in `linum-mode-excludes'."
               ("M-." . nil)))
 
 (use-package lsp-haskell
-  :hook (haskell-mode . lsp-deferred))
+  :hook
+  (haskell-mode . lsp-deferred)
+  (haskell-mode . (lambda ()
+                    (setq-local standard-indent 2)
+                    (setq-local lsp-rename-use-prepare nil))))
 
 (use-package ivy-hoogle
   :bind (("C-. i" . ivy-hoogle))
