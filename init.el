@@ -90,7 +90,8 @@
         lin
         pabbrev
         crux
-        exec-path-from-shell))
+        exec-path-from-shell
+        multiple-cursors))
 
 (dolist (package my/packages)
   (straight-use-package package))
@@ -1383,3 +1384,11 @@ of listed in `linum-mode-excludes'."
   (pabbrev-minimal-expansion-p t)
   :config
   (global-pabbrev-mode 1))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;; multiple-cursors ;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package multiple-cursors
+  :bind
+  (("C-c C-v" . mc/edit-beginnings-of-lines)
+   ("C->" . mc/mark-next-like-this)
+   ("C-<" . mc/mark-previous-like-this)
+   ("C-c C-d" . mc/mark-all-dwim)))

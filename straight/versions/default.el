@@ -56,6 +56,7 @@
  ("markdown-mode" . "7659bc470d096e7a53285fa246cbabcb07d66a33")
  ("melpa" . "d6e796026ef5abb0f55c40af84bc5b3ff352b47b")
  ("merlin" . "4f6c7cfee2344dd75e9568f25c0c1576521ec049")
+ ("multiple-cursors.el" . "6956e8e12ee191d7c80d042ae8ff495286fcbe38")
  ("nerd-fonts.el" . "eb187fd3a356032f4796d92fbb12225d32c8d973")
  ("nerd-icons.el" . "a83d47f6dc4db0ae2f38c0c534de58f02285cea6")
  ("nhexl-mode" . "dec55097dc6938122e7886a89e64dd528b1ce55a")
