@@ -1141,7 +1141,7 @@ of listed in `linum-mode-excludes'."
   (haskell-mode . lsp-deferred)
   (haskell-mode . (lambda ()
                     (setq-local standard-indent 2)
-                    (setq-local lsp-rename-use-prepare nil))))
+                    (setq-local lsp-rename-use-prepare nil)))
   :custom (lsp-haskell-formatting-provider "fourmolu"))
 
 (use-package ivy-hoogle
