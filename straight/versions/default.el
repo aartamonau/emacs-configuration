@@ -85,6 +85,7 @@
  ("unbound" . "b57461a3978da4159231f9392cf9d84d49094882")
  ("undo-tree" . "16f4121032d09ef44b3d7d02c4d02c3c2f18041f")
  ("use-package" . "a6e856418d2ebd053b34e0ab2fda328abeba731c")
+ ("use-package-hydra" . "8cd55a1128fbdf6327bb38a199d206225896d146")
  ("wfnames" . "4447417c58b063df1fca1ba4bec9cb650c7beb60")
  ("with-editor" . "77cb2403158cfea9d8bfb8adad81b84d1d6d7c6a")
  ("wtf" . "896353648212aa81a1b4334866db60cf52c45dea")
