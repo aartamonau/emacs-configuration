@@ -1398,7 +1398,13 @@ of listed in `linum-mode-excludes'."
   (("C-z" . hydra-multiple-cursors/body))
   :config
   (setq mc/cmds-to-run-for-all
-        '(hungry-delete-forward))
+        '(forward-sexp
+          backward-sexp
+          electric-newline-and-maybe-indent
+          kill-sexp
+          haskell-indentation-common-electric-command
+          hungry-delete-backward
+          hungry-delete-forward))
   (setq mc/cmds-to-run-once
         '(ace-window
           hydra-multiple-cursors/body
