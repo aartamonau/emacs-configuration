@@ -98,6 +98,11 @@
 (dolist (package my/packages)
   (straight-use-package package))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; hydra ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package hydra :demand t)
+(use-package use-package-hydra :demand t)
+
+;;;;;;;;;;;;; inherit some environment variable for mac ;;;;;;;;;;;;;;
 (use-package exec-path-from-shell
   :init
   (exec-path-from-shell-initialize)
@@ -675,6 +680,7 @@ of listed in `linum-mode-excludes'."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; avy ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package avy
+  :after hydra
   :custom
   (avy-style 'pre)
   (avy-background t)
@@ -682,13 +688,27 @@ of listed in `linum-mode-excludes'."
   (avy-all-windows nil)
   (avy-all-windows-alt t)
   (avy-subword-extra-word-chars nil)
-  :bind (("C-c j" . avy-goto-subword-1)
-         ("C-c l" . avy-goto-line)
-         ("C-c k" . avy-goto-char)
-         ("C-c C-w" . avy-kill-region)
-         ("C-c M-w" . avy-kill-ring-save-region)
-         ("C-c m" . avy-move-region)
-         ("C-c M" . avy-move-line)))
+  :bind (("C-c j" . hydra-avy/body))
+  :hydra (hydra-avy (:exit t :hint nil)
+  "
+ Line^^       Region^^        Goto
+----------------------------------------------------------
+ [_y_] yank   [_Y_] yank      [_c_] timed char  [_C_] char
+ [_m_] move   [_M_] move      [_w_] word        [_W_] any word
+ [_k_] kill   [_K_] kill      [_l_] line        [_L_] end of line"
+  ("c" avy-goto-char-timer)
+  ("C" avy-goto-char)
+  ("w" avy-goto-word-1)
+  ("W" avy-goto-word-0)
+  ("l" avy-goto-line)
+  ("L" avy-goto-end-of-line)
+  ("m" avy-move-line)
+  ("M" avy-move-region)
+  ("k" avy-kill-whole-line)
+  ("K" avy-kill-region)
+  ("M-w" avy-kill-ring-save-region)
+  ("y" avy-copy-line)
+  ("Y" avy-copy-region)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ace-window ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package ace-window
@@ -1386,10 +1406,6 @@ of listed in `linum-mode-excludes'."
   (pabbrev-minimal-expansion-p t)
   :config
   (global-pabbrev-mode 1))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; hydra ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package hydra :demand t)
-(use-package use-package-hydra :demand t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; multiple-cursors ;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package multiple-cursors
