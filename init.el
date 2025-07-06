@@ -74,7 +74,6 @@
         tuareg
         merlin
         rust-mode
-        cargo-mode
         popper
         cmake-mode
         ivy-avy
@@ -1378,11 +1377,23 @@ of listed in `linum-mode-excludes'."
   :bind ("C-c t" . proced))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rust ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package rust-mode
+  :after hydra
+  :bind (:map rust-mode-map ("C-c C-c" . hydra-rust/body))
+
+  :hydra (hydra-rust (:exit t :hint nil)
+  "
+ Cargo
+----------------------------------------------------------
+ [_c_] compile    [_t_] test    [_C_] clippy    [_r_] run    [_k_] check"
+  ("c" rust-compile)
+  ("t" rust-test)
+  ("C" rust-run-clippy)
+  ("r" rust-run)
+  ("k" rust-check)))
+
 (use-package lsp-rust
   :hook (rust-mode . lsp-deferred))
-
-(use-package cargo-mode
-  :hook (rust-mode . cargo-minor-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; cmake ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package cmake-mode
