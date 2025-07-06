@@ -1002,6 +1002,9 @@ of listed in `linum-mode-excludes'."
   (global-company-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; lsp ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package yasnippet
+  :commands (yas-minor-mode-on))
+
 (use-package lsp
   :commands (lsp-deferred)
   :custom
