@@ -1462,4 +1462,11 @@ of listed in `linum-mode-excludes'."
     ("<down-mouse-1>" ignore)
     ("<drag-mouse-1>" ignore)
     ("q" nil))
+
+  :hook
+  ;; multiple cursors messes with transient-mark-mode and sometimes leaves it
+  ;; enabled even if it was disabled previously, so just always disable it
+  ;; after exiting multiple cursors
+  (multiple-cursors-mode-disabled . (lambda ()
+                                      (transient-mark-mode -1)))
   )
