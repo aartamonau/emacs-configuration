@@ -55,7 +55,6 @@
         counsel
         swiper
         avy
-        ace-window
         ace-link
         shackle
         hungry-delete
@@ -708,13 +707,6 @@ of listed in `linum-mode-excludes'."
   ("M-w" avy-kill-ring-save-region)
   ("y" avy-copy-line)
   ("Y" avy-copy-region)))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ace-window ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package ace-window
-  :custom
-  (aw-dispatch-always nil)
-  (aw-scope 'frame)
-  :bind (("C-x o" . ace-window)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ace-link ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package ace-link
@@ -1484,3 +1476,8 @@ of listed in `linum-mode-excludes'."
   (multiple-cursors-mode-disabled . (lambda ()
                                       (transient-mark-mode -1)))
   )
+
+(use-package repeat
+  :config
+  (setq repeat-on-final-keystroke t)
+  (setq set-mark-command-repeat-pop t))
