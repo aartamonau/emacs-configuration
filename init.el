@@ -134,6 +134,7 @@
   (indent-tabs-mode nil)
   ;; don't show a cursor in non-selected windows
   (cursor-in-non-selected-windows nil)
+  (highlight-nonselected-windows nil)
   ;; add a newline at the end of files
   (require-final-newline t)
   ;; don't auto-revert buffers
@@ -156,10 +157,12 @@
 
   ;; lsp recommends these
   (gc-cons-threshold 100000000)
-  (read-process-output-max (* 1024 1024))
+  (read-process-output-max (* 4 1024 1024))
 
   ;; ask to confirm before killing emacs
   (confirm-kill-emacs 'yes-or-no-p)
+
+  (window-combination-resize t)
 
   :config
   ;; set default font
@@ -218,12 +221,25 @@
       (when was-disabled
         (disable-expensive-modes))))
 
+  ;; Disable Bidirectional Text Scanning
+  (setq-default bidi-display-reordering 'left-to-right
+                bidi-paragraph-direction 'left-to-right)
+  (setq bidi-inhibit-bpa t)
+
+  ;; Skip Fontification During Input
+  (setq redisplay-skip-fontification-on-input t)
+
+  ;; Save the Clipboard Before Killing
+  (setq save-interprogram-paste-before-kill t)
+
   :init
   (defun my/linum-reset ()
     (when linum-mode
       (linum-delete-overlays)))
 
   :hook (text-mode . auto-fill-mode)
+        ;; Auto-Chmod Scripts on Save
+        (after-save . executable-make-buffer-file-executable-if-script-p)
 
   :bind (;; kill current buffer (without a prompt)
          ("C-x k" . (lambda ()
